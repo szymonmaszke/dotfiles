@@ -11,15 +11,15 @@ My current Arch Linux setup files, main ideas:
 
 ###Desktop window
 	- Starts other applications and acts like a desktop (it starts like that automatically!)
-![szynux desktop](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/main.png)
+![szynux desktop](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
 ###Coding window
 	- Allows to edit source codes and other text documents efficiently
-![szynux coding](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/code.png)
+![szynux coding](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
 
 ###Browser
 	- Firefox optimized for keyboard usage. Styled with stylish plugin
-![szynux firefox](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/firefox.png)
+![szynux firefox](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/firefox.png?raw=true "Browser")
 
 ##TO-DO:
 	- Fix prompt (so it fits the whole theme better)
