@@ -11,15 +11,21 @@ My current Arch Linux setup files, main ideas:
 ##Screenshots
 
 ###Desktop window
-	- Starts other applications and acts like a desktop (it starts like that automatically!)
+
+- Starts other applications and acts like a desktop (it starts like that automatically!)
+
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
 ###Coding window
-	- Allows to edit source codes and other text documents efficiently
+
+- Allows to edit source codes and other text documents efficiently
+
 ![Code](https://github.com/vyzyv/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
 
 ###Browser
-	- Firefox optimized for keyboard usage. Styled with stylish plugin
+
+- Firefox optimized for keyboard usage. Styled with stylish plugin
+
 ![Browser](https://github.com/vyzyv/dotfiles/raw/master/screenshots/firefox.png?raw=true "Browser")
 
 ##TO-DO:
