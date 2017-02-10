@@ -11,15 +11,15 @@ My current Arch Linux setup files, main ideas:
 
 ###Desktop window
 	- Starts other applications and acts like a desktop (it starts like that automatically!)
-![szynux desktop](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
+![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
 ###Coding window
 	- Allows to edit source codes and other text documents efficiently
-![szynux coding](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
+![Code](https://github.com/vyzyv/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
 
 ###Browser
 	- Firefox optimized for keyboard usage. Styled with stylish plugin
-![szynux firefox](https://github.com/vyzyv/screenshots/dotfiles/raw/master/screenshots/firefox.png?raw=true "Browser")
+![Browser](https://github.com/vyzyv/dotfiles/raw/master/screenshots/firefox.png?raw=true "Browser")
 
 ##TO-DO:
 	- Fix prompt (so it fits the whole theme better)
@@ -28,7 +28,7 @@ My current Arch Linux setup files, main ideas:
 	- Add play, stop, next, previous buttons to bar displaying spotify song
 
 Disclaimer:
-=====
+=========
 
 I'm not the creator of this software, I've only put different programs together and modified to my liking.
 Below are the links to original repositories:
@@ -41,4 +41,3 @@ Below are the links to original repositories:
 
 I apologize for not mentioning everyone and everything, the list would be much longer.
 Thanks you guys!
-- Mozilla Firefox stylish plugin
