@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/hx/projects/XMind-Searcher/src/procedures'
+let g:netrw_dirhist_2='/home/hx/projects/XMind-Searcher/src'
+let g:netrw_dirhist_3='/home/hx/projects/XMind-Searcher/src/init/Notes'
+let g:netrw_dirhist_4='/home/hx/projects/XMind-Searcher'
+let g:netrw_dirhist_5='/usr/share/alsa'
