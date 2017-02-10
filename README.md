@@ -2,6 +2,7 @@ dotfiles
 =========
 
 My current Arch Linux setup files, main ideas:
+
 	- keyboard oriented (zsh, neovim, i3-gaps, firefox)
 	- minimalistic and fast (resource-wise and programming-wise)
 	- visually pleasant
@@ -22,6 +23,7 @@ My current Arch Linux setup files, main ideas:
 ![Browser](https://github.com/vyzyv/dotfiles/raw/master/screenshots/firefox.png?raw=true "Browser")
 
 ##TO-DO:
+
 	- Fix prompt (so it fits the whole theme better)
 	- Add tmux to coding window
 	- Style XMind, Spotify and apvlv with oomox for better experience
