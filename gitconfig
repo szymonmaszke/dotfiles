@@ -1,0 +1,23 @@
+[user]
+	signingkey = C6E0432F83C44A93
+	name = vYZ
+	email = vyz@protonmail.com
+[commit]
+	gpgsign = true
+[alias]
+	co = checkout
+	ci = commit
+	recommit = commit --amend
+	reci = commit --amend
+	br = branch
+	st = status
+	unstage = reset HEAD
+	sdiff = diff --staged
+	srm = rm --cached
+	log1 = log --pretty=oneline
+	last = log -1 HEAD
+	graph = log --graph
+	name = config user.name
+	editor = config --global core.editor
+[core]
+	editor = /usr/bin/nvim

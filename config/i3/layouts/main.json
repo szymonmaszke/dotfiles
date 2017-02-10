@@ -1,0 +1,79 @@
+// vim:ts=4:sw=4:et
+{
+    // floating_con with 1 children
+    "border": "none",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 223,
+       "width": 530,
+       "x": 812,
+       "y": 531
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 4,
+            "floating": "user_on",
+            "geometry": {
+               "height": 434,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "music",
+            "percent": 1,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "music",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // floating_con with 1 children
+    "border": "none",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 480,
+       "width": 530,
+       "x": 812,
+       "y": 40
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 4,
+            "floating": "user_on",
+            "geometry": {
+               "height": 434,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "center",
+            "percent": 1,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^center$",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

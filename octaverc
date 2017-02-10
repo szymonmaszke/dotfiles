@@ -1,0 +1,7 @@
+PS1("OCTAVE >> ")
+clc;
+#Use vim as an editor
+
+edit mode sync
+edit home .
+EDITOR('nvim >/dev/tty 2>&1 < /dev/tty %s')

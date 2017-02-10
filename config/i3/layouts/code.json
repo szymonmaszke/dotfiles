@@ -1,0 +1,79 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 4,
+    "floating": "user_off",
+    "geometry": {
+       "height": 434,
+       "width": 642,
+       "x": 0,
+       "y": 0
+    },
+    "name": "programming",
+    "percent": 0.691982255525997,
+    "swallows": [
+       {
+        "class": "^Termite$",
+        "instance": "^termite$",
+        "title": "programming",
+        "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "none",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.308017744474003,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 4,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "shell",
+            "percent": 0.746194690265487,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "shell",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 4,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 434,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "compile",
+            "percent": 0.253805309734513,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "compile",
+                "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
