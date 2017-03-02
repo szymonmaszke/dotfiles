@@ -1,42 +1,61 @@
 function! DoRemote(arg)
-	UpdateRemotePlugins
+	UpdateRemotePlugins endfunction
 endfunction
 
 call plug#begin()
+"Fugitive
+Plug 'tpope/vim-fugitive'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
-Plug 'edkolev/promptline.vim'
 Plug 'neomake/neomake'
 Plug 'luochen1990/rainbow'
 Plug 'Shougo/deoplete.nvim', {'do': function('DoRemote')}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'tmux-plugins/vim-tmux'
+"tmuxline
+Plug 'edkolev/tmuxline.vim'
+
 "C FAMILY AUTOCOMPLETION
 Plug 'zchee/deoplete-clang'
 Plug 'tomasr/molokai'
-Plug 'Mizuchi/STL-Syntax'
 "PYTHON AUTOCOMPLETION
 Plug 'zchee/deoplete-jedi'
 "JAVA AUTOCOMPLETION
 "Plug 'artur-shaik/vim-javacomplete2'
-Plug 'jvirtanen/vim-octave'
+Plug 'takac/vim-hardtime'
+"Displays git changes
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-easy-align'
+"TAGS AND MANAGEMENT
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+"AUTOMATIC CLOSING OF BRACKETS
+Plug 'jiangmiao/auto-pairs'
+"UNDOTREE
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+"FZF finder for vim with sane defaults
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+"FOCUS MODE
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+"NERDTREE
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+"CPP PLUGINS
+Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
+
 call plug#end()
 
+"PATH ADDING STANDARD C++ LIBRARIERS
+let &path.="/usr/include/c++/6.3.1/**"
 "THEMES
-let g:airline_theme='molokai'
 colorscheme molokai
 
 "RAINBOW PARENTHESES
 let g:rainbow_active=1
 let g:cpp_class_scope_highlight=1
-"let g:rainbow_conf={
-"			\'separately':{
-"			\	'cpp':{
-"			\		'parentheses':[
-"			\			'start=/(/ end=/)/ fold',
-"			\			'start=/\[/ end=/\]/ fold',
-"			\			'start=/{/ end=/}/ fold',
-"			\			'start=/\(\(\<operator\>\)\@<!<\)\&[a-zA-Z0-9_]\@<=<\ze[^<]/ end=/>/']}}}
 
 "NEOMAKE FOR C++
 let g:neomake_cpp_gcc_make={'args': ['-std=c++14', "-Wall", "-Wextra", "-pedantic"]}
@@ -60,24 +79,200 @@ imap <c-tab>	<Plug>(neosnippet_expand_or_jump)
 smap <c-tab>	<Plug>(neosnippet_expand_or_jump)
 xmap <c-tab>	<Plug>(neosnippet_expand_target)
 
-"OCTAVE CONFIGURATION
-augroup filetypedetect
-	au! BufRead, BufNewFile *.m, set filetype=octave
-augroup END
-autocmd FileType octave map <buffer> <f5> gg0pkg load all<esc>Gopause<esc>:w<cr>:!octave -gf %<cr>ddggdd:w<cr>
+"lightline settings
+let g:Powerline_symbols = 'fancy'
 
+let g:lightline = {
+      \ 'colorscheme': 'p1nk',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'percent', 'lineinfo' ]]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightlineFugitive',
+      \   'readonly': 'LightlineReadonly',
+      \   'modified': 'LightlineModified',
+      \   'filename': 'LightlineFilename',
+      \ },
+			\ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+function! LightlineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return ""
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineFugitive()
+  if exists("*fugitive#head")
+    let branch = fugitive#head()
+    return branch !=# '' ? ' '.branch : ''
+  endif
+  return ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+let g:lightline.mode_map = {
+		\ 'n' : 'N',
+		\ 'i' : 'I',
+		\ 'R' : 'R',
+		\ 'v' : 'V',
+		\ 'V' : 'V-L',
+		\ "\<C-v>": 'V-B',
+		\ 'c' : 'C',
+		\ 's' : 'S',
+		\ 'S' : 'S-L',
+		\ "\C-s>": 'S-B',
+		\ 't': 'T'
+		\ }
+
+"HARDTIME SETTINGS
+let g:hardtime_default_on = 1
+let g:hardtime_timeout = 1000
+let g:list_of_disabled_keys = ["<BACKSPACE>"]
+let g:hardtime_ignore_buffer_patterns = ["undotree.*", "NERD.*", "Tagbar.*"]
+"GITGUTTER SETTINGS
+set updatetime=250
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_removed_first_line = ''
+let g:gitgutter_sign_modified = ' '
+let g:gitgutter_sign_modified_removed = ' '
+"undotree settings
+let g:undotree_TreeNodeShape = ' '
+
+let g:undotree_SetFocusWhenToggle = 1
+"let g:undotree_HighlightChangedText = 0
+
+"FZF SETTINGS
+let g:fzf_layout = { 'left': '~19%' }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+"Nerdtree settings
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+"TAGBAR SETTINGS
+let g:tagbar_left = 1
+let g:tagbar_width = 30
+"SAME WIDTH WHEN ZOOMED AS ZOOMED OUT
+let g:tagbar_zoomwidth = 30
+let g:tagbar_compact = 1
+"ABSOLUTE LINE NUMBERS
+let g:tagbar_show_linenumbers = 1
+let g:tagbar_autofocus = 1
+"AUTOMATICALLY SHOWS CURRENT TAG (EXPANDS BRANCH AS NEEDED)
+let g:tagbar_autoshowtag = 1
+"VIM-CPP HIGHLIGHT SETTINGS
+let c_no_curly_error=1
 "NEOVIM SETTINGS
-set number
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
+"Expands tab to spaces
+set expandtab
+
+set number
 set relativenumber
+set numberwidth=4
+
+"Turns off the annoying bell
 set vb
 set clipboard=unnamed
 "80 chars marker line
 set cc=80
 "DEFAULT MODE IS INVISBLE
 set noshowmode
-"SETTINGS FOR LIGHTLINE TO BE DONE
-let g:lightline={
-			\'colorscheme':'powerline',
-			\}
+"NOWRAP
+set nowrap
+" Number of screen lines to use for the command-line.
+"set cmdheight=2
+" Don't use swapfiles.. use a vcs like git instead
+set noswapfile
+" search case insensitive with /
+set ignorecase
+" Maximum width of text that is being inserted.  A longer line will be
+" broken after white space to get this width.
+set textwidth=80
+
+" When this option is set, the screen will not be redrawn while
+" executing macros, registers and other commands that have not been
+" typed
+set lazyredraw
+
+" This option helps to avoid all the |hit-enter| prompts caused by file messages
+set shortmess=aAIsT
+
+" FILE CHANGES SAVED EVEN AFTER FILE CLOSING
+set undofile                        " Save undo's after file closes
+set undodir=~/.config/nvim/undo_history/ "Undo directory
+set undolevels=1000                 " How many undos
+set undoreload=10000                " number of lines to save for undo
+" Leave netrw to death
+let g:netrw_banner=0
+
+"LOOK OF VERTICAL SPLIT BAR/SEPARATOR
+set fillchars=vert:\ 
+hi VertSplit ctermbg=bg ctermfg=bg
+"KEYBOARD SETTINGS
+"
+"Turns off highlighting for searches after esc
+nnoremap <esc> :noh<return><esc>
+
+let g:mapleader = ';'
+"Copying without leading namespace
+nnoremap <Leader>yy ^yg_
+"Pasting in newline (p below and P above)
+nnoremap <Leader>p :pu<CR>
+nnoremap <Leader>P :pu!<CR>
+"Turning on undotree
+nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>/ :Files<CR>
+nnoremap <Leader>g :Goyo<CR>
+nnoremap <Leader>f :NERDTreeToggle<CR>
+nnoremap <Leader>t :TagbarToggle<CR>
