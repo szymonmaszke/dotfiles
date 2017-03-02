@@ -8,10 +8,10 @@ My current Arch Linux setup files, main ideas:
 	- automated (everything starts as seen on the screenshots below (i3 layouts))
 
 ##Screenshots
-==============
+--------------
 
 ###Desktop window
-------------------
+==================
 
 **Starts other applications and acts similiarly to dekstop**
 
@@ -20,7 +20,7 @@ My current Arch Linux setup files, main ideas:
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
 ###Coding window
------------------
+=================
 
 **Allows to edit source codes and do shell related tasks efficiently**
 
@@ -29,22 +29,21 @@ My current Arch Linux setup files, main ideas:
 ![Code](https://github.com/vyzyv/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
 
 ###Browser
------------
+===========
 
 **Firefox (controlled with vimfx plugin)**
-
 
 ![Browser](https://github.com/vyzyv/dotfiles/raw/master/screenshots/firefox.png?raw=true "Browser")
 
 ##TO-DO:
-=========
+---------
 
 	- Configure tmux
 	- Style XMind apvlv with oomox for better experience
 	- Add play, stop, next, previous buttons to bar displaying spotify song
 
 ##Disclaimer:
-===========
+--------------
 
 I'm not the creator of this software, I've only put different programs together and modified to my liking.
 Below are the links to original repositories:
