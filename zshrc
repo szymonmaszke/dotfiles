@@ -1,4 +1,19 @@
+export TERM=xterm-256color
+# setting polish signs
 setxkbmap 'pl'
+# remapping of caps-lock to esc
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+#turning off touchpad
+synclient TouchpadOff=1
+#faster fzf
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -20,7 +35,7 @@ ZSH=/usr/share/oh-my-zsh
 #DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=13
 
 #ZSH_THEME="powerlevel9k/powerlevel9k"ZSH_THEME="powerlevel9k/powerlevel9k" Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -55,6 +70,8 @@ plugins=(gitfast git-extras git-flow-avh git-hubflow docker python vi-mode)
 ZSH_THEME="agnoster"
 DEFAULT_USER=`whoami`
 
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=7
+
 #ALIASES
 
 alias logo='screenfetch | lolcat'
@@ -75,7 +92,8 @@ alias e='nvim'
 alias ez='nvim ~/.zshrc'
 alias eg='nvim ~/.gitconfig'
 alias en='nvim ~/.config/nvim/init.vim'
-alias ex='nvim ~/.Xresources'
+alias eu='nvim ~/.Xresources'
+alias ex='nvim ~/.xinitrc'
 alias ei='nvim ~/.config/i3/config'
 alias et='nvim ~/.config/termite/config'
 alias ep='nvim ~/.config/polybar/config'
@@ -108,12 +126,10 @@ alias restart='sudo reboot'
 alias off='sudo poweroff'
 alias src='source ~/.zshrc'
 alias sudo='sudo '
-
+alias lock='/home/hx/scripts/lock/lock'
 #PROGRAMS ALIASES
-alias fm='ranger' #FILE MANAGER
 alias connect='sudo wifi-menu'
 alias firefox='firefox >/dev/null 2>/dev/null &'
-alias irc='irssi -c irc.freenode.org' #DOROBIC LEPSZE ALIASY JAK OGARNIESZ IRC
 alias spotify='spotify >/dev/null 2>/dev/null &'
 alias music='spotify >/dev/null 2>/dev/null &'
 alias xmind='XMind >/dev/null 2>/dev/null &'
@@ -181,3 +197,5 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
