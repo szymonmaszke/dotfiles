@@ -12,14 +12,14 @@ My current Arch Linux setup files, main ideas:
 ###Desktop window
 **Starts other applications and acts similiarly to dekstop**
 
-*(On screen: Two termite terminals with CLI-visualizer for music)*
+*(Onscreen: Two termite terminals with CLI-visualizer for music)*
 
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
 ###Coding window
 **Allows to edit source codes and do shell related tasks efficiently**
 
-*(On screen: tmux, neovim, fzf, agnoster prompt, molokai theme)*
+*(Onscreen: tmux, neovim, fzf, agnoster prompt, molokai theme)*
 
 ![Code](https://github.com/vyzyv/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
 
