@@ -5,9 +5,7 @@ endfunction
 call plug#begin()
 "Fugitive
 Plug 'tpope/vim-fugitive'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
-Plug 'neomake/neomake'
 Plug 'luochen1990/rainbow'
 Plug 'Shougo/deoplete.nvim', {'do': function('DoRemote')}
 Plug 'Shougo/neosnippet'
@@ -45,9 +43,17 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 "CPP PLUGINS
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
+"BETTER REGEX, SWAPS, REPLACES ETC.
+Plug 'tpope/vim-abolish'
+"CHANGING OF BRACES, SURROUNDS ETC.
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-bufferline'
+Plug 'w0rp/ale'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-obsession'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
-
 "PATH ADDING STANDARD C++ LIBRARIERS
 let &path.="/usr/include/c++/6.3.1/**"
 "THEMES
@@ -56,11 +62,6 @@ colorscheme molokai
 "RAINBOW PARENTHESES
 let g:rainbow_active=1
 let g:cpp_class_scope_highlight=1
-
-"NEOMAKE FOR C++
-let g:neomake_cpp_gcc_make={'args': ['-std=c++14', "-Wall", "-Wextra", "-pedantic"]}
-let g:neomake_cpp_enabled_makers=['gcc']
-autocmd! BufWritePost * Neomake
 
 "JAVA COMPLETE2
 "autocmd FileType java setlocal omnifunc=javacomplete#Complete
@@ -83,11 +84,11 @@ xmap <c-tab>	<Plug>(neosnippet_expand_target)
 let g:Powerline_symbols = 'fancy'
 
 let g:lightline = {
-      \ 'colorscheme': 'p1nk',
+      \ 'colorscheme': 'mine',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'percent', 'lineinfo' ]]
+      \   'right': [ [ 'percent', 'lineinfo' ],['bufferline']]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive',
@@ -95,6 +96,9 @@ let g:lightline = {
       \   'modified': 'LightlineModified',
       \   'filename': 'LightlineFilename',
       \ },
+      \'component': {
+      \   'bufferline': '%{bufferline#refresh_status()} %{g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after}'
+      \},
 			\ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
@@ -136,24 +140,35 @@ function! LightlineFilename()
 endfunction
 
 let g:lightline.mode_map = {
-		\ 'n' : 'N',
-		\ 'i' : 'I',
-		\ 'R' : 'R',
-		\ 'v' : 'V',
-		\ 'V' : 'V-L',
-		\ "\<C-v>": 'V-B',
-		\ 'c' : 'C',
-		\ 's' : 'S',
-		\ 'S' : 'S-L',
-		\ "\C-s>": 'S-B',
-		\ 't': 'T'
-		\ }
+		    \ 'n' : ' NORMAL',
+		    \ 'i' : ' INSERT',
+		    \ 'R' : ' REPLACE',
+		    \ 'v' : ' VISUAL',
+		    \ 'V' : ' V-LINE',
+		    \ "\<C-v>": ' V-BLOCK',
+		    \ 'c' : ' COMMAND',
+		    \ 's' : ' SELECT',
+		    \ 'S' : ' S-LINE',
+		    \ "\<C-s>": ' S-BLOCK',
+		    \ 't': ' TERMINAL',
+        \}
+"TMUXLINE CONFIGURATION
+let g:tmuxline_preset = {
+      \'a'       : '#S',
+      \'win'     : '#I.#W',
+      \'cwin'    : '#I.#W',
+      \'x'       : [' #(docker ps | grep -cvi "(Paused)")  #(docker ps | grep -ci "(paused)")  #(docker ps -a | grep -c "Exited (0)")  #(docker ps -a | grep "Exited" | grep -vc "(0)")'],
+      \'y'       : [' #(uptime | grep -PZo "(?<=up )[^,]*")'],
+      \'z'       : '#(whoami)@#h',
+      \'options' : {'status-justify' : 'left'}}
 
-"HARDTIME SETTINGS
+
+""HARDTIME SETTINGS
 let g:hardtime_default_on = 1
 let g:hardtime_timeout = 1000
 let g:list_of_disabled_keys = ["<BACKSPACE>"]
 let g:hardtime_ignore_buffer_patterns = ["undotree.*", "NERD.*", "Tagbar.*"]
+let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+"]
 "GITGUTTER SETTINGS
 set updatetime=250
 let g:gitgutter_sign_added = ''
@@ -185,16 +200,16 @@ let g:fzf_colors =
 
 "Nerdtree settings
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
+    \ "Modified"  : " ",
+    \ "Staged"    : "✚ ",
+    \ "Untracked" : " ",
+    \ "Renamed"   : "➜ ",
+    \ "Unmerged"  : " ",
+    \ "Deleted"   : " ",
+    \ "Dirty"     : " ",
+    \ "Clean"     : " ",
+    \ 'Ignored'   : ' ',
+    \ "Unknown"   : " "
     \ }
 "TAGBAR SETTINGS
 let g:tagbar_left = 1
@@ -209,6 +224,24 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoshowtag = 1
 "VIM-CPP HIGHLIGHT SETTINGS
 let c_no_curly_error=1
+"BUFFERLINE SETTINGS
+let bufferline_active_buffer_left = ''
+let bufferline_active_buffer_right = ''
+let g:bufferline_modified = ' '
+let g:bufferline_echo = 0
+"ALE OPTIONS
+let g:ale_linters = {
+\   'cpp': ['g++'],
+\}
+"EASY-ALIGN SETTINGS
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" AUTO PAIRS FLY MODE
+let g:AutoPairsFlyMode = 1
 "NEOVIM SETTINGS
 set tabstop=2
 set shiftwidth=2
@@ -231,8 +264,6 @@ set noshowmode
 set nowrap
 " Number of screen lines to use for the command-line.
 "set cmdheight=2
-" Don't use swapfiles.. use a vcs like git instead
-set noswapfile
 " search case insensitive with /
 set ignorecase
 " Maximum width of text that is being inserted.  A longer line will be
@@ -244,6 +275,8 @@ set textwidth=80
 " typed
 set lazyredraw
 
+" you don't have to save buffers when switching
+set hidden
 " This option helps to avoid all the |hit-enter| prompts caused by file messages
 set shortmess=aAIsT
 
@@ -252,27 +285,68 @@ set undofile                        " Save undo's after file closes
 set undodir=~/.config/nvim/undo_history/ "Undo directory
 set undolevels=1000                 " How many undos
 set undoreload=10000                " number of lines to save for undo
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+" Different backspcae working
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+"REMEMBERS INFO ABOUT BUFFERS ON CLOSE
+set viminfo^=%
 " Leave netrw to death
 let g:netrw_banner=0
-
 "LOOK OF VERTICAL SPLIT BAR/SEPARATOR
-set fillchars=vert:\ 
+set fillchars=vert:\
 hi VertSplit ctermbg=bg ctermfg=bg
-"KEYBOARD SETTINGS
-"
-"Turns off highlighting for searches after esc
-nnoremap <esc> :noh<return><esc>
 
-let g:mapleader = ';'
+" AUTOCOMMANDS
+"git commit messages wrapping and spell checking
+autocmd Filetype gitcommit setlocal spell textwidth=72
+"opens file on last edited line
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \ exe "normal! g`\"" |
+     \ endif
+"clears whitespaces before writing
+autocmd BufWritePre * %s/\s\+$//e
+
+"REMAPPING
+"Turns off highlighting for searches after esc
+nnoremap <silent><esc> :noh<return><esc>
+
+let mapleader = "\<Space>"
 "Copying without leading namespace
-nnoremap <Leader>yy ^yg_
+map <Leader> <Plug>(easymotion-prefix)
+nnoremap <silent><Leader>yy ^yg_
 "Pasting in newline (p below and P above)
-nnoremap <Leader>p :pu<CR>
-nnoremap <Leader>P :pu!<CR>
+nnoremap <silent><Leader>p :pu<CR>
+nnoremap <silent><Leader>P :pu!<CR>
 "Turning on undotree
-nnoremap <leader>u :UndotreeToggle<CR>
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>/ :Files<CR>
-nnoremap <Leader>g :Goyo<CR>
-nnoremap <Leader>f :NERDTreeToggle<CR>
-nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <silent>,u :UndotreeToggle<CR>
+nnoremap <silent>,b :Buffers<CR>
+nnoremap <silent>,/ :Files<CR>
+nnoremap <silent>,g :Goyo<CR>
+nnoremap <silent>,f :NERDTreeToggle<CR>
+nnoremap <silent>,t :TagbarToggle<CR>
+nnoremap <silent><Leader>R :%s/<c-r><c-w>//gI<c-f>$F/i
+nnoremap <silent><Leader>r :%s/\<<c-r><c-w>\>//gI<c-f>$F/i
+"Remap to alt
+nnoremap <silent><M-h> :bp<CR>
+nnoremap <silent><M-l> :bn<CR>
+nnoremap <silent><M-k> :tabn<CR>
+nnoremap <silent><M-j> :tabp<CR>
+"Fast saving
+nnoremap <Leader>w :w!<cr>
+"Fast leaving the file
+nnoremap <Leader>q :wq<cr>
+"Expands :h to :tab help
+cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab help' : 'h'
+"Closing buffer
+nnoremap <Leader>x :bd<cr>
+"Moving line up/down with arrows
+nnoremap <Up>   :<C-u>silent! move-2<CR>==
+nnoremap <Down> :<C-u>silent! move+<CR>==
+

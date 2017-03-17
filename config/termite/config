@@ -1,6 +1,7 @@
+#TERMITE CONFIG FILE
 [options]
 
-font=Source Code Pro for Powerline 10
+font= Sauce Code Powerline 10
 mouse_autohide=true
 #allow_bold = true
 cursor_blink = off
