@@ -22,7 +22,7 @@ My current Arch Linux setup files, main ideas:
 
 *Allows to edit source codes and do shell related tasks efficiently*
 
-*(Onscreen: tmux, neovim, fzf, agnoster prompt, molokai theme)*
+*(Onscreen: tmux, neovim, agnoster prompt, htop)*
 
 ![Code](https://github.com/vyzyv/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
 
