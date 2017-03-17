@@ -30,7 +30,7 @@ background = #101010
 foreground = ${colors.white}
 
 underline-size = 2
-underline-color = ${colors.white}
+underline-color = ${colors.red}
 
 tray-detached = false
 tray-position = right
@@ -169,7 +169,7 @@ label-foreground = ${colors.white}
 
 [module/wlan]
 type = internal/network
-interface = wlp0s20u1
+interface = wlp0s20u6
 interval = 3.0
 
 format-connected-padding = 1
