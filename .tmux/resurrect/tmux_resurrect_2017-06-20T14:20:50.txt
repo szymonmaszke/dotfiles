@@ -1,0 +1,6 @@
+pane	0	1	:sudo	0	:-	0	:/home/vyz/aur/xmind/XMind_amd64	1	sudo	:/usr/lib/firefox/firefox
+sudo pacman -Syyu
+pane	0	2	:sudo	1	:*	0	:/home/vyz	1	sudo	:sudo wifi-menu
+window	0	1	0	:-	ccfe,166x38,0,0,1
+window	0	2	1	:*	ccff,166x38,0,0,2
+state	0	

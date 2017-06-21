@@ -1,0 +1,13 @@
+pane	0	1	:zsh	0	:-	0	:/home/vyz	0	nvim	:nvim /home/vyz/.config/oh-my-zsh/custom/aliases.zsh
+pane	0	1	:zsh	0	:-	1	:/home/vyz/aur/xmind/XMind_amd64	1	zsh	:
+pane	0	2	:zsh	1	:*	0	:/home/vyz/projects/numpp	0	sudo	:sudo docker run --cap-add=NET_ADMIN --name fais_vpn --device /dev/net/tun:/dev/net/tun -i -t ubuntu:14.04 /bin/bash
+/usr/lib/firefox/firefox
+pane	0	2	:zsh	1	:*	1	:/home/vyz/projects/numpp/tests/speed/structures/matrices/normal	1	zsh	:
+pane	0	3	:zsh	0	:	0	:/home/vyz/projects/Algorithms	1	zsh	:
+pane	0	4	:zsh	0	:	0	:/home/vyz	0	zsh	:
+pane	0	4	:zsh	0	:	1	:/home/vyz	1	zsh	:
+window	0	1	0	:-	2015,166x38,0,0{83x38,0,0,1,82x38,84,0,2}
+window	0	2	1	:*	201e,166x38,0,0{83x38,0,0,3,82x38,84,0,4}
+window	0	3	0	:	cd02,166x38,0,0,5
+window	0	4	0	:	a02b,166x38,0,0{83x38,0,0,6,82x38,84,0,7}
+state	0	

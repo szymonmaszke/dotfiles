@@ -1,0 +1,50 @@
+#TERMITE CONFIG FILE
+[options]
+
+#font= Space Mono Nerd Font 10
+font= Code New Roman Nerd Font 11
+mouse_autohide=true
+#allow_bold = true
+cursor_blink = off
+
+
+[colors]
+
+background= #282828
+ background= rgba(40,40,40,0.4)
+foreground= #d7d7d7
+
+cursor= #d7d7d7
+# dark0 + gray
+color0 = #505050
+color8 = #000000
+
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
+
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
+
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
+
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
+
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
+
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
+
+# light4 + light1
+color7 = #d7d7d7
+color15 = #ebdbb2
+
+# vim: ft=dosini cms=#%s

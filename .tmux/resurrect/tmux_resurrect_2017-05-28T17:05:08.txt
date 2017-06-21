@@ -1,0 +1,10 @@
+pane	0	1	:zsh	0	:	0	:/home/vyz	0	zsh	:
+pane	0	1	:zsh	0	:	1	:/home/vyz	1	zsh	:
+pane	0	2	:zsh	0	:-	0	:/home/vyz/projects/numpp/structures/matrices/sparse	0	nvim	:nvim sparse_structure.hpp
+pane	0	2	:zsh	0	:-	1	:/home/vyz/projects/numpp/structures/matrices/sparse	1	zsh	:/usr/lib/firefox/firefox
+pane	0	3	:nvim	1	:*	0	:/home/vyz/testing/cpp	1	nvim	:nvim copy_test.cpp
+pane	0	3	:nvim	1	:*	1	:/home/vyz/testing/cpp	0	zsh	:
+window	0	1	0	:	2015,166x38,0,0{83x38,0,0,1,82x38,84,0,2}
+window	0	2	0	:-	201e,166x38,0,0{83x38,0,0,3,82x38,84,0,4}
+window	0	3	1	:*	2027,166x38,0,0{83x38,0,0,5,82x38,84,0,6}
+state	0	
