@@ -1,0 +1,5 @@
+pane	0	1	:sudo	1	:*	0	:/home/vyz	1	sudo	:/usr/lib/firefox/firefox
+sudo docker attach fais_vpn
+pane	0	1	:sudo	1	:*	1	:/home/vyz	0	zsh	:
+window	0	1	1	:*	a010,166x38,0,0{83x38,0,0,0,82x38,84,0,1}
+state	0	

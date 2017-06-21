@@ -1,0 +1,10 @@
+pane	0	1	:zsh	0	:	0	:/home/vyz	0	nvim	:nvim /home/vyz/.config/oh-my-zsh/custom/aliases.zsh
+pane	0	1	:zsh	0	:	1	:/home/vyz/aur/xmind/XMind_amd64	1	zsh	:
+pane	0	2	:zsh	0	:	0	:/home/vyz/projects/numpp/factorizations	1	zsh	:
+pane	0	3	:zsh	0	:-	0	:/home/vyz/projects/Algorithms	1	zsh	:
+pane	0	4	:zsh	1	:*	0	:/home/vyz	1	zsh	:/usr/lib/firefox/firefox
+window	0	1	0	:	2015,166x38,0,0{83x38,0,0,1,82x38,84,0,2}
+window	0	2	0	:	cd00,166x38,0,0,3
+window	0	3	0	:-	cd01,166x38,0,0,4
+window	0	4	1	:*	cd04,166x38,0,0,7
+state	0	

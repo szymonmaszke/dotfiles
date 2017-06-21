@@ -1,0 +1,8 @@
+pane	0	1	:zsh	0	:	0	:/home/vyz	1	zsh	:
+pane	0	2	:zsh	1	:*	0	:/home/vyz/.config/oh-my-zsh/custom/themes	1	nvim	:/usr/lib/firefox/firefox
+nvim agnoster.zsh-theme
+pane	0	3	:zsh	0	:-	0	:/home/vyz	1	zsh	:
+window	0	1	0	:	ccfe,166x38,0,0,1
+window	0	2	1	:*	e6b7,166x38,0,0,28
+window	0	3	0	:-	66b0,166x38,0,0,30
+state	0	

@@ -1,0 +1,8 @@
+pane	main	1	:zsh	0	:	0	:/home/vyz/.config/tmux	1	zsh	:/usr/lib/firefox/firefox
+pane	main	2	:nvim	0	:-	0	:/home/vyz	1	nvim	:nvim /home/vyz/.config/oh-my-zsh/custom/aliases.zsh
+pane	main	3	:nvim	1	:*	0	:/home/vyz/projects/config_files	1	nvim	:nvim mozilla_plugins
+pane	main	3	:nvim	1	:*	1	:/home/vyz/.mozilla/firefox	0	zsh	:
+window	main	1	0	:	ccfe,166x38,0,0,1
+window	main	2	0	:-	ccff,166x38,0,0,2
+window	main	3	1	:*	0da1,166x38,0,0{83x38,0,0,19,82x38,84,0,20}
+state	main	

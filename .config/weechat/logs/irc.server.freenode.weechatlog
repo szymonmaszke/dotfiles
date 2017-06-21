@@ -1,0 +1,139 @@
+2017-03-24 00:52:38	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:52:38	--	irc: connected to chat.freenode.net/6667 (195.154.200.232)
+2017-03-24 00:52:38	--	barjavel.freenode.net: *** Looking up your hostname...
+2017-03-24 00:52:38	--	barjavel.freenode.net: *** Checking Ident
+2017-03-24 00:52:38	--	barjavel.freenode.net: *** Found your hostname
+2017-03-24 00:52:43	--	barjavel.freenode.net: *** No Ident response
+2017-03-24 00:52:43	--	barjavel.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:52:43	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:52:43	--	irc: disconnected from server
+2017-03-24 00:52:43	--	irc: reconnecting to server in 10 seconds
+2017-03-24 00:52:53	--	irc: reconnecting to server...
+2017-03-24 00:52:53	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:52:53	--	irc: connected to chat.freenode.net/6667 (82.96.96.11)
+2017-03-24 00:52:53	--	kornbluth.freenode.net: *** Looking up your hostname...
+2017-03-24 00:52:53	--	kornbluth.freenode.net: *** Checking Ident
+2017-03-24 00:52:53	--	irc: disconnected from server
+2017-03-24 00:56:45	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:56:46	--	irc: connected to chat.freenode.net/6667 (149.56.134.238)
+2017-03-24 00:56:46	--	cherryh.freenode.net: *** Looking up your hostname...
+2017-03-24 00:56:46	--	cherryh.freenode.net: *** Checking Ident
+2017-03-24 00:56:46	--	cherryh.freenode.net: *** Found your hostname
+2017-03-24 00:56:52	--	cherryh.freenode.net: *** No Ident response
+2017-03-24 00:56:52	--	cherryh.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:56:52	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:56:52	--	irc: disconnected from server
+2017-03-24 00:56:52	--	irc: reconnecting to server in 10 seconds
+2017-03-24 00:57:02	--	irc: reconnecting to server...
+2017-03-24 00:57:02	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:57:03	--	irc: connected to chat.freenode.net/6667 (82.96.96.11)
+2017-03-24 00:57:03	--	kornbluth.freenode.net: *** Looking up your hostname...
+2017-03-24 00:57:03	--	kornbluth.freenode.net: *** Checking Ident
+2017-03-24 00:57:08	--	kornbluth.freenode.net: *** No Ident response
+2017-03-24 00:57:31	--	kornbluth.freenode.net: *** Couldn't look up your hostname
+2017-03-24 00:57:31	--	kornbluth.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:57:31	!!	Closing Link: 77.254.139.150 (Invalid username [~______])
+2017-03-24 00:57:31	--	irc: disconnected from server
+2017-03-24 00:57:31	--	irc: reconnecting to server in 20 seconds
+2017-03-24 00:57:51	--	irc: reconnecting to server...
+2017-03-24 00:57:51	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:57:52	--	irc: connected to chat.freenode.net/6667 (64.86.243.181)
+2017-03-24 00:57:52	--	karatkievich.freenode.net: *** Looking up your hostname...
+2017-03-24 00:57:52	--	karatkievich.freenode.net: *** Checking Ident
+2017-03-24 00:57:52	--	karatkievich.freenode.net: *** Found your hostname
+2017-03-24 00:58:02	--	karatkievich.freenode.net: *** No Ident response
+2017-03-24 00:58:02	--	karatkievich.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:58:02	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:58:02	--	irc: disconnected from server
+2017-03-24 00:58:02	--	irc: reconnecting to server in 40 seconds
+2017-03-24 00:58:07	--	irc: disconnected from server
+2017-03-24 00:58:10	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:58:10	--	irc: connected to chat.freenode.net/6667 (195.154.200.232)
+2017-03-24 00:58:10	--	barjavel.freenode.net: *** Looking up your hostname...
+2017-03-24 00:58:10	--	barjavel.freenode.net: *** Checking Ident
+2017-03-24 00:58:10	--	barjavel.freenode.net: *** Found your hostname
+2017-03-24 00:58:13	--	irc: disconnected from server
+2017-03-24 00:58:17	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:58:17	--	irc: connected to chat.freenode.net/6667 (149.56.134.238)
+2017-03-24 00:58:17	--	cherryh.freenode.net: *** Looking up your hostname...
+2017-03-24 00:58:17	--	cherryh.freenode.net: *** Checking Ident
+2017-03-24 00:58:17	--	cherryh.freenode.net: *** Found your hostname
+2017-03-24 00:58:22	--	irc: disconnected from server
+2017-03-24 00:58:26	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:58:26	--	irc: connected to chat.freenode.net/6667 (139.162.227.51)
+2017-03-24 00:58:26	--	niven.freenode.net: *** Looking up your hostname...
+2017-03-24 00:58:26	--	niven.freenode.net: *** Checking Ident
+2017-03-24 00:58:26	--	niven.freenode.net: *** Found your hostname
+2017-03-24 00:58:36	--	niven.freenode.net: *** No Ident response
+2017-03-24 00:58:36	--	niven.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:58:36	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:58:36	--	irc: disconnected from server
+2017-03-24 00:58:36	--	irc: reconnecting to server in 10 seconds
+2017-03-24 00:58:46	--	irc: reconnecting to server...
+2017-03-24 00:58:46	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:58:46	--	irc: connected to chat.freenode.net/6667 (91.217.189.42)
+2017-03-24 00:58:46	--	sinisalo.freenode.net: *** Looking up your hostname...
+2017-03-24 00:58:46	--	sinisalo.freenode.net: *** Checking Ident
+2017-03-24 00:58:46	--	sinisalo.freenode.net: *** Found your hostname
+2017-03-24 00:58:55	--	sinisalo.freenode.net: *** No Ident response
+2017-03-24 00:58:55	--	sinisalo.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:58:55	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:58:55	--	irc: disconnected from server
+2017-03-24 00:58:55	--	irc: reconnecting to server in 20 seconds
+2017-03-24 00:59:00	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:59:00	--	irc: connected to chat.freenode.net/6667 (82.96.96.11)
+2017-03-24 00:59:00	--	kornbluth.freenode.net: *** Looking up your hostname...
+2017-03-24 00:59:00	--	kornbluth.freenode.net: *** Checking Ident
+2017-03-24 00:59:05	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:59:05	--	irc: connected to chat.freenode.net/6667 (185.30.166.38)
+2017-03-24 00:59:05	--	orwell.freenode.net: *** Looking up your hostname...
+2017-03-24 00:59:05	--	orwell.freenode.net: *** Checking Ident
+2017-03-24 00:59:05	--	orwell.freenode.net: *** Found your hostname
+2017-03-24 00:59:12	--	orwell.freenode.net: *** No Ident response
+2017-03-24 00:59:12	--	orwell.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:59:12	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:59:12	--	irc: disconnected from server
+2017-03-24 00:59:12	--	irc: reconnecting to server in 10 seconds
+2017-03-24 00:59:20	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:59:20	--	irc: connected to chat.freenode.net/6667 (195.148.124.79)
+2017-03-24 00:59:20	--	rajaniemi.freenode.net: *** Looking up your hostname...
+2017-03-24 00:59:20	--	rajaniemi.freenode.net: *** Checking Ident
+2017-03-24 00:59:20	--	rajaniemi.freenode.net: *** Found your hostname
+2017-03-24 00:59:28	--	rajaniemi.freenode.net: *** No Ident response
+2017-03-24 00:59:28	--	rajaniemi.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:59:28	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:59:28	--	irc: disconnected from server
+2017-03-24 00:59:28	--	irc: reconnecting to server in 10 seconds
+2017-03-24 00:59:38	--	irc: reconnecting to server...
+2017-03-24 00:59:38	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:59:38	--	irc: connected to chat.freenode.net/6667 (173.230.128.213)
+2017-03-24 00:59:38	--	moon.freenode.net: *** Looking up your hostname...
+2017-03-24 00:59:38	--	moon.freenode.net: *** Checking Ident
+2017-03-24 00:59:38	--	moon.freenode.net: *** Found your hostname
+2017-03-24 00:59:45	--	moon.freenode.net: *** No Ident response
+2017-03-24 00:59:45	--	moon.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:59:45	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:59:45	--	irc: disconnected from server
+2017-03-24 00:59:45	--	irc: reconnecting to server in 20 seconds
+2017-03-24 00:59:52	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 00:59:52	--	irc: connected to chat.freenode.net/6667 (38.229.70.22)
+2017-03-24 00:59:52	--	card.freenode.net: *** Looking up your hostname...
+2017-03-24 00:59:53	--	card.freenode.net: *** Checking Ident
+2017-03-24 00:59:53	--	card.freenode.net: *** Found your hostname
+2017-03-24 00:59:59	--	card.freenode.net: *** No Ident response
+2017-03-24 00:59:59	--	card.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 00:59:59	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 00:59:59	--	irc: disconnected from server
+2017-03-24 00:59:59	--	irc: reconnecting to server in 10 seconds
+2017-03-24 01:00:09	--	irc: reconnecting to server...
+2017-03-24 01:00:09	--	irc: connecting to server chat.freenode.net/6667...
+2017-03-24 01:00:09	--	irc: connected to chat.freenode.net/6667 (38.229.70.22)
+2017-03-24 01:00:09	--	card.freenode.net: *** Looking up your hostname...
+2017-03-24 01:00:09	--	card.freenode.net: *** Checking Ident
+2017-03-24 01:00:09	--	card.freenode.net: *** Found your hostname
+2017-03-24 01:00:17	--	card.freenode.net: *** No Ident response
+2017-03-24 01:00:17	--	card.freenode.net: *** Your username is invalid. Please make sure that your username contains only alphanumeric characters.
+2017-03-24 01:00:17	!!	Closing Link: 77-254-139-150.adsl.inetia.pl (Invalid username [~______])
+2017-03-24 01:00:17	--	irc: disconnected from server
+2017-03-24 01:00:17	--	irc: reconnecting to server in 20 seconds
+2017-03-24 01:00:29	--	irc: disconnected from server
