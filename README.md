@@ -10,17 +10,17 @@ My current Arch Linux setup files, main ideas:
 
 **Screenshots:**
 --------------
-**Desktop window**
+**Application Layers**
 
-*Starts other applications and acts similiarly to dekstop*
+*Starts other applications and acts similiarly to dekstop. Machine Learning inspired stylization*
 
-*(Onscreen: Two termite terminals with CLI-visualizer for music)*
+*(Onscreen: ML focused main theme in gray tonation. Software: Vim, zsh, tmux)*
 
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
-**Coding window**
+**Previous dotfiles**
 
-*Allows to edit source codes and do shell related tasks efficiently*
+*Look and feel of the previous configuration files*
 
 *(Onscreen: tmux, neovim, agnoster prompt, htop)*
 
