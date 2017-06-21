@@ -10,9 +10,9 @@ My current Arch Linux setup files, main treats:
 
 **Screenshot:**
 
-*Starts other applications and acts similiarly to dekstop. Machine Learning inspired stylization*
+*Starts other applications and acts similiarly to dekstop.*
 
-*(Onscreen: ML focused main theme in gray tonation. Software: Vim, zsh, tmux)*
+*(Onscreen software: Vim, zsh, tmux)*
 
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
