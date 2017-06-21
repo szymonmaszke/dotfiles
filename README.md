@@ -1,16 +1,14 @@
 **dotfiles**
 =========
 
-My current Arch Linux setup files, main ideas:
+My current Arch Linux setup files, main treats:
 
 	- keyboard oriented (zsh, neovim, i3-gaps, firefox, tmux, ...)
 	- minimalistic and fast
-	- visually pleasant
-	- automated (everything starts as seen on the screenshots below (i3 layouts))
+	- everything kept in the same sigle grayish tone
+	- automation (aliases, scripts)
 
-**Screenshots:**
---------------
-**Application Layers**
+**Screenshot:**
 
 *Starts other applications and acts similiarly to dekstop. Machine Learning inspired stylization*
 
@@ -18,24 +16,12 @@ My current Arch Linux setup files, main ideas:
 
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
-**Previous dotfiles**
-
-*Look and feel of the previous configuration files*
-
-*(Onscreen: tmux, neovim, agnoster prompt, htop)*
-
-![Code](https://github.com/vyzyv/dotfiles/raw/master/screenshots/code.png?raw=true "Code")
-
-**Browser**
-
-*Firefox (controlled with vimfx plugin)*
-
-![Browser](https://github.com/vyzyv/dotfiles/raw/master/screenshots/firefox.png?raw=true "Browser")
 
 **TO-DO:**
 ---------
-	- Configure tmux
-	- Style XMind apvlv with oomox for better experience
+	- Make dockerized demo of the system with autoinstallation
+	- ML focused snippers
+	- Add spotify
 	- Add play, stop, next, previous buttons to bar displaying spotify song
 
 **DICLAIMER:**
