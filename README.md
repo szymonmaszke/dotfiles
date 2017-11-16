@@ -8,20 +8,22 @@ My current Arch Linux setup files, main treats:
 	- everything kept in the same sigle grayish tone
 	- automation (aliases, scripts)
 
-**Screenshot:**
+**Screenshots:**
 
 *Starts other applications and acts similiarly to dekstop.*
 
-*(Onscreen software: Vim, zsh, tmux)*
+*(Onscreen software: conky, tmux, termite, vis)*
 
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
+
+Work station (a little fake busy, but still xd)
+
+![Work](https://github.com/vyzyv/dotfiles/raw/master/screenshots/work.png?raw=true "Work")
 
 
 **TO-DO:**
 ---------
-	- Make dockerized demo of the system with autoinstallation
-	- ML focused snippers
-	- Add spotify
+	- ML focused snippets
 	- Add play, stop, next, previous buttons to bar displaying spotify song
 
 **DICLAIMER:**
