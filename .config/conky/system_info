@@ -1,0 +1,86 @@
+conky.config = {
+  background = false,
+  -- font = 'Source Code for Powerline:bold:size=12',
+  use_xft = true,
+  xftalpha = 1,
+  update_interval = 1,
+  total_run_times = 0,
+
+  own_window = true,
+  own_window_type = 'override',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  double_buffer = true,
+  draw_shades = false,
+  draw_outline = false,
+  draw_borders = false,
+  draw_graph_borders = true,
+  default_color = 'c7c7c7',
+  alignment = 'top_right',
+  no_buffers = true,
+  cpu_avg_samples = 2,
+  net_avg_samples = 2,
+  override_utf8_locale = true,
+  use_spacer = true,
+
+  minimum_width = 450,
+  maximum_width = 450,
+
+  color1 = 'c7c7c7',
+  color2 = 'dc143c',
+};
+
+conky.text = [[
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+${alignr}${offset -90}${voffset -5}${font Source Code for Powerline:bold:pixelsize=35}${color1}OS${font Source Code for Powerline:bold:pixelsize=15}${color2} updates: ${exec checkupdates | wc -l ## 60} ${color1}${font}
+${alignr}${offset -30}└─────────┐
+${alignr}${voffset -2}${offset -30} │
+${alignr}${voffset -4} ${offset -24}${font Source Code for
+Powerline:bold:pixelsize=18}${color2}${nodename}${color1}${font} ─┤
+${alignr}${voffset -2} ${offset -38}│   ${offset 8}│
+${alignr}${voffset -2} ${offset -34}[ ${exec uname -r | cut -c 1-14} ] kernel ─┤    ${offset 4}│
+${alignr}${voffset -2} ${offset -34}[ $machine ] arch ─┤    ${offset 4}│
+${alignr}${voffset -2} ${offset -34}[ $uptime ] uptime ─┘    ${offset 4}│
+${alignr}${voffset -2} ${offset -30} │
+${alignr}${voffset -4} ${offset -24}${font Source Code for
+Powerline:bold:pixelsize=18}${color2}cpu${color1}${font} ─┤
+${alignr}${voffset -2} ${offset -38}│   ${offset 8}│
+${alignr}${voffset -2} ${offset -34}used ─┤    ${offset 4}│
+${alignr}${voffset -2} ${offset -34}[${cpu 1}%] CPU1 [${cpu 2}%] CPU2 ─┤ ${offset 4}  │     │
+${alignr}${voffset -2} ${offset -34}[${cpu 3}%] CPU3 [${cpu 4}%] CPU4 ─┘ ${offset 4}  │     │
+${alignr}${voffset -2} ${offset -34}freq ─┤    ${offset 4}│
+${alignr}${voffset -2} ${offset -34}[ ${freq 1}mhz ] cpu1 ─┤    │    ${offset 4}│
+${alignr}${voffset -2} ${offset -34}[ ${freq 2}mhz ] cpu2 ─┘    │    ${offset 4}│
+${alignr}${voffset -2} ${offset -34}[ $loadavg ] load ─┤    ${offset 4}│
+${alignr}${voffset -2}${offset -34}[ ${top name 1} ${top cpu 1} ] ─┤    ${offset 4}│
+${alignr}${voffset -2}${offset -34}[ ${top name 2} ${top cpu 2} ] ─┤    ${offset 4}│
+${alignr}${voffset -2}${offset -34}[ ${top name 3} ${top cpu 3} ] ─┤    ${offset 4}│
+${alignr}${voffset -2}${offset -34}[ ${top name 4} ${top cpu 4} ] ─┘    ${offset 4}│
+${alignr}${voffset -2} ${offset -30} │
+${alignr}${voffset -4}${offset -22}${font Source Code for
+Powerline:bold:pixelsize=18}${color2}processes${font}${color1} ─┤
+${alignr}${voffset -2} ${offset -38}│   ${offset 8}│
+${alignr}${voffset -2}${offset -34} [ $processes ]   total ─┤    ${offset 4}│
+${alignr}${voffset -2}${offset -46}[ $running_processes ] running ─┘ ${offset 16}│
+${alignr}${voffset -2} ${offset -30} │
+${alignr}${voffset -4}${offset -22}${font Source Code for
+Powerline:bold:pixelsize=18}${color2}resources${font}${color1} ─┘
+${alignr}${voffset -2} ${offset -66}│
+${alignr}${voffset -2}${offset -66}[ $diskio_read ]  read ─┤
+${alignr}${voffset -2}${offset -66}[ $diskio_write ] write ─┤
+${alignr}${voffset -2}${offset -66} RAM ─┤
+${alignr}${voffset -2}${offset -66}[ $memperc% ] used ─┤    │
+${alignr}${voffset -2}${offset -76} [ $mem/$memmax ] ─┘    ${offset 10}│    │
+${alignr}${voffset -2}${offset -66}[ ${top_mem name 1}  ${top_mem mem 1} ] ─┤    │
+${alignr}${voffset -2}${offset -66}[ ${top_mem name 2}  ${top_mem mem 2} ] ─┤    │
+${alignr}${voffset -2}${offset -66}[ ${top_mem name 3}  ${top_mem mem 3} ] ─┤    │
+${alignr}${voffset -2}${offset -66}[ ${top_mem name 4}  ${top_mem mem 4} ] ─┘    │
+${alignr}${voffset -2}${offset -66}[$swapperc% - $swap/$swapmax ] swap ─┤
+${alignr}${voffset -2}${offset -66} ${swapbar 5,120}  ─┘    │
+${alignr}${voffset -2}${offset -66}[ ${fs_used /}/${fs_size /} ] root ─┤
+${alignr}${voffset -2}${offset -66} ${fs_bar 5,120 /}  ─┘    │
+${alignr}${voffset -2}${offset -66}[ ${fs_used /home}/${fs_size /home} ] home ─┘
+${alignr}${voffset -2}${offset -98} ${fs_bar 5,120 /home/$USER/}  ─┘
+#${alignr}$font ${color1}[${color} ${fs_used /usr/local}/${fs_size /usr/local} ${color1}]${color} local -─┘    │
+#${alignr}$font ${color1}[${color} ${fs_bar 5,120 /home/Container/} ${color1}]${color} -─┘         │
+]];
