@@ -24,7 +24,7 @@ set -g status-left "#[fg=#d7d7d7,bg=#505050] #S #[fg=#505050 ,bg=#373737,nobold,
 set -g status-right " \
 #[fg=#505050,bg=#373737]#[fg=#d7d7d7, bg=#505050] #h #[fg=#373737,bg=#505050] \
 #[fg=#d7d7d7]#(uptime -p | sed 's/up/,/' | tr -d '[A-z] ' \
-| sed 's/,/ /;s/,/:/;s/,/:/') "
+| sed 's/,/ /;s/,/:/;s/,/:/') #{prefix_highlight}"
 
 setw -g window-status-format "#[fg=#373737,bg=#373737,nobold,nounderscore,noitalics]#[default] #I.#W #[fg=#373737,bg=#373737,nobold,nounderscore,noitalics]"
 setw -g window-status-current-format "#[fg=#373737,bg=#505050,nobold,nounderscore,noitalics] #[fg=#d7d7d7,bg=#505050]#I.#W #[fg=#505050,bg=#373737,nobold,nounderscore,noitalics]"
