@@ -1,8 +1,0 @@
-pane	0	1	:nvim	1	:*	0	:/home/vyz	1	nvim	:/usr/lib/firefox/firefox
-nvim .zshrc
-pane	0	2	:zsh	0	:-	0	:/home/vyz	1	zsh	:
-pane	0	3	:zsh	0	:	0	:/home/vyz/projects/university	1	zsh	:
-window	0	1	1	:*	ccfe,166x38,0,0,1
-window	0	2	0	:-	e6b9,166x38,0,0,49
-window	0	3	0	:	66b1,166x38,0,0,50
-state	0	
