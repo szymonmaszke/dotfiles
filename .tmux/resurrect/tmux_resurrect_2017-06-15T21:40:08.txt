@@ -1,7 +1,0 @@
-pane	0	1	:zsh	1	:*	0	:/home/vyz/projects/machine_learning/notes/frameworks/tensorflow	0	zsh	:/usr/lib/firefox/firefox
-./XMind
-pane	0	1	:zsh	1	:*	1	:/home/vyz/temp	1	zsh	:
-pane	1	1	:zsh	1	:*	0	:/home/vyz	1	zsh	:
-window	0	1	1	:*	2015,166x38,0,0{83x38,0,0,1,82x38,84,0,2}
-window	1	1	1	:*	cd00,166x38,0,0,3
-state	1	
