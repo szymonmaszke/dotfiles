@@ -16,6 +16,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym XF86MonBrightnessDown exec "light -U -p 5"
 bindsym XF86MonBrightnessUp exec "light -A -p 5"
 
+#bind clipmenu
+bindsym $mod+c exec "clipmenu"
+
 # change sound level/mute
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
 bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
@@ -90,6 +93,7 @@ assign [class="Firefox"] 3
 for_window[class="Firefox"] layout tabbed
 assign [class="XMind"] 4
 assign [class="Apvlv"] 5
+for_window[class="Apvlv"] layout tabbed
 for_window[class="Spotify"] move to workspace 6
 assign [class="octave-gui"] 7
 assign [class="com.oracle.javafx.scenebuilder.app.SceneBuilderApp"] 7
