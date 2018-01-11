@@ -1,17 +1,16 @@
 #TERMITE CONFIG FILE
 [options]
 
-#font= Space Mono Nerd Font 10
-font= Code New Roman Nerd Font 11
+font= DejaVuSansMono Nerd Font Mono 13
 mouse_autohide=true
-#allow_bold = true
+hyperlinks = true
 cursor_blink = off
+padding = 0
 
 
 [colors]
 
 background= #282828
- background= rgba(40,40,40,0.4)
 foreground= #d7d7d7
 
 cursor= #d7d7d7

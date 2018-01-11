@@ -1,6 +1,4 @@
-setxkbmap 'pl,pl'
 # If you come from bash you might have to change your $PATH.
-source $HOME/.config/scripts/fshow.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/oh-my-zsh
@@ -11,6 +9,7 @@ export ML2018NAME="Maszke"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+eval "$(pipenv --completion)"
 eval "$(hub alias -s)"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -55,7 +54,7 @@ eval "$(hub alias -s)"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions gitfast docker alias-tips zsh-syntax-highlighting)
+plugins=(zsh-autosuggestions enhancd gitfast docker alias-tips zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -221,3 +220,9 @@ function dmark()  {
 
 zle -N jump
 bindkey '^g' jump
+
+### Bashhub.com Installation
+if [ -f ~/.bashhub/bashhub.zsh ]; then
+    source ~/.bashhub/bashhub.zsh
+fi
+

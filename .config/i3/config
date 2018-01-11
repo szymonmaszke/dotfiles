@@ -3,7 +3,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
-font pango:Source Code for Powerline 9
+font pango: DejaVuSansMono Nerd Font Mono 12
 new_window none
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -13,15 +13,19 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # change screen brightness
-bindsym XF86MonBrightnessDown exec "light -U -p 5"
-bindsym XF86MonBrightnessUp exec "light -A -p 5"
+bindsym F11 exec "light -U -p 5"
+bindsym F12 exec "light -A -p 5"
 
 #bind clipmenu
-bindsym $mod+c exec "clipmenu"
+bindsym $mod+c exec "rofi -show clipboard"
+bindsym $mod+x exec "rofi -show drun"
+bindsym $mod+w exec "$HOME/.config/rofi/webbrowser.sh"
+bindsym $mod+n exec "networkmanager_dmenu"
+bindsym $mod+q exec "shutdown now"
 
 # change sound level/mute
-bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
-bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
+bindsym F2 exec "amixer set Master 5%-"
+bindsym F3 exec "amixer set Master 5%+"
 
 #kill focused window
 bindsym $mod+Shift+q kill
@@ -59,7 +63,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -156,6 +160,7 @@ bar{
 	mode invisible
 }
 
-exec_always feh --bg-scale $HOME/pictures/wall_1.jpg
-exec_always compton -f
-exec --no-startup-id i3-msg 'workspace 1; append_layout /home/vyz/.config/i3/desktop.json; exec termite -t main -e /home/vyz/.config/startup.sh --hold; exec termite -t music -e vis; workspace 2; exec termite -e tmux; workspace 1'
+exec feh --bg-scale $HOME/pictures/wall_1.jpg
+exec compton -b
+exec --no-startup-id greenclip daemon &
+exec --no-startup-id i3-msg 'workspace 1; exec termite -e tmux'

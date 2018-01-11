@@ -1,0 +1,3 @@
+SURFRAW_graphical_browser=/usr/bin/firefox
+#SURFRAW_text_browser=/usr/bin/elinks
+SURFRAW_graphical=yes
