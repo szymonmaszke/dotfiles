@@ -5,26 +5,27 @@ My current Arch Linux setup files, main treats:
 
 	- keyboard oriented (zsh, neovim, i3-gaps, firefox, tmux, ...)
 	- minimalistic and fast
-	- everything kept in the same sigle grayish tone
-	- automation (aliases, scripts)
+	- everything kept in the same colorscheme
+	- automation focused on Python and ML (automatic code documentation, reference
+  jumping, autocompletions of frameworks, folding, syntax etc.)
 
 **Screenshots:**
 
-*Starts other applications and acts similiarly to dekstop.*
-
-*(Onscreen software: conky, tmux, termite, vis)*
+*(Onscreen software: gtop, tmux, termite, neovim, fzf)*
 
 ![Desktop](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Desktop")
 
-Work station (a little fake busy, but still xd)
-
 ![Work](https://github.com/vyzyv/dotfiles/raw/master/screenshots/work.png?raw=true "Work")
 
+**Installation:**
+
+Copy appropriate configuration files to your $HOME folder. Most of them should
+work out of the box, otherwise contact me.
 
 **TO-DO:**
 ---------
+  - Automatic installation (docker container?)
 	- ML focused snippets
-	- Add play, stop, next, previous buttons to bar displaying spotify song
 
 **DICLAIMER:**
 --------------
