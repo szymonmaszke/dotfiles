@@ -11,18 +11,14 @@ alias ut='tar xvzf'
 alias pack='tar zcvf'
 alias xmind='XMind >/dev/null 2>&1 &'
 
-pdf(){
-  apvlv $1 >/dev/null 2>&1 &
-}
-
-jup(){
-  jupyter notebook $1 >/dev/null 2>&1 &
-}
 alias qjup='kill $(pgrep jupyter)'
+alias mv='$HOME/.config/mv_function.sh'
 
+alias cp='cp -ri'
 #pacman specific
-alias pup='sudo pacman -Syyu --noconfirm && gem update && npm update -g'
-alias pget='sudo pacman -S'
+alias pup='sudo pacman -Syyu --noconfirm && gem update && sudo npm update -g'
+# alias pget='sudo pacman -S'
+alias pget='sudo pacman -Syyu --noconfirm && gem update && sudo npm update -g && $HOME/.config/fzf/pkgsearch.sh'
 alias prm='sudo pacman -Rn'
 alias pls='sudo pacman -Qe'
 

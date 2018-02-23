@@ -1,7 +1,7 @@
 #TERMITE CONFIG FILE
 [options]
 
-font= DejaVuSansMono Nerd Font Mono 13
+font= Knack Nerd Font 13
 mouse_autohide=true
 hyperlinks = true
 cursor_blink = off

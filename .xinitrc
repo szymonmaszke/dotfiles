@@ -4,4 +4,5 @@ xrandr --auto
 xsetroot -cursor_name left_ptr
 setxkbmap 'pl,pl'
 setxkbmap -option caps:swapescape
+systemctl --user import-environment DISPLAY
 exec i3

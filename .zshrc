@@ -3,15 +3,31 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/oh-my-zsh
 export PAGER=/usr/bin/vimpager
-export ML2018NAME="Maszke"
+export BETTER_EXCEPTIONS=1
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 eval "$(pipenv --completion)"
 eval "$(hub alias -s)"
 
+function powerline_precmd() {
+    PS1="$(powerline-go -modules "docker,venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root" -shorten-gke-names -mode flat -error $? -shell zsh)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -95,6 +111,7 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=28,bold'
 
 ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=160,bold'
 
+export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES='e $(fzf --preview "rougify --theme molokai -i {}")'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -130,7 +147,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_R_COMMAND='rg --files --no-ignore --hidden --follow'
 export FZF_CTRL_R_OPTS="--preview 'parse_to_man {}'"
 export FZF_ALT_C_OPTS="--preview 'tree -C -h {}'"
-bindkey  -s '^p' 'nvim $(fzf --preview "rougify --theme molokai -i {}")^M'
+bindkey  -s '^v' 'nvim $(fzf --preview "rougify --theme molokai -i {}")^M'
 bindkey '^ ' autosuggest-accept
 
 fzf-history-widget-accept() {
