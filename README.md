@@ -1,12 +1,12 @@
 dotfiles
 ====================
 
-| ![OS](https://img.shields.io/badge/OS-Arch%20Linux-1793D1.svg) | ![WM](https://img.shields.io/badge/Window%20Manager-i3-lightgrey.svg) | ![Terminal](https://img.shields.io/badge/Terminal-Termite-795548.svg) | ![Status](https://img.shields.io/badge/Status%20bar-polybar-c62828.svg) | ![Shell](https://img.shields.io/badge/Shell-zsh-512DA8.svg) |
-![Packages](https://img.shields.io/badge/Packages-294-yellow.svg) |
-|--------------------|----------------------------|------------------|---------------------|--------------|-----------------|
-| ![Multiplexer](https://img.shields.io/badge/Multiplexer-tmux-4caf50.svg) | ![Editor](https://img.shields.io/badge/Editor-Neovim-2e7d32.svg) | ![Notifications](https://img.shields.io/badge/Notifications-Dunst-f57c00.svg) | ![Launcher](https://img.shields.io/badge/Launcher-Rofi-01579B.svg) | ![Browser](https://img.shields.io/badge/Browser-Vivaldi-E53935.svg) | ![Fuzzy Finder](https://img.shields.io/badge/Finder-fzf-D81B60.svg) |
+   ![OS](https://img.shields.io/badge/OS-Arch%20Linux-1793D1.svg) ![WM](https://img.shields.io/badge/Window%20Manager-i3-lightgrey.svg) ![Terminal](https://img.shields.io/badge/Terminal-Termite-795548.svg) ![Status](https://img.shields.io/badge/Status%20bar-polybar-c62828.svg) ![Shell](https://img.shields.io/badge/Shell-zsh-512DA8.svg)
+![Packages](https://img.shields.io/badge/Packages-294-yellow.svg)
 
 ![Clean](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Clean")
+
+![Multiplexer](https://img.shields.io/badge/Multiplexer-tmux-4caf50.svg) ![Editor](https://img.shields.io/badge/Editor-Neovim-2e7d32.svg) ![Notifications](https://img.shields.io/badge/Notifications-Dunst-f57c00.svg) ![Launcher](https://img.shields.io/badge/Launcher-Rofi-01579B.svg) ![Browser](https://img.shields.io/badge/Browser-Vivaldi-E53935.svg) ![Fuzzy Finder](https://img.shields.io/badge/Finder-fzf-D81B60.svg)
 
 Installation and configuration
 ==============================
