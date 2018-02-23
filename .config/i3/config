@@ -17,11 +17,16 @@ bindsym F11 exec "light -U -p 5"
 bindsym F12 exec "light -A -p 5"
 
 #bind clipmenu
+bindsym $mod+z exec "$HOME/.config/rofi/unify.sh"
 bindsym $mod+c exec "rofi -show clipboard"
 bindsym $mod+x exec "rofi -show drun"
-bindsym $mod+w exec "$HOME/.config/rofi/webbrowser.sh"
-bindsym $mod+n exec "networkmanager_dmenu"
-bindsym $mod+q exec "shutdown now"
+# Screenshots
+bindsym --release Print exec scrot -s -e 'mv $f ~/screens/'
+# Music player
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym $mod+Print exec scrot "$SCREEN_DIRECTORY/%b%d::%H%M%S.png" -q 100
 
 # change sound level/mute
 bindsym F2 exec "amixer set Master 5%-"
@@ -53,10 +58,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+z split h
+bindsym $mod+- split h
 
 # split in vertical orientation
-bindsym $mod+9 split v
+bindsym $mod+| split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -78,30 +83,42 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-#bindsym $mod+Shift+8 move container to workspace 8
-#bindsym $mod+Shift+9 move container to workspace 9
-#bindsym $mod+Shift+0 move container to workspace 10
+set $code 1
+set $web 2
+set $read 3
+set $xmind 4
+set $music 5
+set $nteract 6
+set $other 7
+
+bindsym $mod+1 workspace $code
+bindsym $mod+2 workspace $web
+bindsym $mod+3 workspace $read
+bindsym $mod+4 workspace $xmind
+bindsym $mod+5 workspace $music
+bindsym $mod+6 workspace $nteract
+bindsym $mod+7 workspace $other
+
+bindsym $mod+Shift+1 move container to workspace $code
+bindsym $mod+Shift+2 move container to workspace $web
+bindsym $mod+Shift+3 move container to workspace $read
+bindsym $mod+Shift+4 move container to workspace $xmind
+bindsym $mod+Shift+5 move container to workspace $music
+bindsym $mod+Shift+6 move container to workspace $nteract
+bindsym $mod+Shift+7 move container to workspace $other
 
 workspace_auto_back_and_forth yes
 
-assign [class="Firefox"] 3
-for_window[class="Firefox"] layout tabbed
-assign [class="XMind"] 4
-assign [class="Apvlv"] 5
-for_window[class="Apvlv"] layout tabbed
-for_window[class="Spotify"] move to workspace 6
-assign [class="octave-gui"] 7
-assign [class="com.oracle.javafx.scenebuilder.app.SceneBuilderApp"] 7
-assign [class="libreoffice"] 8
+assign [class="Termite"] $code
+assign [class="Vivaldi"] $web
+for_window[class="Vivaldi"] layout tabbed
+assign [class="XMind"] $xmind
+assign [class="Zathura"] $read
+for_window[class="Zathura"] layout tabbed
+for_window[class="Spotify"] move to workspace $music
+assign [class="nteract"] $nteract
+for_window[class="nteract"] layout tabbed
+assign [class="libreoffice"] $other
 
 #GAPS
 for_window[class="^.*"] border pixel 4
@@ -132,7 +149,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+Control+r mode "resize"
 
 #i3 colors
 
@@ -150,17 +167,10 @@ client.focused #373737 #373737 #d0d0d0 #373737
 #client.urgent	$urgent-bg-color	$urgent-bg-color	$text-color	$bg-color
 
 
-bar{
-	status_command polybar Bar
-	tray_output primary
-	separator_symbol '//"
-	strip_workspace_numbers yes
-
-	position bottom
-	mode invisible
-}
-
-exec feh --bg-scale $HOME/pictures/wall_1.jpg
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec redshift
+exec feh --bg-scale $HOME/pictures/wallpaper3.jpeg
 exec compton -b
 exec --no-startup-id greenclip daemon &
+exec --no-startup-id udiskie &
 exec --no-startup-id i3-msg 'workspace 1; exec termite -e tmux'
