@@ -1,6 +1,8 @@
 dotfiles
 ====================
 
+**Screenshots: [link](https://imgur.com)**
+
    ![OS](https://img.shields.io/badge/OS-Arch%20Linux-1793D1.svg) ![WM](https://img.shields.io/badge/Window%20Manager-i3-lightgrey.svg) ![Terminal](https://img.shields.io/badge/Terminal-Termite-795548.svg) ![Status](https://img.shields.io/badge/Status%20bar-polybar-c62828.svg) ![Shell](https://img.shields.io/badge/Shell-zsh-512DA8.svg)
 ![Packages](https://img.shields.io/badge/Packages-294-yellow.svg)
 
