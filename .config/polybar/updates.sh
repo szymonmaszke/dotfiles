@@ -4,7 +4,7 @@ arch_updates=$(checkupdates | wc -l)
 warning_color='#ff5555'
 
 if [ "$arch_updates" -eq 0 ]; then
-	echo 
+	echo ""
 else
-	echo "%{F${warning_color}}%{F-} ${arch_updates}"
+	echo "%{F${warning_color}}%{F-} ${arch_updates}"
 fi

@@ -1,280 +1,313 @@
 [colors]
 white = #d7d7d7
 gray = #585858
-black = #090909
-red = #c90000
-blue = #307fff
-yellow = #ffec21
+dark_gray = #373737
+orange = #fabd2f
+red = #f44336
 green = #27cc18
 
-[bar/Bar]
+[bar/top_bar]
+override-redirect = false
 bottom = false
-dock = false
-wm-restack = i3
 width = 100%
-height = 24
+height = 32
 
-enable-ipc = true
+border-top-size = 15
+border-left-size = 12
+border-right-size = 12
 
-padding-left = 1
-padding-right = 1
+border-bottom-size = 5
 
-module-margin-right = 1
-module-margin-left = 1
+padding-left = 0
+padding-right = 0
 
-modules-right = temperature backlight cpu updates gmail volume date
-modules-left = i3 battery network
+module-margin-right = 0
+module-margin-left = 0
 
-background = #373737
+modules-right = updates gmail github pulseaudio network bluetooth menu
+modules-left = date i3 backlight redshift battery cpu temperature battery-alarm
+
+background = ${colors.dark_gray}
 foreground = ${colors.white}
 
 underline-size = 2
 underline-color = ${colors.red}
 
-tray-detached = false
-tray-position = right
-tray-offset-x =
-tray-maxsize =
-tray-padding =
+font-0 = MaterialDesignIcons:size=14;3
+font-1 = "DejaVuSansMono Nerd Font Complete Mono:size=11;3"
 
-font-0 = DejaVuSans: size=12;1
-font-1 = DejaVuSansMono Nerd Font Mono: size=15;3
-font-2 = DejaVuSansMono Nerd Font Mono: size=15;-1
-font-3 = DejaVuSansMono Nerd Font Mono: size=15;0
-font-4 = icomoon: size=12;1
+[module/battery-alarm]
+type = custom/script
+exec = ~/.config/polybar/battery_notification.sh
+interval = 300
 
-[module/xwindow]
-type = internal/xwindow
-label = %title%
-label-maxlen = 30
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume-margin = 3
+format-volume-padding = 2
+format-volume-background = ${colors.gray}
+format-volume = <ramp-volume> <bar-volume>
+
+format-muted-margin = 3
+format-muted-padding = 2
+format-muted-background = ${colors.gray}
+format-muted = <label-muted> <bar-volume>
+
+label-muted = 
+label-muted-foreground = #66
+
+bar-volume-width = 6
+bar-volume-indicator = 
+bar-volume-indicator-foreground = ${colors.red}
+bar-volume-fill = 
+bar-volume-fill-foreground = ${colors.white}
+bar-volume-empty = 
+bar-volume-empty-foreground = ${colors.dark_gray}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+[module/date]
+type = internal/date
+
+time = %H:%M
+label = %time%
+
+format =  <label>
+format-background = ${colors.gray}
+interval = 5
+format-padding = 1
+
+
+[module/i3]
+type = internal/i3
+;ws-icon-[0-9]+ = label;icon
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+
+ws-icon-default = ♟
+
+strip-wsnumbers = true
+
+format-margin = 3
+
+label-focused = "%icon%"
+label-focused-foreground = ${colors.red}
+label-focused-background = ${colors.gray}
+label-focused-padding = 1
+
+label-unfocused = "%icon%"
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.white}
+label-unfocused-background = ${colors.gray}
+/* label-unfocused-background = ${colos.red} */
+
+label-urgent = "%icon%"
+label-urgent-foreground = ${colors.white}
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+[module/backlight]
+
+format-background = ${colors.gray}
+format-padding = 1
+type = internal/backlight
+card = intel_backlight
+format = <ramp>
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+
 
 [module/updates]
 type = custom/script
 
 exec = ~/.config/polybar/updates.sh
 format = <label>
+format-background = ${colors.gray}
+format-padding = 1
 label = %output%
 click-left = xdg-open https://www.archlinux.org/news/
 
-tail = true
 interval = 90
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-label-focused = ■
-label-focused-background = #383838
-label-focused-padding = 0
-
-label-unfocused = □
-label-unfocused-padding = 0
-
-label-urgent = □
-label-urgent-background = ${colors.red}
-label-urgent-padding = 0
-
-label-visible = □
-label-visible-foreground = ${colors.white}
-label-visible-padding = 0
-
-[module/backlight]
-
-type = internal/backlight
-card = intel_backlight
-format = <ramp>
-
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
 
 [module/gmail]
 type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
+format-background = ${colors.gray}
+format-padding = 1
 tail = true
 click-left = xdg-open https://mail.google.com
 
-[module/weathericons]
+[module/github]
 type = custom/script
-interval = 10
+exec = ~/.config/polybar/github.sh
+format-background = ${colors.gray}
+format-padding = 1
+click-left = xdg-open https://github.com
+
+interval = 60
+
+[module/bluetooth]
+type = custom/script
 format = <label>
-exec = ~/.config/polybar/weathericons
+format-padding = 1
+format-background = ${colors.gray}
+exec = ~/.config/polybar/bluetooth.sh
+interval = 5
 
-[module/cpu]
-type = internal/cpu
-interval = 0.2
-
-format = <label> <ramp-coreload>
-label = 
-
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = #55aa55
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = #55aa55
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = #55aa55
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = #55aa55
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
-ramp-coreload-4-foreground = #f5a70a
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
-ramp-coreload-5-foreground = #f5a70a
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff5555
-
-bar-load-width = 20
-bar-load-foreground-0 = #55aa55
-bar-load-foreground-1 = #55aa55
-bar-load-foreground-2 = #f5a70a
-bar-load-foreground-3 = #ff5555
-bar-load-gradient = false
-bar-load-indicator = │
-bar-load-indicator-font = 2
-bar-load-indicator-foreground = #ff
-bar-load-fill = ━
-bar-load-fill-font = 2
-bar-load-empty = ━
-bar-load-empty-font = 2
-bar-load-empty-foreground = #444444
-
-[module/memory]
-type = internal/memory
-interval = 2
-
-label = MEM: %percentage_used%%
+[module/redshift]
+type = custom/script
+format = <label>
+format-background = ${colors.gray}
+format-padding = 1
+exec = ~/.config/polybar/redshift.sh
+interval = 5
 
 [module/network]
 type = internal/network
 interface = wlp3s0
-interval = 3.0
 
+format-connected = <label-connected>
+format-connected-background = ${colors.gray}
 format-connected-padding = 1
+format-disconnected = <label-disconnected>
 format-disconnected-padding = 1
-
-format-connected = <ramp-signal> <label-connected>
-
-ramp-signal-0 = %{T5}%{T-}
-ramp-signal-1 = %{T5}%{T-}
-ramp-signal-2 = %{T5}%{T-}
-ramp-signal-3 = %{T5}%{T-}
-ramp-signal-4 = %{T5}%{T-}
-
-label-connected =   %upspeed%  %downspeed%
-label-disconnected = 
-label-disconnected-foreground = ${colors.gray}
-
-[module/date]
-type = internal/date
-date-alt =   %b/%d/%A  %H:%M
-date =   %H:%M
-interval = 5
-format-padding = 1
-
-
-[module/volume]
-type = internal/volume
-
-format-volume = <bar-volume>
-format-muted = <label-muted>
-
-label-muted =  muted
-label-muted-foreground = ${colors.gray}
-
-bar-volume-width = 11
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #f5a70a
-bar-volume-foreground-7 = #f5a70a
-bar-volume-foreground-8 = #ff5555
-bar-volume-foreground-9 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator =
-bar-volume-indicator-font = 1
-bar-volume-indicator-foreground = ${colors.white}
-bar-volume-fill = ■
-bar-volume-fill-font = 1
-bar-volume-empty = □
-bar-volume-empty-font = 1
-bar-volume-empty-foreground = ${colors.gray}
+label-connected =  %essid%
+label-disconnected = 
+label-disconnected-foreground = ${colors.dark_gray}
+label-disconnected-background= ${colors.gray}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = ADP0
-full-at = 98
+adapter = AC
+full_at = 99
 
-format-charging = <animation-charging> <label-charging>
-format-charging-foreground = #55aa55
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-foreground = #ff5555
-format-full = <ramp-capacity> <label-full>
-format-full-foreground = #55aa55
+format-charging-padding = 2
+format-charging = <animation-charging>
+format-discharging-padding = 2
+format-discharging = <ramp-capacity>
+format-full = <label-full>
+format-full-padding = 2
 
-time-format = %H:%M
+label-full = 
+label-full-foreground = ${colors.gray}
 
-label-charging = %percentage%% %time%
-label-charging-foreground = #d7d7d7
-label-discharging = %percentage%% %time%
-label-discharging-foreground = #d7d7d7
-label-full= %percentage%%
-label-full-foreground = #d7d7d7
+ramp-capacity-9 = ""
+ramp-capacity-8 = ""
+ramp-capacity-7 = ""
+ramp-capacity-6 = ""
+ramp-capacity-5 = ""
+ramp-capacity-4 = ""
+ramp-capacity-4-foreground = ${colors.orange}
+ramp-capacity-3 = ""
+ramp-capacity-3-foreground = ${colors.orange}
+ramp-capacity-2 = ""
+ramp-capacity-2-foreground = ${colors.red}
+ramp-capacity-1 = ""
+ramp-capacity-1-foreground = ${colors.red}
+ramp-capacity-0 = ""
+ramp-capacity-0-foreground = ${colors.red}
 
-ramp-capacity-0 = ■□□□□□□□□□
-ramp-capacity-1 = ■■□□□□□□□□
-ramp-capacity-2 = ■■■□□□□□□□
-ramp-capacity-3 = ■■■■□□□□□□
-ramp-capacity-4 = ■■■■■■□□□□
-ramp-capacity-5 = ■■■■■■■□□□
-ramp-capacity-6 = ■■■■■■■■□□
-ramp-capacity-7 = ■■■■■■■■■□
-ramp-capacity-8 = ■■■■■■■■■■
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 400
 
-animation-charging-0 = ■□□□□□□□□□
-animation-charging-1 = ■■□□□□□□□□
-animation-charging-2 = ■■■□□□□□□□
-animation-charging-3 = ■■■■■□□□□□
-animation-charging-4 = ■■■■■■□□□□
-animation-charging-5 = ■■■■■■■□□□
-animation-charging-6 = ■■■■■■■■□□
-animation-charging-7 = ■■■■■■■■■□
-animation-charging-8 = ■■■■■■■■■■
+[module/menu]
+type = custom/menu
 
-animation-charging-framerate = 250
+expand-right= false
+menu-0-0 = 
+menu-0-0-background = ${colors.gray}
+menu-0-0-exec = shutdown now
+menu-0-0-margin-left = 3
+menu-0-0-padding = 2
+menu-0-1 = 
+menu-0-1-background = ${colors.gray}
+menu-0-1-exec = shutdown now -r
+menu-0-1-padding = 2
+menu-0-2 = 
+menu-0-2-background = ${colors.gray}
+menu-0-2-exec = i3lock-next
+menu-0-2-padding = 2
+
+label-open-margin-left = 3
+label-open = 
+label-open-padding=2
+label-open-background = ${colors.red}
+label-close = 
+label-close-padding = 2
+label-close-background = ${colors.red}
+
+[module/cpu]
+type = internal/cpu
+
+format-background = ${colors.gray}
+format = <ramp-coreload>
+format-padding = 2
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-6 = ▇
+ramp-coreload-7-foreground = ${colors.red}
+ramp-coreload-7 = █
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 65
+warn-temperature = 75
 
-format = <ramp> <label>
-format-warn = <label-warn>
+format-background = ${colors.gray}
+format = <ramp>
+format-warn = <ramp> <label-warn>
 
 format-padding = 1
-format-warn-padidng = 1
+format-warn-padding = 1
 format-warn-foreground = ${colors.red}
+format-warn-background= ${colors.gray}
 
-label = %temperature%
-label-warn = %temperature%
+label-warn = 
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.white}
+ramp-0 = 
+ramp-0-foreground = ${colors.white}
+ramp-1 = 
+ramp-1-foreground = ${colors.white}
+ramp-2 = 
+ramp-2-foreground = ${colors.orange}
+ramp-3 = 
+ramp-3-foreground = ${colors.red}
+
+
+[module/title]
+type = internal/xwindow
+
+format-background = ${colors.gray}
+format-foreground = ${colors.white}
+format-padding = 4
+
+label = %title%
+label-maxlen = 20
