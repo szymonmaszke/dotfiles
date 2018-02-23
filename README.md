@@ -1,19 +1,20 @@
-dotfiles
-====================
-
-**Screenshots: [link](https://imgur.com)**
-
-   ![OS](https://img.shields.io/badge/OS-Arch%20Linux-1793D1.svg) ![WM](https://img.shields.io/badge/Window%20Manager-i3-lightgrey.svg) ![Terminal](https://img.shields.io/badge/Terminal-Termite-795548.svg) ![Status](https://img.shields.io/badge/Status%20bar-polybar-c62828.svg) ![Shell](https://img.shields.io/badge/Shell-zsh-512DA8.svg)
-![Packages](https://img.shields.io/badge/Packages-294-yellow.svg)
+# dotfiles
+<p align=center>
+    <a href=""><img alt="" src="https://img.shields.io/badge/OS-Arch%20Linux-1793D1.svg"></a>
+    <a href=""><img alt="" src="https://img.shields.io/badge/Window%20Manager-i3-lightgrey.svg"></a>
+    <a href=""><img alt="" src="https://img.shields.io/badge/Terminal-Termite-795548.svg"></a>
+    <a href=""><img alt="" src="https://img.shields.io/badge/Shell-zsh-512DA8.svg"></a>
+    <a href=""><img alt="" src="https://img.shields.io/badge/Editor-Neovim-2e7d32.svg"></a>
+    <a href=""><img alt="" src="https://img.shields.io/badge/Packages-294-yellow.svg"></a>
+</p>
 
 ![Clean](https://github.com/vyzyv/dotfiles/raw/master/screenshots/main.png?raw=true "Clean")
 
-![Multiplexer](https://img.shields.io/badge/Multiplexer-tmux-4caf50.svg) ![Editor](https://img.shields.io/badge/Editor-Neovim-2e7d32.svg) ![Notifications](https://img.shields.io/badge/Notifications-Dunst-f57c00.svg) ![Launcher](https://img.shields.io/badge/Launcher-Rofi-01579B.svg) ![Browser](https://img.shields.io/badge/Browser-Vivaldi-E53935.svg) ![Fuzzy Finder](https://img.shields.io/badge/Finder-fzf-D81B60.svg)
+**Screenshots: [link](https://imgur.com)**
 
-Installation and configuration
-==============================
+## Installation and configuration
 
-**Read ![wiki pages](https://github.com/vyzyv/dotfiles/wiki) to benefit from those config files.**
+**Read [wiki pages](https://github.com/vyzyv/dotfiles/wiki) to benefit from those config files.**
 
 Contents:
 - **[i3](https://github.com/vyzyv/dotfiles/wiki/i3)**: Backbone of the system, movement, windows, tiling, functionality
