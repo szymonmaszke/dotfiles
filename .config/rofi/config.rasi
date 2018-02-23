@@ -2,7 +2,7 @@ configuration {
 	modi: "window,run,ssh,drun,clipboard:greenclip print";
   theme: "./royal-sky.rasi";
   font: "Source Code for Powerline 12";
-  display-drun: "app";
+  display-drun: "run";
   matching: "fuzzy";
 /*  show-icons: false; */
 /*	width: 50;*/
