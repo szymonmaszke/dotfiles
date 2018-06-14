@@ -24,8 +24,8 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-modules-right = docker placeholder updates gmail volume network bluetooth menu
-modules-left = date weather i3 battery filesystem placeholder cpu temperature placeholder backlight redshift battery-alarm
+modules-right = docker placeholder updates volume network bluetooth menu
+modules-left = date i3 battery filesystem placeholder cpu temperature placeholder backlight redshift battery-alarm
 
 background = ${colors.dark_gray}
 foreground = ${colors.white}
