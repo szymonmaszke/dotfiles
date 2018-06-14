@@ -1,37 +1,39 @@
+alias enhance='function ne() { docker run --rm -v "$(pwd)/`dirname ${@:$#}`":/ne/input -it alexjc/neural-enhance:gpu ${@:1:$#-1} "input/`basename ${@:$#}`"; }; ne'
 #main usage aliases
 alias c='clear'
 alias off='shutdown now'
 alias restart='shutdown now -r'
+
 #program specific
 alias e='nvim'
 alias se='sudo -E nvim'
 alias g++='g++ -march=native -std=c++17 -O2 -Werror -Wextra -Wall -Weffc++ -Wnarrowing'
-alias py='python -b -B -O -W once -q '
 alias ut='tar xvzf'
 alias pack='tar zcvf'
-alias xmind='XMind >/dev/null 2>&1 &'
 
 alias qjup='kill $(pgrep jupyter)'
-alias mv='$HOME/.config/mv_function.sh'
+alias mv='$HOME/.config/scripts/mv.sh'
 
 alias cp='cp -ri'
 #pacman specific
-alias pup='sudo pacman -Syyu --noconfirm && gem update && sudo npm update -g'
-# alias pget='sudo pacman -S'
-alias pget='sudo pacman -Syyu --noconfirm && gem update && sudo npm update -g && $HOME/.config/fzf/pkgsearch.sh'
-alias prm='sudo pacman -Rn'
-alias pls='sudo pacman -Qe'
+alias pup='pikaur -Syyu --noconfirm && gem update'
+alias pcc='pikaur -Scc'
+alias pget='pikaur -S'
+alias prm='pikaur -Rn'
+alias pls='pikaur -Qe'
 
-alias l='colorls --sort-dirs'
-alias lf='colorls --files'
-alias ld='colorls --dirs'
-alias la='colorls --sort-dirs -a'
+alias l='ls_extended -s'
+alias lf='ls_extended -f'
+alias ld='ls_extended -d'
+alias la='ls_extended -Aslhi'
 
-alias ls='colorls --sort-dirs'
+alias ls='ls_extended -s'
+alias cat='bat'
 
+alias git='hub'
 #revert last commit
-alias grlc='git reset HEAD~'
-alias gp='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias grlc='hub reset HEAD~'
+alias gp='hub push -u origin $(git rev-parse --abbrev-ref HEAD)'
 
 #config aliases
 alias en='nvim ~/.config/nvim/init.vim'
@@ -40,6 +42,7 @@ alias ez='nvim ~/.zshrc'
 alias et='nvim ~/.config/termite/config'
 alias ei='nvim ~/.config/i3/config'
 alias ep='nvim ~/.config/polybar/config'
+alias ex='nvim ~/.xinitrc'
 
 #docker specific
 #--format using regex, formatting of given output, check it, p.58
@@ -101,3 +104,13 @@ alias dhist='docker history'
 #can only push to user/repo_name, repo_name alone won't work (considered root,
 #docker staff can only use it)
 alias dpush='docker push'
+
+alias drmi_dangling='docker system prune'
+
+# removes all none images
+alias drminone='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+
+# Pipenv aliases
+alias prp='pipenv run python'
+alias pi='pipenv install'
+

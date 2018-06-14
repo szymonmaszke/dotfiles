@@ -3,7 +3,6 @@
 
 ON="Turn On"
 OFF="Turn Off"
-# devices=$(hcitool scan | tail -n +2)
 
 CMD=$(echo -e "$ON\\n$OFF" | rofi -dmenu -p "bluetooth: ")
 case $CMD in

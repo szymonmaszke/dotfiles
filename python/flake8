@@ -1,0 +1,5 @@
+[flake8]
+ignore = W604, E501
+/* select = C,E,F,W,B,B950 */
+exclude = .git
+format = ${cyan}%(path)s${reset}:${yellow_bold}%(row)d${reset}:${green_bold}%(col)d${reset}: ${red_bold}%(code)s${reset} %(text)s

@@ -4,7 +4,7 @@ gray = #585858
 dark_gray = #373737
 orange = #fabd2f
 red = #f44336
-green = #27cc18
+green = #388E3C
 
 [bar/top_bar]
 override-redirect = false
@@ -24,8 +24,8 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-modules-right = updates gmail github pulseaudio network bluetooth menu
-modules-left = date i3 backlight redshift battery cpu temperature battery-alarm
+modules-right = docker placeholder updates gmail volume network bluetooth menu
+modules-left = date weather i3 battery filesystem placeholder cpu temperature placeholder backlight redshift battery-alarm
 
 background = ${colors.dark_gray}
 foreground = ${colors.white}
@@ -35,14 +35,16 @@ underline-color = ${colors.red}
 
 font-0 = MaterialDesignIcons:size=14;3
 font-1 = "DejaVuSansMono Nerd Font Complete Mono:size=11;3"
+font-2 = "Weather Icons:size=14;4"
 
 [module/battery-alarm]
 type = custom/script
 exec = ~/.config/polybar/battery_notification.sh
-interval = 300
+interval = 600
 
-[module/pulseaudio]
-type = internal/pulseaudio
+
+[module/volume]
+type = internal/volume
 
 format-volume-margin = 3
 format-volume-padding = 2
@@ -57,7 +59,7 @@ format-muted = <label-muted> <bar-volume>
 label-muted = 
 label-muted-foreground = #66
 
-bar-volume-width = 6
+bar-volume-width = 8
 bar-volume-indicator = 
 bar-volume-indicator-foreground = ${colors.red}
 bar-volume-fill = 
@@ -82,7 +84,6 @@ format =  <label>
 format-background = ${colors.gray}
 interval = 5
 format-padding = 1
-
 
 [module/i3]
 type = internal/i3
@@ -135,6 +136,30 @@ ramp-5 = 
 ramp-6 = 
 
 
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/weather.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval = 600
+label-font = 3
+
+[module/filesystem]
+type = custom/script
+exec = ~/.config/polybar/root_system.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval = 60
+click-left = ~/.config/polybar/system_info.sh
+
+[module/docker]
+type = custom/script
+exec = ~/.config/polybar/docker.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval=30
+label-font = 2
+
 [module/updates]
 type = custom/script
 
@@ -143,26 +168,14 @@ format = <label>
 format-background = ${colors.gray}
 format-padding = 1
 label = %output%
-click-left = xdg-open https://www.archlinux.org/news/
-
 interval = 90
 
 [module/gmail]
 type = custom/script
-exec = ~/.config/polybar/gmail/launch.py
+exec = ~/.config/polybar/gmail/launch.py --color=#f44336 --prefix 
 format-background = ${colors.gray}
 format-padding = 1
 tail = true
-click-left = xdg-open https://mail.google.com
-
-[module/github]
-type = custom/script
-exec = ~/.config/polybar/github.sh
-format-background = ${colors.gray}
-format-padding = 1
-click-left = xdg-open https://github.com
-
-interval = 60
 
 [module/bluetooth]
 type = custom/script
@@ -187,27 +200,35 @@ interface = wlp3s0
 format-connected = <label-connected>
 format-connected-background = ${colors.gray}
 format-connected-padding = 1
-format-disconnected = <label-disconnected>
-format-disconnected-padding = 1
 label-connected =  %essid%
-label-disconnected = 
+format-disconnected = <label-disconnected>
+label-disconnected =   
 label-disconnected-foreground = ${colors.dark_gray}
 label-disconnected-background= ${colors.gray}
+
+[module/placeholder]
+type = custom/script
+format = <label>
+format-background = ${colors.dark_gray}
+exec = echo '   '
 
 [module/battery]
 type = internal/battery
 adapter = AC
-full_at = 99
+full-at = 100
 
-format-charging-padding = 2
+format-charging-padding = 1
 format-charging = <animation-charging>
-format-discharging-padding = 2
+format-charging-background = ${colors.gray}
+format-discharging-padding = 1
 format-discharging = <ramp-capacity>
+format-discharging-background = ${colors.gray}
 format-full = <label-full>
-format-full-padding = 2
+format-full-padding = 1
+format-full-background = ${colors.gray}
 
 label-full = 
-label-full-foreground = ${colors.gray}
+label-full-foreground = ${colors.green}
 
 ramp-capacity-9 = ""
 ramp-capacity-8 = ""
@@ -245,7 +266,7 @@ menu-0-1 = 
 menu-0-1-background = ${colors.gray}
 menu-0-1-exec = shutdown now -r
 menu-0-1-padding = 2
-menu-0-2 = 
+menu-0-2 = 
 menu-0-2-background = ${colors.gray}
 menu-0-2-exec = i3lock-next
 menu-0-2-padding = 2

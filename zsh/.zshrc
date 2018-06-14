@@ -4,6 +4,7 @@
 export ZSH=$HOME/.config/oh-my-zsh
 export PAGER=/usr/bin/vimpager
 export BETTER_EXCEPTIONS=1
+export HISTFILE=$HOME/.zsh_history 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -13,7 +14,7 @@ eval "$(pipenv --completion)"
 eval "$(hub alias -s)"
 
 function powerline_precmd() {
-    PS1="$(powerline-go -modules "docker,venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root" -shorten-gke-names -mode flat -error $? -shell zsh)"
+    PS1="$(powerline-go -modules "docker,venv,host,ssh,cwd,perms,git,hg,jobs,exit,root" -shorten-gke-names -mode flat -error $? -shell zsh)"
 }
 
 function install_powerline_precmd() {
@@ -57,6 +58,7 @@ fi
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -70,9 +72,10 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions enhancd gitfast docker alias-tips zsh-syntax-highlighting)
+plugins=(zsh-autosuggestions enhancd bgnotify gitfast docker alias-tips zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -111,7 +114,7 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=28,bold'
 
 ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=160,bold'
 
-export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES='e $(fzf --preview "rougify --theme molokai -i {}")'
+export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES='e $(fzf --preview "bat {}")'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -141,13 +144,14 @@ fi
 
 #AWESOME FZF !!!
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='-m --no-height --bind alt-j:down,alt-k:up,ctrl-a:select-all,page-up:preview-page-up,page-down:preview-page-down'
+export FZF_DEFAULT_OPTS='-m --height 40% --bind alt-j:down,alt-k:up,ctrl-a:select-all,up:preview-up,down:preview-down'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow 2>/dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --preview 'bat {}'"
 export FZF_CTRL_R_COMMAND='rg --files --no-ignore --hidden --follow'
-export FZF_CTRL_R_OPTS="--preview 'parse_to_man {}'"
+export FZF_CTRL_R_OPTS="--preview='file {}' --preview-window=down:1"
 export FZF_ALT_C_OPTS="--preview 'tree -C -h {}'"
-bindkey  -s '^v' 'nvim $(fzf --preview "rougify --theme molokai -i {}")^M'
+bindkey  -s '^v' 'nvim $(fzf --preview "rougify {}")^M'
 bindkey '^ ' autosuggest-accept
 
 fzf-history-widget-accept() {
@@ -161,7 +165,7 @@ bindkey '^X' fzf-history-widget-accept
 #FUNCTIONS
 function list_all() {
     emulate -L zsh
-    colorls --sort-dirs
+    ls_extended -s
 }
 chpwd_functions=(${chpwd_functions[@]} "list_all")
 
@@ -238,8 +242,40 @@ function dmark()  {
 zle -N jump
 bindkey '^g' jump
 
-### Bashhub.com Installation
-if [ -f ~/.bashhub/bashhub.zsh ]; then
-    source ~/.bashhub/bashhub.zsh
-fi
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
 
+# fh() {
+#   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+# }
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**'
+zstyle ':completion:*' max-errors 2
+zstyle :compinstall filename '/home/vyz/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+function ListAllCommands
+{
+    echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
+        -executable -type f -printf '%P\n' | sort -u
+}
+ 
+#Notifications
+
+# Minimum elapsed time
+bgnotify_threshold=4
+
+# Text to be displayed
+function bgnotify_formatted {
+  ## $1=exit_status, $2=command, $3=elapsed_time
+  bgnotify "Command '$2' finished." "Status code: $1\nElapsed time: $3s";
+}
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='bg=blue,bold'
+source /usr/share/nvm/init-nvm.sh

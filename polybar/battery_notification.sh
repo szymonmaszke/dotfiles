@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 battery_level=$(acpi -b | grep -P -o '[0-9]+(?=%)')
 

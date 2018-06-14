@@ -14,9 +14,9 @@ $CHOOSE_REGION)
 	exec scrot "$SCREEN_DIRECTORY/%b%d::%H%M%S.png" -q 100 -s
 	;;
 $WHOLE_SCREEN)
-	exec scrot "$SCREEN_DIRECTORY/%b%d::%H%M%S.png" -q 100
+	exec scrot "$SCREEN_DIRECTORY/%b%d::%H%M%S.png" -q 100 -d 1
 	;;
 $CURRENT_WINDOW)
-	exec scrot "$SCREEN_DIRECTORY/%b%d::%H%M%S.png" -q 100
+	exec scrot "$SCREEN_DIRECTORY/%b%d::%H%M%S.png" -q 100 -d 1
 	;;
 esac

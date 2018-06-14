@@ -1,21 +1,23 @@
 #TERMITE CONFIG FILE
 [options]
-
-font= Knack Nerd Font 13
+clickable_url=true
+font= Knack Nerd Font Mono 13
 mouse_autohide=true
 hyperlinks = true
-cursor_blink = off
+cursor_blink = system
+cursor_shape=block
 padding = 0
-
+scrollback_lines=0
+visible_bell=false
 
 [colors]
 
 background= #282828
 foreground= #d7d7d7
 
-cursor= #d7d7d7
+cursor= #585858
 # dark0 + gray
-color0 = #505050
+color0 = #585858
 color8 = #000000
 
 # neutral_red + bright_red

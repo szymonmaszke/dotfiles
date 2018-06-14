@@ -1,3 +1,2 @@
-SURFRAW_graphical_browser=/usr/bin/vivaldi-stable
-#SURFRAW_text_browser=/usr/bin/elinks
+SURFRAW_graphical_browser=/usr/bin/firefox
 SURFRAW_graphical=yes

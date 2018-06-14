@@ -20,13 +20,14 @@ bindsym F12 exec "light -A -p 5"
 bindsym $mod+z exec "$HOME/.config/rofi/unify.sh"
 bindsym $mod+c exec "rofi -show clipboard"
 bindsym $mod+x exec "rofi -show drun"
+bindsym $mod+m exec "$HOME/.config/rofi/messengers.sh"
 # Screenshots
 bindsym --release Print exec scrot -s -e 'mv $f ~/screens/'
 # Music player
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym $mod+Print exec scrot "$SCREEN_DIRECTORY/%b%d::%H%M%S.png" -q 100
+bindsym $mod+Print exec scrot "$HOME/screens/%b%d::%H%M%S.png"
 
 # change sound level/mute
 bindsym F2 exec "amixer set Master 5%-"
@@ -67,7 +68,7 @@ bindsym $mod+| split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -82,6 +83,7 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
 
 set $code 1
 set $web 2
@@ -109,16 +111,20 @@ bindsym $mod+Shift+7 move container to workspace $other
 
 workspace_auto_back_and_forth yes
 
-assign [class="Termite"] $code
-assign [class="Vivaldi"] $web
-for_window[class="Vivaldi"] layout tabbed
+# assign [class="Termite"] $code
+for_window[class="Spotify"] move to workspace $music
+for_window[class="Termite"] layout tabbed
+assign [class="Firefox"] $web
+for_window[class="Firefox"] layout tabbed
 assign [class="XMind"] $xmind
 assign [class="Zathura"] $read
 for_window[class="Zathura"] layout tabbed
-for_window[class="Spotify"] move to workspace $music
 assign [class="nteract"] $nteract
 for_window[class="nteract"] layout tabbed
 assign [class="libreoffice"] $other
+assign [class="feh"] $other
+assign [class="filelight"] $other
+assign [class="bleachbit"] $other
 
 #GAPS
 for_window[class="^.*"] border pixel 4
@@ -156,21 +162,26 @@ bindsym $mod+Control+r mode "resize"
 set $bg-color 			#2f343f
 set $inactive-bg-color 		#2f343f
 set $text-color 		#f3f4f5
-set $inactive-text-color 	#676E7D
-set $urgent-bg-color		#E53935
+set $inactive-text-color 	#f3f4f5
 
 #window colors	border		background	text		indicator
 #client.focused	#c795ae $bg-color	$text-color	$bg-color
-client.unfocused	#373737 #373737 #d0d0d0 #373737
-client.focused #373737 #373737 #d0d0d0 #373737
+client.unfocused	#585858 #585858 #d0d0d0 #585858
+client.focused #585858 #585858 #d0d0d0 #585858
+client.focused_inactive #585858 #585858 #d0d0d0 #585858
 #client.focused_inactive		$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$bg-color
 #client.urgent	$urgent-bg-color	$urgent-bg-color	$text-color	$bg-color
 
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec redshift
-exec feh --bg-scale $HOME/pictures/wallpaper3.jpeg
-exec compton -b
-exec --no-startup-id greenclip daemon &
-exec --no-startup-id udiskie &
-exec --no-startup-id i3-msg 'workspace 1; exec termite -e tmux'
+exec compton -b --config $HOME/.config/compton.conf
+
+# configs for scratchpads
+bindsym $mod+Shift+m move scratchpad
+
+# Messengers
+
+for_window [class="Caprine"] mark "messenger-client", move scratchpad
+for_window [class="Slack"] mark "slack-client", move scratchpad
+for_window [class="Inboxer"] mark "inbox-client", move scratchpad
+for_window [class="Protonmail Desktop"] mark "protonmail-client", move scratchpad
+

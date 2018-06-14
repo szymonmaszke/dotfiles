@@ -23,9 +23,13 @@ setw -g window-status-activity-attr "underscore"
 setw -g window-status-activity-fg "#d7d7d7"
 setw -g window-status-separator ""
 setw -g window-status-bg "#585858"
-set -g status-left "#[fg=#d7d7d7,bg=#585858] #S #[fg=#d7d7d7,bg=#373737]  "
+set -g status-left "#[fg=#d7d7d7,bg=#585858] #S #[fg=#d7d7d7,bg=#373737] "
 
-set -g status-right "#[fg=#d7d7d7, bg=#585858]  #{uptime} #{prefix_highlight}"
+set -g status-right "#{prefix_highlight} \
+#[fg=#d7d7d7, bg=#585858]  #{pane_current_path} #[bg=#3d3d3d] \
+#[fg=#d7d7d7, bg=#585858]  #{continuum_status} #[bg=#3d3d3d] \
+#[fg=#d7d7d7, bg=#585858]  #{uptime} "
+
 
 setw -g window-status-format "#[fg=#d7d7d7,bg=#585858] #W "
 setw -g window-status-current-format "#[fg=#f44336,bg=#585858,bold] #W "
