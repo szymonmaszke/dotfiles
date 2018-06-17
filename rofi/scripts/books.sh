@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 book_dir="$HOME/books"
 chosen_book="$(find "$book_dir"/* -printf "%f\\n" |

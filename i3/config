@@ -17,12 +17,10 @@ bindsym F11 exec "light -U -p 5"
 bindsym F12 exec "light -A -p 5"
 
 #bind clipmenu
-bindsym $mod+z exec "$HOME/.config/rofi/unify.sh"
+bindsym $mod+z exec "$HOME/.config/rofi/scripts/unify.sh"
 bindsym $mod+c exec "rofi -show clipboard"
 bindsym $mod+x exec "rofi -show drun"
-bindsym $mod+m exec "$HOME/.config/rofi/messengers.sh"
-# Screenshots
-bindsym --release Print exec scrot -s -e 'mv $f ~/screens/'
+bindsym $mod+m exec "$HOME/.config/rofi/scripts/messengers.sh"
 # Music player
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -184,4 +182,3 @@ for_window [class="Caprine"] mark "messenger-client", move scratchpad
 for_window [class="Slack"] mark "slack-client", move scratchpad
 for_window [class="Inboxer"] mark "inbox-client", move scratchpad
 for_window [class="Protonmail Desktop"] mark "protonmail-client", move scratchpad
-

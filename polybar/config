@@ -24,8 +24,8 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-modules-right = docker placeholder updates volume network bluetooth menu
-modules-left = date i3 battery filesystem placeholder cpu temperature placeholder backlight redshift battery-alarm
+modules-right = docker placeholder updates reddit github volume network ping bluetooth menu
+modules-left = date weather i3 battery filesystem placeholder cpu temperature placeholder backlight redshift battery-alarm
 
 background = ${colors.dark_gray}
 foreground = ${colors.white}
@@ -39,9 +39,32 @@ font-2 = "Weather Icons:size=14;4"
 
 [module/battery-alarm]
 type = custom/script
-exec = ~/.config/polybar/battery_notification.sh
+exec = ~/.config/polybar/scripts/battery_notification.sh
 interval = 600
 
+[module/reddit]
+type = custom/script
+exec = ~/.config/polybar/scripts/reddit.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval = 120
+label-font = 0
+
+[module/github]
+type = custom/script
+exec = ~/.config/polybar/scripts/github.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval = 120
+label-font = 0
+
+[module/ping]
+type = custom/script
+exec = ~/.config/polybar/scripts/ping.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval = 120
+label-font = 0
 
 [module/volume]
 type = internal/volume
@@ -135,10 +158,9 @@ ramp-4 = 
 ramp-5 = 
 ramp-6 = 
 
-
 [module/weather]
 type = custom/script
-exec = ~/.config/polybar/weather.sh
+exec = ~/.config/polybar/scripts/weather.sh
 format-background = ${colors.gray}
 format-padding = 1
 interval = 600
@@ -146,43 +168,37 @@ label-font = 3
 
 [module/filesystem]
 type = custom/script
-exec = ~/.config/polybar/root_system.sh
+exec = ~/.config/polybar/scripts/root_system.sh
 format-background = ${colors.gray}
 format-padding = 1
 interval = 60
-click-left = ~/.config/polybar/system_info.sh
+click-left = ~/.config/polybar/scripts/dropdown/system_info.sh
 
 [module/docker]
 type = custom/script
-exec = ~/.config/polybar/docker.sh
+exec = ~/.config/polybar/scripts/docker.sh
 format-background = ${colors.gray}
 format-padding = 1
 interval=30
 label-font = 2
+click-left = ~/.config/polybar/scripts/dropdown/docker_info.sh
 
 [module/updates]
 type = custom/script
 
-exec = ~/.config/polybar/updates.sh
+exec = ~/.config/polybar/scripts/updates.sh
 format = <label>
 format-background = ${colors.gray}
 format-padding = 1
 label = %output%
 interval = 90
 
-[module/gmail]
-type = custom/script
-exec = ~/.config/polybar/gmail/launch.py --color=#f44336 --prefix 
-format-background = ${colors.gray}
-format-padding = 1
-tail = true
-
 [module/bluetooth]
 type = custom/script
 format = <label>
 format-padding = 1
 format-background = ${colors.gray}
-exec = ~/.config/polybar/bluetooth.sh
+exec = ~/.config/polybar/scripts/bluetooth.sh
 interval = 5
 
 [module/redshift]
@@ -190,7 +206,7 @@ type = custom/script
 format = <label>
 format-background = ${colors.gray}
 format-padding = 1
-exec = ~/.config/polybar/redshift.sh
+exec = ~/.config/polybar/scripts/redshift.sh
 interval = 5
 
 [module/network]
@@ -200,9 +216,9 @@ interface = wlp3s0
 format-connected = <label-connected>
 format-connected-background = ${colors.gray}
 format-connected-padding = 1
-label-connected =  %essid%
-format-disconnected = <label-disconnected>
+label-connected =  
 label-disconnected =   
+format-disconnected = <label-disconnected>
 label-disconnected-foreground = ${colors.dark_gray}
 label-disconnected-background= ${colors.gray}
 
@@ -228,7 +244,6 @@ format-full-padding = 1
 format-full-background = ${colors.gray}
 
 label-full = 
-label-full-foreground = ${colors.green}
 
 ramp-capacity-9 = ""
 ramp-capacity-8 = ""
