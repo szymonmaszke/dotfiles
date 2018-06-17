@@ -25,7 +25,7 @@ module-margin-right = 0
 module-margin-left = 0
 
 modules-right = docker placeholder updates reddit github volume network ping bluetooth menu
-modules-left = date weather i3 battery filesystem placeholder cpu temperature placeholder backlight redshift battery-alarm
+modules-left = date weather i3 battery filesystem placeholder cpu temperature placeholder backlight redshift
 
 background = ${colors.dark_gray}
 foreground = ${colors.white}
@@ -36,11 +36,6 @@ underline-color = ${colors.red}
 font-0 = MaterialDesignIcons:size=14;3
 font-1 = "DejaVuSansMono Nerd Font Complete Mono:size=11;3"
 font-2 = "Weather Icons:size=14;4"
-
-[module/battery-alarm]
-type = custom/script
-exec = ~/.config/polybar/scripts/battery_notification.sh
-interval = 600
 
 [module/reddit]
 type = custom/script

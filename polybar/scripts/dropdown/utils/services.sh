@@ -15,16 +15,16 @@ display_services() {
 	count=0
 	tput bold
 	tput setaf 5
-	printf "SERVICES\\n"
+	printf "SERVICES"
 	for service in $2; do
-		is_active "$service"
-		((count++))
 		if ! (("$count" % "$1")); then
 			printf "\\n"
 		fi
+		is_active "$service"
+		((count++))
 	done
 	tput sgr0
 }
 
-row=3
+row=4
 display_services $row "docker earlyoom mariadb ufw"
