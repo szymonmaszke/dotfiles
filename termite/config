@@ -1,7 +1,7 @@
 #TERMITE CONFIG FILE
 [options]
 clickable_url=true
-font= Knack Nerd Font Mono 13
+font= Hack Nerd Font Mono 13
 mouse_autohide=true
 hyperlinks = true
 cursor_blink = system

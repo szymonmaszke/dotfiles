@@ -34,7 +34,7 @@ underline-size = 2
 underline-color = ${colors.red}
 
 font-0 = MaterialDesignIcons:size=14;3
-font-1 = "DejaVuSansMono Nerd Font Complete Mono:size=11;3"
+font-1 = "Hack Nerd Font Complete Mono:size=11;3"
 font-2 = "Weather Icons:size=14;4"
 
 [module/reddit]
@@ -43,7 +43,6 @@ exec = ~/.config/polybar/scripts/reddit.sh
 format-background = ${colors.gray}
 format-padding = 1
 interval = 120
-label-font = 0
 
 [module/github]
 type = custom/script
@@ -51,7 +50,6 @@ exec = ~/.config/polybar/scripts/github.sh
 format-background = ${colors.gray}
 format-padding = 1
 interval = 120
-label-font = 0
 
 [module/ping]
 type = custom/script
@@ -59,7 +57,6 @@ exec = ~/.config/polybar/scripts/ping.sh
 format-background = ${colors.gray}
 format-padding = 1
 interval = 120
-label-font = 0
 
 [module/volume]
 type = internal/volume

@@ -10,6 +10,11 @@ alias se='sudo -E nvim'
 alias g++='g++ -march=native -std=c++17 -O2 -Werror -Wextra -Wall -Weffc++ -Wnarrowing'
 alias ut='tar xvzf'
 alias pack='tar zcvf'
+alias r='rtichoke'
+
+renv(){
+  R -e "packrat::init('$1')"
+}
 
 alias qjup='kill $(pgrep jupyter)'
 alias mv='$HOME/.config/scripts/mv.sh'
