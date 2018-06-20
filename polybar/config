@@ -24,8 +24,8 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-modules-right = docker placeholder updates reddit github volume network ping bluetooth menu
-modules-left = date weather i3 battery filesystem placeholder cpu temperature placeholder backlight redshift
+modules-right = docker placeholder updates reddit github volume network ping bluetooth placeholder filesystem battery menu
+modules-left = date weather i3 cpu temperature placeholder backlight redshift
 
 background = ${colors.dark_gray}
 foreground = ${colors.white}
