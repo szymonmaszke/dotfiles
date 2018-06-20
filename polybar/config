@@ -57,6 +57,7 @@ exec = ~/.config/polybar/scripts/ping.sh
 format-background = ${colors.gray}
 format-padding = 1
 interval = 120
+click-left = ~/.config/polybar/scripts/dropdown/internet_info.sh
 
 [module/volume]
 type = internal/volume
