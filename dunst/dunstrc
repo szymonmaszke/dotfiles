@@ -51,7 +51,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 3
 
     # Padding between text and separator.
     padding = 8
@@ -64,7 +64,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#585858"
+    frame_color = "#282828"
 
     # Define a color for the separator.
     # possible values are:
@@ -81,7 +81,7 @@
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
     # Transient notifications ignore this setting.
-    idle_threshold = 120
+    idle_threshold = 0
 
     ### Text ###
 
@@ -134,7 +134,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = -1
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.
