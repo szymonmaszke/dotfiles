@@ -6,6 +6,8 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
 Plug 'jparise/vim-graphql'
 Plug 'tweekmonster/startuptime.vim'
 " MATCH function endfunciton AND OTHER LANGUAGE SPECIFIC KEYWORDS (configure)
