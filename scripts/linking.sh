@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 link_to_config() {
 	rm -rf "$HOME"/.config/"$1"
 	ln -sf "$HOME"/dotfiles/"$1" "$HOME"/.config/"$1"
