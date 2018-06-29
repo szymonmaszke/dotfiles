@@ -1,7 +1,7 @@
 #!/bin/sh
 
 warning_color='#f44336'
-url=$(head -n 1 "$HOME"/.config/polybar_secrets/reddit_token)
+url=$(head -n 1 "$HOME"/.config/secrets/polybar_reddit_token)
 unread=$(curl -sf "$url" | jq '.["data"]["children"] | length')
 
 case "$unread" in

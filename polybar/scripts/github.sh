@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-TOKEN=$(head -n 1 "$HOME"/.config/polybar_secrets/github_token)
+TOKEN=$(head -n 1 "$HOME"/.config/secrets/polybar_github_token)
 
 warning_color='#f44336'
 

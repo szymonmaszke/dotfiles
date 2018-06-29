@@ -26,7 +26,7 @@ get_icon() {
 	echo $icon
 }
 
-KEY=$(head -n 1 "$HOME"/.config/polybar_secrets/weather_token)
+KEY=$(head -n 1 "$HOME"/.config/secrets/polybar_weather_token)
 CITY=""
 UNITS="metric"
 SYMBOL="°"
