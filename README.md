@@ -1,4 +1,7 @@
 # dotfiles
+
+![Clean](https://user-images.githubusercontent.com/20703378/36677420-63482fb2-1b0e-11e8-9e0f-c14a34f11e98.png "Clean")
+
 <p align=center>
     <a href=""><img alt="" src="https://img.shields.io/badge/OS-Arch%20Linux-1793D1.svg"></a>
     <a href=""><img alt="" src="https://img.shields.io/badge/Window%20Manager-i3-lightgrey.svg"></a>
@@ -8,11 +11,9 @@
     <a href=""><img alt="" src="https://img.shields.io/badge/Editor-Neovim-2e7d32.svg"></a>
 </p>
 
-![Clean](https://user-images.githubusercontent.com/20703378/36677420-63482fb2-1b0e-11e8-9e0f-c14a34f11e98.png "Clean")
-
 ## Installation and configuration
 
-Files can be linked using ```/scripts/linking.sh``` against your system.
+Files can be linked against your system using ```/scripts/linking.sh```.
 - __WARNING__ This script removes files from your computer. Read it before using!
 - __WARNING__ Better way to make use of those dotfiles is to go through next section and use only the parts suiting you.
 
@@ -31,7 +32,7 @@ __Some UNIX proficiency is required in order to use this configuration.__
 
 ## Acknowledgments
 
-Thanks to any developers whose work brought this system to life.
+Thanks to any developer whose work brought this system to life.
 This repository contains many __WIP__ projects and errors, if you see any (or want to contribute/suggest something interesting), do not hesitate to open PR.
 
 __Lastly, if you like/made use of anything from this repository, a star would be nice :heart_eyes:__
