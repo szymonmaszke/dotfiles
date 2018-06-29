@@ -14,5 +14,5 @@ termite -e tmux &
 redshift &
 greenclip daemon &
 udiskie &
-feh --bg-scale $HOME/wallpapers/simpsons_denmark.png &
+feh --bg-scale $HOME/wallpapers/geometric_hd.jpg &
 exec i3
