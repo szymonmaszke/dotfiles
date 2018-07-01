@@ -25,7 +25,7 @@ module-margin-right = 0
 module-margin-left = 0
 
 modules-right = docker placeholder updates reddit github volume network ping bluetooth placeholder filesystem battery menu
-modules-left = date weather i3 cpu temperature placeholder backlight redshift
+modules-left = tmux_environment date weather i3 cpu temperature placeholder backlight redshift
 
 background = ${colors.dark_gray}
 foreground = ${colors.white}
@@ -36,6 +36,11 @@ underline-color = ${colors.red}
 font-0 = MaterialDesignIcons:size=14;3
 font-1 = "Hack Nerd Font Complete Mono:size=11;3"
 font-2 = "Weather Icons:size=14;4"
+
+[module/tmux_environment]
+type = custom/script
+exec = ~/.config/scripts/notifications/tmux_environment_saved.sh
+interval = 600
 
 [module/reddit]
 type = custom/script
@@ -172,7 +177,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/docker.sh
 format-background = ${colors.gray}
 format-padding = 1
-interval=30
+interval = 60
 label-font = 2
 click-left = ~/.config/polybar/scripts/dropdown/docker_info.sh
 
@@ -184,7 +189,7 @@ format = <label>
 format-background = ${colors.gray}
 format-padding = 1
 label = %output%
-interval = 90
+interval = 120
 
 [module/bluetooth]
 type = custom/script
@@ -192,7 +197,7 @@ format = <label>
 format-padding = 1
 format-background = ${colors.gray}
 exec = ~/.config/polybar/scripts/bluetooth.sh
-interval = 5
+interval = 60
 
 [module/redshift]
 type = custom/script
@@ -200,7 +205,7 @@ format = <label>
 format-background = ${colors.gray}
 format-padding = 1
 exec = ~/.config/polybar/scripts/redshift.sh
-interval = 5
+interval = 60
 
 [module/network]
 type = internal/network
@@ -237,8 +242,6 @@ format-full-padding = 1
 format-full-background = ${colors.gray}
 
 label-full = 
-
-ramp-capacity-9 = ""
 ramp-capacity-8 = ""
 ramp-capacity-7 = ""
 ramp-capacity-6 = ""
