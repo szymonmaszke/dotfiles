@@ -11,6 +11,7 @@ let g:ale_fixers = {
       \   'python': ['black', 'isort', 'remove_trailing_lines', 'trim_whitespace'],
       \   'sh': ['shfmt', 'remove_trailing_lines', 'trim_whitespace',],
       \   'vim': ['remove_trailing_lines', 'trim_whitespace',],
+      \   'md': ['prettier', 'trim_whitespace',],
       \}
 
 let g:ale_python_black_executable = 'black'
