@@ -26,6 +26,7 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Print exec scrot "$HOME/screens/%b%d::%H%M%S.png"
+bindsym --release Print exec scrot -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
 
 # change sound level/mute
 bindsym F2 exec "amixer set Master 5%-"
@@ -88,7 +89,7 @@ set $web 2
 set $read 3
 set $xmind 4
 set $music 5
-set $nteract 6
+set $film 6
 set $other 7
 
 bindsym $mod+1 workspace $code
@@ -96,7 +97,7 @@ bindsym $mod+2 workspace $web
 bindsym $mod+3 workspace $read
 bindsym $mod+4 workspace $xmind
 bindsym $mod+5 workspace $music
-bindsym $mod+6 workspace $nteract
+bindsym $mod+6 workspace $film
 bindsym $mod+7 workspace $other
 
 bindsym $mod+Shift+1 move container to workspace $code
@@ -104,7 +105,7 @@ bindsym $mod+Shift+2 move container to workspace $web
 bindsym $mod+Shift+3 move container to workspace $read
 bindsym $mod+Shift+4 move container to workspace $xmind
 bindsym $mod+Shift+5 move container to workspace $music
-bindsym $mod+Shift+6 move container to workspace $nteract
+bindsym $mod+Shift+6 move container to workspace $film
 bindsym $mod+Shift+7 move container to workspace $other
 
 workspace_auto_back_and_forth yes
@@ -112,6 +113,7 @@ workspace_auto_back_and_forth yes
 # assign [class="Termite"] $code
 for_window[class="Spotify"] move to workspace $music
 for_window[class="Termite"] layout tabbed
+for_window[class="mpv"] move to workspace $film
 assign [class="Firefox"] $web
 for_window[class="Firefox"] layout tabbed
 assign [class="XMind"] $xmind
