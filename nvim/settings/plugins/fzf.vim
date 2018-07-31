@@ -20,8 +20,6 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 let g:fzf_layout = { 'down': '~50%' }
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" --all'
-inoremap <expr> <c-x><c-k> fzf#complete('cat $HOME/testing/text')
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
@@ -37,6 +35,13 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 let g:fzf_buffers_jump = 1
+
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 nnoremap <silent><tab>t :Tags<CR>
 nnoremap <silent><Leader>bt :BTags<CR>
