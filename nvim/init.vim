@@ -6,6 +6,7 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
+Plug 'sgur/vim-editorconfig'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'jparise/vim-graphql'
@@ -156,6 +157,7 @@ source $HOME/.config/nvim/settings/languages/python.vim
 " }}}
 
 " PLUGINS CONFIGURATION FILES {{{
+source $HOME/.config/nvim/settings/plugins/vim-markdown.vim
 source $HOME/.config/nvim/settings/plugins/jedi.vim
 source $HOME/.config/nvim/settings/plugins/edgemotion.vim
 source $HOME/.config/nvim/settings/plugins/echodoc.vim
