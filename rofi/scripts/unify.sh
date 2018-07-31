@@ -22,24 +22,24 @@ $RUN_APP)
 	exec rofi -show drun
 	;;
 $WEB)
-	exec "$HOME/.config/rofi/webbrowser.sh"
+	exec "$HOME/.config/rofi/scripts/webbrowser.sh"
 	;;
 $NETWORK)
-	exec "$HOME/.config/rofi/networkmanager-dmenu/networkmanager_dmenu"
+	exec "$HOME/.config/rofi/scripts/network.sh"
 	;;
 $SESSION)
-	exec "$HOME/.config/rofi/session.sh"
+	exec "$HOME/.config/rofi/scripts/session.sh"
 	;;
 $BLUETOOTH)
-	exec "$HOME/.config/rofi/bluetooth.sh"
+	exec "$HOME/.config/rofi/scripts/bluetooth.sh"
 	;;
 $BOOKS)
-	exec "$HOME/.config/rofi/books.sh"
+	exec "$HOME/.config/rofi/scripts/books.sh"
 	;;
 $SCREENSHOTS)
-	exec "$HOME/.config/rofi/screenshots.sh"
+	exec "$HOME/.config/rofi/scripts/screenshots.sh"
 	;;
 $MONITORS)
-	exec "$HOME/.config/rofi/xrandr.sh"
+	exec "$HOME/.config/rofi/scripts/xrandr.sh"
 	;;
 esac
