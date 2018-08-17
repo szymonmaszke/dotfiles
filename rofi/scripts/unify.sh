@@ -25,7 +25,7 @@ $WEB)
 	exec "$HOME/.config/rofi/scripts/webbrowser.sh"
 	;;
 $NETWORK)
-	exec "$HOME/.config/rofi/scripts/network.sh"
+	exec "$HOME/.config/rofi/scripts/wifi.sh"
 	;;
 $SESSION)
 	exec "$HOME/.config/rofi/scripts/session.sh"
