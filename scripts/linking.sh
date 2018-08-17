@@ -9,7 +9,7 @@ mkdir -p "$HOME"/.config/nvim
 mkdir -p "$HOME"/.config/tmux
 mkdir -p "$HOME"/.config/oh-my-zsh/custom
 
-to_config="dunst i3 neofetch polybar python rofi scripts surfraw termite compton.conf flake8 greenclip.cfg nvim/settings nvim/init.vim tmux/line oh-my-zsh/custom/aliases.zsh"
+to_config="redshift.conf dunst i3 neofetch polybar python rofi scripts surfraw termite compton.conf flake8 greenclip.cfg nvim/settings nvim/init.vim tmux/line oh-my-zsh/custom/aliases.zsh"
 
 for config in $to_config; do
 	link_to_config "$config"
