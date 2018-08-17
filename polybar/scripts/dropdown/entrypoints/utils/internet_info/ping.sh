@@ -16,6 +16,7 @@ else
 	else
 		tput setaf 1
 	fi
-	echo "Ping: $rtt"
+	printf "Ping: "
+	tput sgr0
+	printf "%s\\n" "$rtt"
 fi
-tput sgr0

@@ -20,7 +20,7 @@ make_row() {
 
 make_header() {
 	tput bold
-	tput setaf 4
+	tput setaf 5
 	printf "INTERFACES"
 }
 

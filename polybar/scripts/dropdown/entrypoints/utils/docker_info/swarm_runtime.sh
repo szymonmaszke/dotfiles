@@ -25,5 +25,3 @@ else
 fi
 
 printf "\\n%s" "$runtime"
-
-sleep 5

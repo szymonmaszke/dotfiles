@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 tput bold
+tput setaf 4
 ssid=$(iwgetid -r)
-echo "SSID: $ssid"
+printf "SSID: "
 tput sgr0
+printf "%s\\n" "$ssid"

@@ -5,7 +5,6 @@ containers_images_volumes=$(
 		-e 's/Local Volumes/Volumes/g' | tr -s ' ' | cut -f 1-4 -d\  | column -t
 )
 
-setterm -cursor off
 tput bold
 
 # Display informations about containers, images and volumes
