@@ -98,6 +98,8 @@ set noswapfile
 set cursorcolumn
 set cursorline
 
+set scrolloff=10
+
 " TRUE COLORS SUPPORT
 if has('termguicolors')     " set true colors
   set t_8f=\[[38;2;%lu;%lu;%lum
