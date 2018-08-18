@@ -65,7 +65,7 @@ interval = 120
 click-left = ~/.config/polybar/scripts/dropdown/internet_info.sh
 
 [module/volume]
-type = internal/volume
+type = internal/pulseaudio
 
 format-volume-margin = 3
 format-volume-padding = 2
