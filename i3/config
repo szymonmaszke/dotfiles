@@ -114,17 +114,20 @@ workspace_auto_back_and_forth yes
 for_window[class="Spotify"] move to workspace $music
 for_window[class="Termite"] layout tabbed
 for_window[class="mpv"] move to workspace $film
+
 assign [class="Firefox"] $web
 for_window[class="Firefox"] layout tabbed
+
 assign [class="XMind"] $xmind
+
 assign [class="Zathura"] $read
 for_window[class="Zathura"] layout tabbed
-assign [class="nteract"] $nteract
-for_window[class="nteract"] layout tabbed
+
 assign [class="libreoffice"] $other
 assign [class="feh"] $other
 assign [class="filelight"] $other
 assign [class="bleachbit"] $other
+assign [class="keepassxc"] $other
 
 #GAPS
 for_window[class="^.*"] border pixel 4
