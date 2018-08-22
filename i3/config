@@ -25,8 +25,10 @@ bindsym $mod+m exec "$HOME/.config/rofi/scripts/messengers.sh"
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym $mod+Print exec scrot "$HOME/screens/%b%d::%H%M%S.png"
-bindsym --release Print exec scrot -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
+bindsym $mod+Print exec scrot -z "$HOME/screens/%b%d::%H%M%S.png"
+bindsym --release Print exec scrot -z -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
+
+bindsym $mod+p exec keepmenu
 
 # change sound level/mute
 bindsym F2 exec "amixer set Master 5%-"
@@ -139,7 +141,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
