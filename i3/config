@@ -16,11 +16,21 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym F11 exec "light -U -p 5"
 bindsym F12 exec "light -A -p 5"
 
-#bind clipmenu
-bindsym $mod+z exec "$HOME/.config/rofi/scripts/unify.sh"
+# BIND ROFI
+# Messengers
+bindsym $mod+s [con_mark="signal-client"] scratchpad show
+bindsym $mod+f [con_mark="messenger-client"] scratchpad show
+bindsym $mod+g [con_mark="inbox-client"] scratchpad show
+bindsym $mod+m [con_mark="protonmail-client"] scratchpad show
+bindsym $mod+w [con_mark="slack-client"] scratchpad show
+
+bindsym $mod+n exec "$HOME/.config/rofi/scripts/network.sh"
+bindsym $mod+b exec "$HOME/.config/rofi/scripts/books.sh"
+
+bindsym $mod+o exec "$HOME/.config/rofi/scripts/other.sh"
 bindsym $mod+c exec "rofi -show clipboard"
 bindsym $mod+x exec "rofi -show drun"
-bindsym $mod+m exec "$HOME/.config/rofi/scripts/messengers.sh"
+
 # Music player
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -28,7 +38,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Print exec scrot -z "$HOME/screens/%b%d::%H%M%S.png"
 bindsym --release Print exec scrot -z -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
 
-bindsym $mod+p exec keepmenu
+bindsym $mod+p exec /home/vyz/.local/bin/keepmenu
 
 # change sound level/mute
 bindsym F2 exec "amixer set Master 5%-"
@@ -66,7 +76,7 @@ bindsym $mod+- split h
 bindsym $mod+| split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -187,5 +197,6 @@ bindsym $mod+Shift+m move scratchpad
 
 for_window [class="Caprine"] mark "messenger-client", move scratchpad
 for_window [class="Slack"] mark "slack-client", move scratchpad
+for_window [class="Signal"] mark "signal-client", move scratchpad
 for_window [class="Inboxer"] mark "inbox-client", move scratchpad
 for_window [class="Protonmail Desktop"] mark "protonmail-client", move scratchpad
