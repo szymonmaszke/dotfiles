@@ -5,6 +5,7 @@ export ZSH=$HOME/.config/oh-my-zsh
 export PAGER=/usr/bin/vimpager
 export BETTER_EXCEPTIONS=1
 export HISTFILE=$HOME/.zsh_history 
+export PATH=/home/vyz/.local/bin:$PATH
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -254,6 +255,7 @@ zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**'
 zstyle ':completion:*' max-errors 2
 zstyle :compinstall filename '/home/vyz/.zshrc'
+fpath+=~/.zfunc
 
 autoload -Uz compinit
 compinit
