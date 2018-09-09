@@ -28,7 +28,7 @@ alias cp='cp -ri'
 alias pup='pikaur -Syyu --noconfirm && gem update'
 alias pcc='pikaur -Scc'
 alias pget='pikaur -S'
-alias prm='pikaur -Rn'
+alias prm='pikaur -Rns'
 alias pls='pikaur -Qe'
 
 alias l='ls_extended -s'
