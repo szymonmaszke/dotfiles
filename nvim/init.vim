@@ -6,7 +6,6 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
-Plug 'sgur/vim-editorconfig'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'jparise/vim-graphql'
@@ -16,9 +15,9 @@ Plug 'andymass/vim-matchup'
 " CONFIGURE (file searching with regex and ag)
 Plug 'eugen0329/vim-esearch'
 Plug 'tweekmonster/helpful.vim'
-Plug 'vyzyv/vimpyter'
 Plug 'chrisbra/Replay'
 Plug 'davidhalter/jedi-vim'
+Plug '~/projects/vimpyter'
 Plug 'tpope/vim-markdown'
 " EXPAND REGION WITH VISUAL SELECTION
 Plug 'terryma/vim-expand-region'

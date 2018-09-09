@@ -1,5 +1,7 @@
 scriptencoding utf-8
 
+autocmd BufNewFile,BufRead $HOME/.config/polybar/config set filetype=dosini
+
 augroup SmallerSyntax
   autocmd BufEnter * :syntax sync maxlines=300
 augroup END
