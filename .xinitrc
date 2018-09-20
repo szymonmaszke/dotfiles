@@ -16,5 +16,4 @@ greenclip daemon &
 udiskie &
 signal-desktop &
 feh --bg-scale $HOME/wallpapers/geometric_hd.jpg &
-pgrep xautolock > /dev/null 2>&1 || xautolock -locker 'i3lock-next' &
 exec i3
