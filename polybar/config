@@ -24,8 +24,8 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-modules-right = docker placeholder updates reddit github volume network ping bluetooth placeholder filesystem battery menu
-modules-left = tmux_environment date weather i3 cpu temperature placeholder backlight redshift
+modules-right = docker placeholder updates reddit github volume network ping vpn firewall bluetooth placeholder filesystem battery menu
+modules-left = battery_alarm tmux_environment date weather i3 cpu temperature placeholder backlight redshift
 
 background = ${colors.dark_gray}
 foreground = ${colors.white}
@@ -36,6 +36,25 @@ underline-color = ${colors.red}
 font-0 = MaterialDesignIcons:size=14;3
 font-1 = "Hack Nerd Font Complete Mono:size=11;3"
 font-2 = "Weather Icons:size=14;4"
+
+[module/firewall]
+type = custom/script
+exec = ~/.config/polybar/scripts/firewall.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval = 120
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/vpn.sh
+format-background = ${colors.gray}
+format-padding = 1
+interval = 120
+
+[module/battery_alarm]
+type = custom/script
+exec = ~/.config/scripts/notifications/battery.sh
+interval = 300
 
 [module/tmux_environment]
 type = custom/script
@@ -112,11 +131,12 @@ type = internal/i3
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
 
 ws-icon-default = ♟
 
