@@ -7,8 +7,8 @@ setup_ufw() {
 	ip=$1
 	port=$2
 
-	ufw default deny outgoing
 	ufw --force reset
+	ufw default deny outgoing
 	ufw allow out on "$VPN_INTERFACE" from any to any
 	ufw allow out to "$ip" port "$port" proto "$PROTOCOL"
 	ufw enable

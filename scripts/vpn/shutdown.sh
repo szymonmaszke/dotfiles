@@ -1,5 +1,6 @@
 #!/bin/env sh
 
 pkill openvpn
-ufw reset
+ufw --force reset
+ufw default deny outgoing
 ufw enable
