@@ -1,35 +1,21 @@
-#program aliases
-alias yt='youtube-viewer'
+###############################################################################
+#
+#                                     SYSTEM
+#
+###############################################################################
 
-alias s='sudo -E'
-alias enhance='function ne() { docker run --rm -v "$(pwd)/`dirname ${@:$#}`":/ne/input -it alexjc/neural-enhance:gpu ${@:1:$#-1} "input/`basename ${@:$#}`"; }; ne'
-#main usage aliases
-alias c='clear'
 alias off='shutdown now'
 alias restart='shutdown now -r'
 
-#program specific
-alias e='nvim'
-alias se='sudo -E nvim'
-alias g++='g++ -march=native -std=c++17 -O2 -Werror -Wextra -Wall -Weffc++ -Wnarrowing'
-alias ut='tar xvzf'
-alias pack='tar zcvf'
-alias r='rtichoke'
+###############################################################################
+#
+#                                   SYSTEM FUNCTIONS
+#
+###############################################################################
 
-renv(){
-  R -e "packrat::init('$1')"
-}
-
-alias qjup='kill $(pgrep jupyter)'
+alias c='clear'
 alias mv='$HOME/.config/scripts/mv.sh'
-
 alias cp='cp -ri'
-#pacman specific
-alias pup='pikaur -Syyu --noconfirm && gem update'
-alias pcc='pikaur -Scc'
-alias pget='pikaur -S'
-alias prm='pikaur -Rns'
-alias pls='pikaur -Qe'
 
 alias l='ls_extended -s'
 alias lf='ls_extended -f'
@@ -39,12 +25,12 @@ alias la='ls_extended -Aslhi'
 alias ls='ls_extended -s'
 alias cat='bat'
 
-alias git='hub'
-#revert last commit
-alias grlc='hub reset HEAD~'
-alias gp='hub push -u origin $(git rev-parse --abbrev-ref HEAD)'
+###############################################################################
+#
+#                                   CONFIG FILES
+#
+###############################################################################
 
-#config aliases
 alias en='nvim ~/.config/nvim/init.vim'
 alias ea='nvim ~/.config/oh-my-zsh/custom/aliases.zsh'
 alias ez='nvim ~/.zshrc'
@@ -52,6 +38,62 @@ alias et='nvim ~/.config/termite/config'
 alias ei='nvim ~/.config/i3/config'
 alias ep='nvim ~/.config/polybar/config'
 alias ex='nvim ~/.xinitrc'
+
+###############################################################################
+#
+#                                     PROGRAMS
+#
+###############################################################################
+
+# Neovim
+alias e='nvim'
+alias se='sudo -E nvim'
+
+
+# Tar.gz aliases
+alias unpack='tar xvzf'
+alias pack='tar zcvf'
+
+# Compiling
+alias g++='g++ -march=native -std=c++17 -O2 -Werror -Wextra -Wall -Weffc++ -Wnarrowing'
+alias r='rtichoke'
+
+# Other programs
+alias yt='youtube-viewer'
+alias qjup='kill $(pgrep jupyter)'
+
+
+###############################################################################
+#
+#                                     PACMAN
+#
+###############################################################################
+
+alias pup='pikaur -Syyu --noconfirm && gem update'
+alias pcc='pikaur -Scc'
+alias pget='pikaur -S'
+alias prm='pikaur -Rns'
+alias pls='pikaur -Qe'
+
+###############################################################################
+#
+#                                     GIT
+#
+###############################################################################
+
+alias gsa='git submodule add'
+alias gsinit='git submodule init'
+alias gsup='git submodule update'
+alias git='hub'
+#revert last commit
+alias grlc='hub reset HEAD~'
+alias gp='hub push -u origin $(git rev-parse --abbrev-ref HEAD)'
+
+###############################################################################
+#
+#                                     DOCKER
+#
+###############################################################################
 
 #docker specific
 #--format using regex, formatting of given output, check it, p.58
@@ -86,6 +128,7 @@ alias dinfo='docker info'
 #You can run your own registries
 #pulls given image from repository
 #ubuntu:12.04 - runs tagged version, best to build containers like that
+
 alias dp='docker pull'
 #list docker images
 alias di='docker images'
@@ -119,7 +162,46 @@ alias drmi_dangling='docker system prune'
 # removes all none images
 alias drminone='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 
-# Pipenv aliases
-alias prp='pipenv run python'
-alias pi='pipenv install'
 
+###############################################################################
+#
+#                                   VIRTUAL ENVIRONMENTS
+#
+###############################################################################
+
+# Pipenv
+alias per='pipenv run'
+alias perp='pipenv run python'
+alias pei='pipenv install'
+alias pes='pipenv shell'
+alias perm='pipenv uninstall'
+
+# Conda
+alias ca='conda activate'
+alias ci='conda install'
+alias ccr='conda create --name'
+alias cls='conda list'
+alias crm='conda remove'
+alias ccl='conda clean'
+
+# Poetry
+alias poi='poetry add'
+alias porm='poetry remove'
+alias poup='poetry update'
+alias poupg='poetry upgrade'
+
+# R Packrat
+renv(){
+  R -e "packrat::init('$1')"
+}
+
+###############################################################################
+#
+#                                   FUNCTIONS
+#
+###############################################################################
+
+# Run pdf from command line
+pdf(){
+  zathura "$1" >/dev/null 2>&1 &
+}
