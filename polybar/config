@@ -120,6 +120,8 @@ type = internal/date
 time = %H:%M
 label = %time%
 
+time-alt = %A, %d %B %Y
+
 format =  <label>
 format-background = ${colors.gray}
 interval = 5
