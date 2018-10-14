@@ -2,8 +2,7 @@ scriptencoding utf-8
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
-let g:deoplete#sources#jedi#server_timeout = 300
-let g:deoplete#sources#jedi#enable_cache = 1
+let g:deoplete#sources#jedi#server_timeout = 50000
 
 call deoplete#custom#source('omni',          'mark', '⌾')
 call deoplete#custom#source('jedi',          'mark', '')
