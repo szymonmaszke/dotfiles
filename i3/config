@@ -22,7 +22,6 @@ bindsym $mod+s [con_mark="signal-client"] scratchpad show
 bindsym $mod+f [con_mark="messenger-client"] scratchpad show
 bindsym $mod+g [con_mark="inbox-client"] scratchpad show
 bindsym $mod+m [con_mark="protonmail-client"] scratchpad show
-bindsym $mod+w [con_mark="slack-client"] scratchpad show
 
 # Other scripts
 bindsym $mod+n exec "$HOME/.config/rofi/scripts/network.sh"
