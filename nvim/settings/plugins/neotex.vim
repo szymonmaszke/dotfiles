@@ -1,3 +1,3 @@
 scriptencoding utf-8
 
-autocmd Filetype tex let g:neotex_enabled=1
+let g:neotex_enabled=2
