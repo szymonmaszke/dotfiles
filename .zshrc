@@ -279,4 +279,3 @@ function bgnotify_formatted {
 }
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='bg=blue,bold'
-source /usr/share/nvm/init-nvm.sh
