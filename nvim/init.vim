@@ -6,6 +6,7 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'jparise/vim-graphql'
@@ -17,14 +18,15 @@ Plug 'eugen0329/vim-esearch'
 Plug 'tweekmonster/helpful.vim'
 Plug 'chrisbra/Replay'
 Plug 'davidhalter/jedi-vim'
-Plug '~/projects/vimpyter'
+" Plug '~/projects/vimpyter'
+Plug 'szymonmaszke/vimpyter'
 Plug 'tpope/vim-markdown'
 " EXPAND REGION WITH VISUAL SELECTION
 Plug 'terryma/vim-expand-region'
 " MORE TARGETS FOR PARENTHESES ETC. <CONFIGURE>
 Plug 'wellle/targets.vim'
 "CORRECT PASTING
-Plug 'sickill/vim-pasta'
+" Plug 'sickill/vim-pasta'
 Plug 'deris/vim-shot-f'
 Plug 'bradford-smith94/quick-scope'
 Plug 'farmergreg/vim-lastplace'
@@ -153,6 +155,7 @@ source $HOME/.config/nvim/settings/other.vim
 source $HOME/.config/nvim/settings/languages/latex.vim
 source $HOME/.config/nvim/settings/languages/vim.vim
 source $HOME/.config/nvim/settings/languages/python.vim
+source $HOME/.config/nvim/settings/languages/ipynb.vim
 " }}}
 
 " PLUGINS CONFIGURATION FILES {{{
