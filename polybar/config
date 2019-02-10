@@ -24,7 +24,7 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-modules-right = docker placeholder updates reddit github volume network ping vpn firewall bluetooth placeholder filesystem battery menu
+modules-right = docker placeholder updates reddit github volume network ping vpn firewall placeholder filesystem battery menu
 modules-left = battery_alarm tmux_environment date weather i3 cpu temperature placeholder backlight redshift
 
 background = ${colors.dark_gray}
