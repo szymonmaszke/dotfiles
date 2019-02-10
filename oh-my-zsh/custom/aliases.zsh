@@ -49,7 +49,6 @@ alias ex='nvim ~/.xinitrc'
 alias e='nvim'
 alias se='sudo -E nvim'
 
-
 # Tar.gz aliases
 alias unpack='tar xvzf'
 alias pack='tar zcvf'
@@ -61,7 +60,6 @@ alias r='rtichoke'
 # Other programs
 alias yt='youtube-viewer'
 alias qjup='kill $(pgrep jupyter)'
-
 
 ###############################################################################
 #
@@ -179,10 +177,13 @@ alias perm='pipenv uninstall'
 # Conda
 alias ca='conda activate'
 alias ci='conda install'
+alias cif='conda install -c conda-forge'
 alias ccr='conda create --name'
 alias cls='conda list'
 alias crm='conda remove'
 alias ccl='conda clean'
+alias cup='conda update'
+alias cupc='conda update -n base -c defaults conda'
 
 # Poetry
 alias poi='poetry add'
@@ -205,3 +206,11 @@ renv(){
 pdf(){
   zathura "$1" >/dev/null 2>&1 &
 }
+
+###############################################################################
+#
+#                                 KERNEL AND OS
+#
+###############################################################################
+
+alias regrub='grub-mkconfig -o /boot/grub/grub.cfg'
