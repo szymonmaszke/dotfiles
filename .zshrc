@@ -6,6 +6,7 @@ export PAGER=/usr/bin/vimpager
 export BETTER_EXCEPTIONS=1
 export HISTFILE=$HOME/.zsh_history 
 export PATH=/home/vyz/.local/bin:$PATH
+export TBVACCINE=1
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
