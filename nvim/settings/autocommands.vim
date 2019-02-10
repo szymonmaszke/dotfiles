@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 autocmd BufNewFile,BufRead $HOME/.config/polybar/config set filetype=dosini
+autocmd FileType ipynb setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 augroup SmallerSyntax
   autocmd BufEnter * :syntax sync maxlines=300
