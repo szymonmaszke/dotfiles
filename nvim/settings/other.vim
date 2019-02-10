@@ -27,15 +27,15 @@ let g:limelight_eop = '\ze\n^\s'
 "   Set it to -1 not to overrule hlsearch
 let g:limelight_priority = 10
 
-augroup StatusLine
-  au! FocusLost * set laststatus=0
-  au! FocusGained * set laststatus=2
-augroup END
+" augroup StatusLine
+"   au! FocusLost * set laststatus=0
+"   au! FocusGained * set laststatus=2
+" augroup END
 
-augroup ToggleTabLine
-  au! FocusLost * set showtabline=0
-  au! FocusGained * set showtabline=2
-augroup END
+" augroup ToggleTabLine
+"   au! FocusLost * set showtabline=0
+"   au! FocusGained * set showtabline=2
+" augroup END
 
 augroup ColorColumn
   au! FocusLost * set colorcolumn=0

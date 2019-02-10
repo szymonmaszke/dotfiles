@@ -6,6 +6,7 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
+Plug 'TaDaa/vimade'
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
