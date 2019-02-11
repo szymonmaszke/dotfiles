@@ -6,30 +6,36 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
+" Interactive REPL for scratchpad
+Plug 'metakirby5/codi.vim'
+Plug 'fidian/hexmode'
 Plug 'TaDaa/vimade'
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-Plug 'iamcco/mathjax-support-for-mkdp'
-Plug 'iamcco/markdown-preview.vim'
 Plug 'jparise/vim-graphql'
 Plug 'tweekmonster/startuptime.vim'
-" MATCH function endfunciton AND OTHER LANGUAGE SPECIFIC KEYWORDS (configure)
+" Preview of markdown files
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+" MATCH function endfunction AND OTHER LANGUAGE SPECIFIC KEYWORDS (configure)
+" Use % to jump between matching objects
 Plug 'andymass/vim-matchup'
 " CONFIGURE (file searching with regex and ag)
+" Can be made for project wide replacements etc.
 Plug 'eugen0329/vim-esearch'
+" Display from which version specific command is available"
 Plug 'tweekmonster/helpful.vim'
+" Recording of vim session
 Plug 'chrisbra/Replay'
 Plug 'davidhalter/jedi-vim'
 " Plug '~/projects/vimpyter'
 Plug 'szymonmaszke/vimpyter'
+" Markdown syntax"
 Plug 'tpope/vim-markdown'
-" EXPAND REGION WITH VISUAL SELECTION
-Plug 'terryma/vim-expand-region'
+Plug 'tyru/markdown-codehl-onthefly.vim'
+Plug 'unblevable/quick-scope'
 " MORE TARGETS FOR PARENTHESES ETC. <CONFIGURE>
 Plug 'wellle/targets.vim'
-"CORRECT PASTING
-" Plug 'sickill/vim-pasta'
-Plug 'deris/vim-shot-f'
-Plug 'bradford-smith94/quick-scope'
+" Color next letters after f, F, t, T"
+" Plug 'deris/vim-shot-f'
 Plug 'farmergreg/vim-lastplace'
 Plug 'jiangmiao/auto-pairs'
 "MOVE FILE WITH IT'S HISTORY, SHELL SCRIPTS MADE EXECUTABLE, RENAME ETC.
@@ -45,7 +51,6 @@ Plug 'Shougo/echodoc.vim'
 Plug 'vim-utils/vim-interruptless'
 "HIGHLIGHT CURRENT WORD
 Plug 'osyo-manga/vim-brightest'
-Plug 'duckwork/limelight.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -104,18 +109,14 @@ Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 "BETTER REGEX, SWAPS, REPLACES ETC.
 Plug 'tpope/vim-abolish'
 "CHANGING OF BRACES, SURROUNDS ETC.
 Plug 'tpope/vim-surround'
-
 Plug 'w0rp/ale'
-
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
 "Displays ident lines
@@ -125,7 +126,7 @@ Plug 'morhetz/gruvbox'
 "RESIZING WHEN MULTIPLE WINDOWS USED
 Plug 'justincampbell/vim-eighties'
 "REPEAT f,F,t,T for next letters
-" Plug 'rhysd/clever-f.vim'
+Plug 'rhysd/clever-f.vim'
 "VIM SCROLLING
 Plug 'yuttie/comfortable-motion.vim'
 " BOOKMARKS FOR VIM (CHECK)
@@ -133,7 +134,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 "MOVE FUNCTIONS ARGUMENTS LEFT AND RIGHT
 Plug 'AndrewRadev/sideways.vim'
 "RUNNING ASYNCHRONOUSLY COMMANDS
-Plug 'skywind3000/asyncrun.vim'
 Plug 'machakann/vim-highlightedyank'
 
 "LOAD LAST ALWAYS
@@ -149,7 +149,6 @@ source $HOME/.config/nvim/settings/vim-plug.vim
 source $HOME/.config/nvim/settings/neovim.vim
 source $HOME/.config/nvim/settings/autocommands.vim
 source $HOME/.config/nvim/settings/mappings.vim
-source $HOME/.config/nvim/settings/other.vim
 " }}}
 
 " LOAD LANGUAGE SPECIFIC COMMANDS {{{
@@ -185,5 +184,13 @@ source $HOME/.config/nvim/settings/plugins/vim-surround.vim
 source $HOME/.config/nvim/settings/plugins/vim-easymotion.vim
 source $HOME/.config/nvim/settings/plugins/vimpyter.vim
 source $HOME/.config/nvim/settings/plugins/sideways.vim
+source $HOME/.config/nvim/settings/plugins/codi.vim
+source $HOME/.config/nvim/settings/plugins/vimade.vim
+source $HOME/.config/nvim/settings/plugins/helpful.vim
+source $HOME/.config/nvim/settings/plugins/markdown-preview.vim
+source $HOME/.config/nvim/settings/plugins/quickscope.vim
+source $HOME/.config/nvim/settings/plugins/vim-brightest.vim
 source $HOME/.config/nvim/settings/plugins/vim-highlightedundo.vim
+source $HOME/.config/nvim/settings/plugins/vim-highlightedyank.vim
+source $HOME/.config/nvim/settings/plugins/clever-f.vim
 " }}}

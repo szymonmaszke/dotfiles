@@ -24,14 +24,13 @@ let g:loaded_netrwFileHandlers = 1
 " Leave netrw to death
 let g:netrw_banner=0
 
-" This option is overriden by indentLine plugin
-set conceallevel=0
 set inccommand=nosplit
 " Copy indent from previous line
 set copyindent
 " Use signs for end of line and tabs
 set list
 set listchars=tab:→\ ,trail:·,eol:↴,nbsp:·
+set fillchars=vert:\ 
 " Spelling turned on
 set spelllang=en_gb
 set spell
@@ -106,3 +105,6 @@ if has('termguicolors')     " set true colors
   set t_8b=\[[48;2;%lu;%lu;%lum
   set termguicolors
 endif
+
+hi HighlightedyankRegion ctermbg=161 guibg=#fc00a8
+hi Normal guibg=NONE ctermbg=NONE

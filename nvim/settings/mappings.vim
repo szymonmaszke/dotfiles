@@ -2,6 +2,8 @@ scriptencoding utf-8
 
 let g:mapleader = "\<Space>"
 
+inoremap <BS> <nop>
+
 " Easier indentation - does dot loose selection
 vnoremap > >gv
 vnoremap < <gv
@@ -19,17 +21,13 @@ nnoremap <tab>h :cd $HOME<CR>:pwd<cr>
 
 " COMMAND LINE REMAPS
 " GO TO THE BEGINNING OF LINE IN COMMAND LINE MODE
-cnoremap <C-a> <Home>
-cnoremap <C-B> <Left>
+cnoremap <M-H> <Home>
+cnoremap <M-L> <Left>
 "MOVE THROUGH HISTORY
 cmap <M-k> <Up>
 cmap <M-j> <Down>
 " In command mode, type %% to insert the path of the currently edited file, as a shortcut for %:h<tab>.
 " cmap %% <C-R>=expand("%:h") . "/" <CR>
-
-" Select the text that was last edited/pasted.
-" http://vimcasts.org/episodes/bubbling-text/
-nmap gV `[v`]
 
 "EXIT WITHOUT SAVING
 nnoremap Q :q!<CR>
@@ -41,11 +39,8 @@ inoremap <C-h> <Esc>hi
 inoremap <C-j> <Esc>ji
 inoremap <C-k> <Esc>ki
 inoremap <C-l> <Esc>li
-" Ctrl-e end of line Ctrl-b beginning
-inoremap <C-H> <C-o>0
-inoremap <C-L> <C-o>$
-"Turns off highlighting for searches after esc
-nnoremap <silent><esc> :noh<return><esc>
+"Turns off highlighting for searches after esc. Additionally cancel clever-f
+nnoremap <silent><esc> :noh<return><Plug>(clever-f-reset)<esc>
 
 " OPEN DOCUMENTATION ALWAYS IN NEW TAB
 nnoremap <silent>K :execute 'tab ' . &keywordprg . ' ' . expand("<cword>")<CR>
