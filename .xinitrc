@@ -14,6 +14,7 @@ redshift &
 greenclip daemon &
 udiskie &
 signal-desktop &
+termite -t scratchpad-code -e "nvim $HOME/.scratchpad/scratch.py" &
 feh --bg-scale $HOME/wallpapers/geometric_hd.jpg &
 xidlehook --time 5 --timer 'i3lock-next' --not-when-fullscreen --not-when-audio &
 exec i3
