@@ -1,12 +1,12 @@
 scriptencoding utf-8
 
-let g:codi#width=120
 
 augroup Scratchpad
   au! BufRead,BufNewFile $HOME/.scratchpad/* call SetupScratchpad()
 augroup END
 
 function SetupScratchpad()
+  let g:codi#width=0.5
   " No split indication between buffers
   hi VertSplit guibg=bg
   set listchars&
