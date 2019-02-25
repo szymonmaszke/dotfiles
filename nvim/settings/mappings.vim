@@ -2,8 +2,6 @@ scriptencoding utf-8
 
 let g:mapleader = "\<Space>"
 
-inoremap <BS> <nop>
-
 " Easier indentation - does dot loose selection
 vnoremap > >gv
 vnoremap < <gv
@@ -30,7 +28,7 @@ cmap <M-j> <Down>
 " cmap %% <C-R>=expand("%:h") . "/" <CR>
 
 "EXIT WITHOUT SAVING
-nnoremap Q :q!<CR>
+nnoremap <silent>Q :q!<CR>
 " B and E for begin and end line
 nnoremap H ^
 nnoremap L $
@@ -67,3 +65,6 @@ nnoremap <Leader>x :Bdelete<CR>
 "Moving line up/down with arrows
 nnoremap <silent><C-Up>   :<C-u>silent! move-2<CR>==
 nnoremap <silent><C-Down> :<C-u>silent! move+<CR>==
+
+" Remap default completion to nop
+ inoremap <c-x><c-k> <nop>

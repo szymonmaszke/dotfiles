@@ -30,7 +30,6 @@ set copyindent
 " Use signs for end of line and tabs
 set list
 set listchars=tab:→\ ,trail:·,eol:↴,nbsp:·
-set fillchars=vert:\ 
 " Spelling turned on
 set spelllang=en_gb
 set spell
@@ -79,7 +78,7 @@ set shortmess=sWcIqFTAf
 
 " Undo directories
 set undofile                        " Save undo's after file closes
-set undodir=~/.config/nvim/undo_history/ "Undo directory
+set undodir=$HOME/.config/nvim/undo_history/ "Undo directory
 set undolevels=10000                 " How many undos
 set undoreload=10000                " number of lines to save for undo
 
