@@ -6,7 +6,7 @@ augroup Scratchpad
 augroup END
 
 function SetupScratchpad()
-  let g:codi#width=0.5
+  let g:codi#width=50.0
   " No split indication between buffers
   hi VertSplit guibg=bg
   set listchars&
