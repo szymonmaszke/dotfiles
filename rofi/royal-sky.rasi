@@ -5,7 +5,7 @@
  **/
 * {
     selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
-    foreground:                  rgba ( 196, 202, 212, 100 % );
+    foreground:                  rgba ( 213, 213, 213, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: rgba ( 42, 42, 42, 100 % );
     red:                         rgba ( 194, 65, 65, 100 % );
@@ -55,8 +55,8 @@
     border:       0;
     border-color: @separatorcolor;
     spacing:      2px;
-    scrollbar:    true;
-    padding:      2px 0px 0px;
+    scrollbar:    false;
+    padding:      0px 0px 0px;
 }
 #element {
     border:  0;
