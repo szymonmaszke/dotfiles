@@ -6,6 +6,7 @@ function! DoRemote(arg)
 endfunction
 
 call plug#begin()
+Plug 'pearofducks/ansible-vim'
 " Interactive REPL for scratchpad
 Plug 'metakirby5/codi.vim'
 Plug 'fidian/hexmode'
