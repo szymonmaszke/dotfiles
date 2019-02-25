@@ -5,6 +5,7 @@ let g:ale_dockerfile_hadolint_use_docker = 'always'
 
 let g:ale_linters = {
       \   'python': ['flake8', 'pylint',],
+      \   'vim': ['vint',],
       \}
 
 let g:ale_fixers = {
