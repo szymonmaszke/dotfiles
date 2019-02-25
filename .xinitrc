@@ -7,7 +7,6 @@ setxkbmap -option caps:swapescape
 systemctl --user import-environment DISPLAY
 
 protonmail-desktop &
-inboxer &
 caprine &
 termite -e tmux &
 redshift &
