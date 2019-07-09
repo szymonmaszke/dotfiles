@@ -1,0 +1,12 @@
+{
+    "max-concurrent-uploads": 1,
+    "max-concurrent-downloads": 1,
+    "graph": "/home/vyz/.docker/data",
+    "default-runtime": "nvidia",
+    "runtimes": {
+        "nvidia": {
+            "path": "/usr/bin/nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
