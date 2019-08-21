@@ -23,6 +23,7 @@ augroup END
 
 command! PU PlugClean <bar> PlugUpdate <bar> PlugUpgrade
 command! PI PlugInstall
+
 augroup FastUpdate
   autocmd BufEnter $HOME/.config/nvim/init.vim nnoremap <buffer> <silent> <leader>u :PU<CR>
 augroup END

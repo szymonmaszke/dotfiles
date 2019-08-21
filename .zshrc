@@ -24,3 +24,5 @@ source $HOME/.config/zsh/plugins/bgnotify.sh
 source $HOME/.config/zsh/plugins/powerline.sh
 source $HOME/.config/zsh/plugins/fzf.sh
 # }}}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

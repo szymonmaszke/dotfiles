@@ -60,7 +60,7 @@ nnoremap <silent><M-j> :tabprevious<CR>
 "Fast saving
 nnoremap <silent><Leader>w :w!<CR>
 "Closing buffer
-nnoremap <Leader>x :Bdelete<CR>
+nnoremap <silent><Leader>x :Bdelete<CR>
 
 "Moving line up/down with arrows
 nnoremap <silent><C-Up>   :<C-u>silent! move-2<CR>==
@@ -68,3 +68,5 @@ nnoremap <silent><C-Down> :<C-u>silent! move+<CR>==
 
 " Remap default completion to nop
  inoremap <c-x><c-k> <nop>
+
+nnoremap <silent>q :let g:_is_recording = !g:_is_recording<CR>q

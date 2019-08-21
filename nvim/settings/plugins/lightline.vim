@@ -6,8 +6,8 @@ let g:lightline = {
       \ 'colorscheme': 'mine',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'percent' ], ['linter_errors', 'linter_warnings', 'linter_ok']]
+      \             [ 'filetype', 'readonly', 'fugitive', 'filename', 'modified' ] ],
+      \   'right': [ [ 'directory', 'column', 'is_recording' ], ['linter_errors', 'linter_warnings', 'linter_ok']]
       \ },
       \ 'component_expand': {
       \  'linter_warnings': 'lightline#ale#warnings',
@@ -19,75 +19,79 @@ let g:lightline = {
       \     'linter_errors': 'error',
       \ },
       \ 'component_function': {
-      \   'fugitive': 'LightlineFugitive',
-      \   'readonly': 'LightlineReadonly',
-      \   'modified': 'LightlineModified',
-      \   'filename': 'LightlineFilename',
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
+      \   'fugitive': 'Fugitive',
+      \   'readonly': 'ReadOnly',
+      \   'filename': 'Filename',
+      \   'filetype': 'Filetype',
+      \   'directory': 'Directory',
+      \   'column': 'Column',
+      \   'is_recording': 'IsRecording',
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
+      \ 'subseparator': { 'left': '│', 'right': '│' }
       \ }
 
 let g:webdevicons_enable = 1
 
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : '?') : ''
+let g:_is_recording = get(g:, '_is_recording', 0)
+function! IsRecording()
+  if get(g:, '_is_recording', 0) == 0
+    return ''
+  endif
+  return ''
 endfunction
 
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+function! Column()
+  return ' ' . col('.')
 endfunction
 
-function! LightlineModified()
-  if &filetype ==# 'help'
-    return ''
-  elseif &modified
+function! Directory()
+  let l:current_directory = getcwd()
+  return l:current_directory
+endfunction
+
+function! Filetype()
+  return strlen(&filetype) ? ' ' . WebDevIconsGetFileTypeSymbol() : '?'
+endfunction
+
+function! Modified()
+  if &modified
     return ''
-  elseif &modifiable
-    return ''
-  else
-    return ''
-  endif
-endfunction
-
-function! LightlineReadonly()
-  if &filetype ==# 'help'
-    return ''
-  elseif &readonly
-    return ''
-  else
-
-    return ''
-  endif
-endfunction
-
-function! LightlineFugitive()
-  if exists('*fugitive#head')
-    let l:branch = fugitive#head()
-    return l:branch !=# '' ? ' '. l:branch : ''
   endif
   return ''
 endfunction
-function! LightlineFilename()
-  return ('' !=# LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ ('' !=# expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' !=# LightlineModified() ? ' ' . LightlineModified() : '')
+
+function! ReadOnly()
+  if &readonly
+    return ''
+  endif
+  return ''
+endfunction
+
+function! Fugitive()
+  if exists('*fugitive#head')
+    let l:branch = fugitive#head()
+    return l:branch !=# '' ? l:branch . ' ' : ''
+  endif
+  return ''
+endfunction
+
+function! Filename()
+  return expand('%:t')
 endfunction
 
 let g:lightline.mode_map = {
-      \ 'n' : '',
+      \ 'n' : '',
       \ 'i' : '',
       \ 'R' : '',
       \ 'v' : '',
-      \ 'V' : ' ',
-      \ "\<C-v>": ' ',
-      \ 'c' : ' command',
-      \ 's' : ' select',
-      \ 'S' : ' S-LINE',
+      \ 'V' : '',
+      \ "\<C-v>": '',
+      \ 'c' : '',
+      \ 's' : 's',
+      \ 'S' : 'S',
       \ 't': '',
       \}
+
 let g:lightline#ale#indicator_warnings = ''
 let g:lightline#ale#indicator_errors = ''
 let g:lightline#ale#indicator_ok = ''

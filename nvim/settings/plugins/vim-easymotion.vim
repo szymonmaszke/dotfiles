@@ -10,6 +10,6 @@ map  N <Plug>(easymotion-prev)
 
 let g:EasyMotion_smartcase = 1
 
-map <Leader>k <Plug>(easymotion-bd-jk)
+map <Leader>j <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 nmap <Leader>b <Plug>(easymotion-overwin-w)

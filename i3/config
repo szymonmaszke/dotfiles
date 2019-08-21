@@ -131,10 +131,11 @@ for_window[class="Spotify"] move to workspace $music
 for_window[class="Termite"] layout tabbed
 for_window[class="mpv"] move to workspace $film
 
-assign [class="Firefox"] $web
-for_window[class="Firefox"] layout tabbed
+assign [class="firefox"] $web
+for_window[class="firefox"] layout tabbed
 
 assign [class="XMind"] $xmind
+for_window[class="XMind"] layout tabbed
 
 assign [class="Feedreader"] $reader
 
@@ -150,7 +151,7 @@ assign [class="keepassxc"] $other
 #GAPS
 for_window[class="^.*"] border pixel 4
 gaps inner 6
-gaps outer 6
+gaps outer 12
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

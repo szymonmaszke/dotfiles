@@ -1,5 +1,11 @@
 scriptencoding utf-8
 
+" Automatically change directory to the one used in buffer
+set autochdir
+
+" Use shell aliases inside neovim
+" set shellcmdflag=-ic
+
 " gitgutter advises 100ms updates for neovim
 set updatetime=100
 
@@ -52,17 +58,17 @@ set numberwidth=4
 set visualbell
 
 " Use system clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " 80 chars marker line
-set colorcolumn=88
-set textwidth=88
+set colorcolumn=80
+set textwidth=160
 
 set noshowmode
 set nowrap
 
 " No window preview
-set completeopt-=preview
+set completeopt=menuone
 " search case insensitive with /
 set ignorecase
 " Maximum width of text that is being inserted.  A longer line will be

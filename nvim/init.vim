@@ -1,11 +1,23 @@
 scriptencoding utf-8
 
+"{{{ IDEAS
+" Add pwd to lightline (maybe shorten)
+" Add column to lightline (why did I remove it in the first place...)
+" Add recording status to lightline (and how many recordings available), improve recording mappings (make it silent etc.)
+" Configure bookmarks
+"}}}
+
 " PLUGINS {{{
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 
 call plug#begin()
+" Show vim keys
+Plug 'liuchengxu/vim-which-key'
+Plug 'rhysd/git-messenger.vim'
+Plug 'ncm2/float-preview.nvim'
+Plug 'rhysd/git-messenger.vim'
 Plug 'pearofducks/ansible-vim'
 " Interactive REPL for scratchpad
 Plug 'metakirby5/codi.vim'
@@ -130,19 +142,12 @@ Plug 'justincampbell/vim-eighties'
 Plug 'rhysd/clever-f.vim'
 "VIM SCROLLING
 Plug 'yuttie/comfortable-motion.vim'
-" BOOKMARKS FOR VIM (CHECK)
 Plug 'MattesGroeger/vim-bookmarks'
-"MOVE FUNCTIONS ARGUMENTS LEFT AND RIGHT
 Plug 'AndrewRadev/sideways.vim'
-"RUNNING ASYNCHRONOUSLY COMMANDS
 Plug 'machakann/vim-highlightedyank'
-
-"LOAD LAST ALWAYS
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
-
 " }}}
 
 " LOAD NEOVIM CONFIGURATION FILES {{{
@@ -150,6 +155,7 @@ source $HOME/.config/nvim/settings/vim-plug.vim
 source $HOME/.config/nvim/settings/neovim.vim
 source $HOME/.config/nvim/settings/autocommands.vim
 source $HOME/.config/nvim/settings/mappings.vim
+source $HOME/.config/nvim/settings/file-specific.vim
 " }}}
 
 " LOAD LANGUAGE SPECIFIC COMMANDS {{{
@@ -160,6 +166,7 @@ source $HOME/.config/nvim/settings/languages/ipynb.vim
 " }}}
 
 " PLUGINS CONFIGURATION FILES {{{
+source $HOME/.config/nvim/settings/plugins/float-preview.vim
 source $HOME/.config/nvim/settings/plugins/vim-markdown.vim
 source $HOME/.config/nvim/settings/plugins/jedi.vim
 source $HOME/.config/nvim/settings/plugins/edgemotion.vim
@@ -194,4 +201,5 @@ source $HOME/.config/nvim/settings/plugins/vim-brightest.vim
 source $HOME/.config/nvim/settings/plugins/vim-highlightedundo.vim
 source $HOME/.config/nvim/settings/plugins/vim-highlightedyank.vim
 source $HOME/.config/nvim/settings/plugins/clever-f.vim
+source $HOME/.config/nvim/settings/plugins/vim-which-key.vim
 " }}}

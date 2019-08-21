@@ -4,6 +4,7 @@
 #
 ###############################################################################
 
+alias present='mons -d'
 alias off='shutdown now'
 alias restart='shutdown now -r'
 
@@ -96,15 +97,16 @@ alias gp='hub push -u origin $(git rev-parse --abbrev-ref HEAD)'
 #docker specific
 #--format using regex, formatting of given output, check it, p.58
 #-d running as daemon, -c running command
-alias dr='docker run'
-alias ds='docker start'
-alias dst='docker stop'
+alias drun='docker run'
+alias dpull='docker pull'
+alias dstart='docker start'
+alias dstop='docker stop'
 alias drm='docker rm'
 alias drmall='docker ps -a -q | xargs sudo docker rm'
 #drastic m8
 alias dkill='docker kill'
-alias drs='docker restart'
-alias datt='docker attach'
+alias drestart='docker restart'
+alias dattach='docker attach'
 #add container name below. -f flag - monitors current output, not last few liens
 #-t for timestamps
 alias dlogs='docker logs'
@@ -191,11 +193,6 @@ alias porm='poetry remove'
 alias poup='poetry update'
 alias poupg='poetry upgrade'
 
-# R Packrat
-renv(){
-  R -e "packrat::init('$1')"
-}
-
 ###############################################################################
 #
 #                                   FUNCTIONS
@@ -214,3 +211,17 @@ pdf(){
 ###############################################################################
 
 alias regrub='grub-mkconfig -o /boot/grub/grub.cfg'
+
+###############################################################################
+#
+#                                 CODE SHARING
+#
+###############################################################################
+
+alias gsh='gist -p -s -c'
+
+fastrm(){
+  cd "$1"
+  perl -e 'for(<*>){((stat)[9]<(unlink))}'
+  cd -
+}
