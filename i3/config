@@ -13,8 +13,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # change screen brightness
-bindsym F11 exec "light -U -p 5"
-bindsym F12 exec "light -A -p 5"
+bindsym F11 exec "sudo light -U 5"
+bindsym F12 exec "sudo light -A 5"
 
 # BIND ROFI
 # Messengers
@@ -50,10 +50,10 @@ bindsym F3 exec "amixer set Master 5%+"
 bindsym $mod+Shift+q kill
 
 # change focus
-bindsym $mod+h focus left
+bindsym $mod+Left focus left
 bindsym $mod+Up focus up
 bindsym $mod+Down focus down
-bindsym $mod+l focus right
+bindsym $mod+Right focus right
 
 #change workspaces
 bindsym $mod+j workspace prev
