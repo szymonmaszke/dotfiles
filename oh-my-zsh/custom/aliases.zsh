@@ -4,6 +4,8 @@
 #
 ###############################################################################
 
+alias record='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -ac 1 -i hw:1,0 -c:v libx264 screen.mp4'
+
 alias present='mons -d'
 alias off='shutdown now'
 alias restart='shutdown now -r'
