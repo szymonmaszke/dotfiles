@@ -1,32 +1,21 @@
-set -g pane-border-bg '#282828'
-set -g pane-border-fg '#282828'
-set -g pane-active-border-bg '#282828'
-set -g pane-active-border-fg '#282828'
-set -g window-style 'fg=#d7d7d7,bg=#373737'
-set -g window-active-style 'fg=#d7d7d7,bg=#282828'
-set -g status-bg "#373737"
-set -g message-command-fg "colour246"
 set -g status-justify "left"
 set -g status-left-length "100"
 set -g status "on"
-set -g message-bg "colour239"
-set -g status-right-length "100"
-set -g status-right-attr "none"
-set -g message-fg "colour246"
-set -g message-command-bg "colour239"
-set -g status-attr "none"
-set -g status-left-attr "none"
-setw -g window-status-fg "#d7d7d7"
-setw -g window-status-attr "none"
-setw -g window-status-activity-bg "#373737"
-setw -g window-status-activity-attr "underscore"
-setw -g window-status-activity-fg "#d7d7d7"
+
+set -g pane-border-style 'fg=#282828,bg=#282828'
+set -g pane-active-border-style 'fg=#282828,bg=#282828'
+set -g window-style 'fg=#d7d7d7,bg=#373737'
+set -g window-active-style 'fg=#d7d7d7,bg=#282828'
+set -g status-style 'bg=#373737'
+set -g message-command-style 'fg=colour246,bg=colour239'
+set -g message-style 'fg=colour239,bg=colour246'
+set -g status-right-length '100'
+setw -g window-status-style 'fg=#d7d7d7,bg=#585858'
+setw -g window-status-activity-style 'fg=#d7d7d7,bg=#373737,underscore'
 setw -g window-status-separator ""
-setw -g window-status-bg "#585858"
 set -g status-left "#[fg=#d7d7d7,bg=#585858] #S #[fg=#d7d7d7,bg=#373737] "
 
 set -g status-right "#{prefix_highlight} \
-#[fg=#d7d7d7, bg=#585858]  #{pane_current_path} #[bg=#373737] \
 #[fg=#d7d7d7, bg=#585858]  #{continuum_status} #[bg=#373737] \
 #[fg=#d7d7d7, bg=#585858]  #{uptime} "
 
