@@ -23,7 +23,6 @@ Plug 'pearofducks/ansible-vim'
 Plug 'metakirby5/codi.vim'
 Plug 'fidian/hexmode'
 Plug 'TaDaa/vimade'
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'jparise/vim-graphql'
 Plug 'tweekmonster/startuptime.vim'
 " Preview of markdown files
@@ -100,8 +99,6 @@ Plug 'tpope/vim-repeat'
 Plug 't9md/vim-choosewin'
 "GENERATE DOCUMENTATION FOR FUNCTIONS CLASSES ETC. AUTOMATICALLY
 Plug 'heavenshell/vim-pydocstring'
-"BETTER FOLDING FOR PYTHON
-Plug 'pseewald/vim-anyfold'
 "SNIPPETS MENU
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -152,6 +149,7 @@ call plug#end()
 
 " LOAD NEOVIM CONFIGURATION FILES {{{
 source $HOME/.config/nvim/settings/vim-plug.vim
+source $HOME/.config/nvim/settings/paths.vim
 source $HOME/.config/nvim/settings/neovim.vim
 source $HOME/.config/nvim/settings/autocommands.vim
 source $HOME/.config/nvim/settings/mappings.vim
@@ -185,7 +183,6 @@ source $HOME/.config/nvim/settings/plugins/python-syntax.vim
 source $HOME/.config/nvim/settings/plugins/vim-pydocstring.vim
 source $HOME/.config/nvim/settings/plugins/vimtex.vim
 source $HOME/.config/nvim/settings/plugins/vim-choosewin.vim
-source $HOME/.config/nvim/settings/plugins/vim-anyfold.vim
 source $HOME/.config/nvim/settings/plugins/neotex.vim
 source $HOME/.config/nvim/settings/plugins/TextObjectify.vim
 source $HOME/.config/nvim/settings/plugins/vim-surround.vim
