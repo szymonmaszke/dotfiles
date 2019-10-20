@@ -156,7 +156,6 @@ label-unfocused = "%icon%"
 label-unfocused-padding = 1
 label-unfocused-foreground = ${colors.white}
 label-unfocused-background = ${colors.gray}
-/* label-unfocused-background = ${colos.red} */
 
 label-urgent = "%icon%"
 label-urgent-foreground = ${colors.white}
