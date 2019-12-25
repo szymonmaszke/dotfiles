@@ -40,16 +40,23 @@ let g:fzf_colors =
       \ 'header':  ['fg', 'Comment'] }
 
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-command! -bang -nargs=? -complete=dir GFiles
-\ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Jump to existing buffer if exists
 let g:fzf_buffers_jump = 1
 
 nnoremap <silent><Leader>t :BTags<CR>
 nnoremap <silent><Leader>f :Files<CR>
-nnoremap <silent><Leader>l :Rg<CR>
+nnoremap <silent><Leader>l :RG<CR>
 nnoremap <silent><Leader>c :BCommits<CR>
 nnoremap <silent><Leader>hf :Files $HOME<CR>
