@@ -30,6 +30,13 @@ let g:ale_lint_on_enter = 0
 " CPP ALE
 let g:ale_cpp_gcc_options = '-std=c++17 -Werror -Wextra -Wall -Weffc++ -Wnarrowing'
 
+let g:ale_virtualtext_cursor = 1
+highlight ALEVirtualTextInfo guifg=#282828 guibg=#0097A7 gui=bold
+highlight ALEVirtualTextWarning guifg=#282828 guibg=#FBC02D gui=bold
+highlight ALEVirtualTextError guifg=#282828 guibg=#E64A19 gui=bold
+
+let g:ale_virtualtext_prefix = ' '
+
 nnoremap <M-n> :ALENext<CR>
 nnoremap <M-b> :ALEPrevious<CR>
 nnoremap <silent><Leader>, :let b:ale_fix_on_save=0<CR>

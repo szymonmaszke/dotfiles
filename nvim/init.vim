@@ -14,10 +14,10 @@ endfunction
 
 call plug#begin()
 " Show vim keys
+Plug 'mxw/vim-prolog'
 Plug 'liuchengxu/vim-which-key'
 Plug 'rhysd/git-messenger.vim'
 Plug 'ncm2/float-preview.nvim'
-Plug 'rhysd/git-messenger.vim'
 Plug 'pearofducks/ansible-vim'
 " Interactive REPL for scratchpad
 Plug 'metakirby5/codi.vim'
@@ -27,36 +27,32 @@ Plug 'jparise/vim-graphql'
 Plug 'tweekmonster/startuptime.vim'
 " Preview of markdown files
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
-" MATCH function endfunction AND OTHER LANGUAGE SPECIFIC KEYWORDS (configure)
-" Use % to jump between matching objects
-Plug 'andymass/vim-matchup'
 " CONFIGURE (file searching with regex and ag)
 " Can be made for project wide replacements etc.
-Plug 'eugen0329/vim-esearch'
+" Plug 'eugen0329/vim-esearch'
 " Display from which version specific command is available"
 Plug 'tweekmonster/helpful.vim'
 " Recording of vim session
 Plug 'chrisbra/Replay'
 Plug 'davidhalter/jedi-vim'
-" Plug '~/projects/vimpyter'
-Plug 'szymonmaszke/vimpyter'
+" Plug 'szymonmaszke/vimpyter'
 " Markdown syntax"
 Plug 'tpope/vim-markdown'
 Plug 'tyru/markdown-codehl-onthefly.vim'
 Plug 'unblevable/quick-scope'
 " MORE TARGETS FOR PARENTHESES ETC. <CONFIGURE>
-Plug 'wellle/targets.vim'
+" Plug 'wellle/targets.vim'
 " Color next letters after f, F, t, T"
 " Plug 'deris/vim-shot-f'
 Plug 'farmergreg/vim-lastplace'
 Plug 'jiangmiao/auto-pairs'
 "MOVE FILE WITH IT'S HISTORY, SHELL SCRIPTS MADE EXECUTABLE, RENAME ETC.
 Plug 'tpope/vim-eunuch'
-Plug 'haya14busa/vim-edgemotion'
+" Plug 'haya14busa/vim-edgemotion'
 Plug 'vim-python/python-syntax'
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 Plug 'elzr/vim-json'
-Plug 'paradigm/TextObjectify'
+" Plug 'paradigm/TextObjectify'
 Plug 'Shougo/echodoc.vim'
 " Plug 'tenfyzhong/CompleteParameter.vim'
 "IF FILE CHANGED ON DISK IT'S FINE, JUST RELOAD VIM
@@ -96,7 +92,7 @@ Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'rhysd/committia.vim'
 " USING DOT WITH PLUGINS
 Plug 'tpope/vim-repeat'
-Plug 't9md/vim-choosewin'
+" Plug 't9md/vim-choosewin'
 "GENERATE DOCUMENTATION FOR FUNCTIONS CLASSES ETC. AUTOMATICALLY
 Plug 'heavenshell/vim-pydocstring'
 "SNIPPETS MENU
@@ -117,7 +113,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 "TAGS AND MANAGEMENT
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+" Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -126,7 +122,7 @@ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 Plug 'tpope/vim-abolish'
 "CHANGING OF BRACES, SURROUNDS ETC.
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
 "Displays ident lines
@@ -138,7 +134,7 @@ Plug 'justincampbell/vim-eighties'
 "REPEAT f,F,t,T for next letters
 Plug 'rhysd/clever-f.vim'
 "VIM SCROLLING
-Plug 'yuttie/comfortable-motion.vim'
+Plug 'psliwka/vim-smoothie'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'machakann/vim-highlightedyank'
@@ -167,14 +163,14 @@ source $HOME/.config/nvim/settings/languages/ipynb.vim
 source $HOME/.config/nvim/settings/plugins/float-preview.vim
 source $HOME/.config/nvim/settings/plugins/vim-markdown.vim
 source $HOME/.config/nvim/settings/plugins/jedi.vim
-source $HOME/.config/nvim/settings/plugins/edgemotion.vim
+" source $HOME/.config/nvim/settings/plugins/edgemotion.vim
 source $HOME/.config/nvim/settings/plugins/echodoc.vim
 source $HOME/.config/nvim/settings/plugins/deoplete.vim
 source $HOME/.config/nvim/settings/plugins/lightline.vim
 source $HOME/.config/nvim/settings/plugins/rainbow_parentheses.vim
 source $HOME/.config/nvim/settings/plugins/vim-gitgutter.vim
-source $HOME/.config/nvim/settings/plugins/easy-align.vim
-source $HOME/.config/nvim/settings/plugins/tagbar.vim
+" source $HOME/.config/nvim/settings/plugins/easy-align.vim
+" source $HOME/.config/nvim/settings/plugins/tagbar.vim
 source $HOME/.config/nvim/settings/plugins/undotree.vim
 source $HOME/.config/nvim/settings/plugins/fzf.vim
 source $HOME/.config/nvim/settings/plugins/ale.vim
@@ -182,13 +178,13 @@ source $HOME/.config/nvim/settings/plugins/indentline.vim
 source $HOME/.config/nvim/settings/plugins/python-syntax.vim
 source $HOME/.config/nvim/settings/plugins/vim-pydocstring.vim
 source $HOME/.config/nvim/settings/plugins/vimtex.vim
-source $HOME/.config/nvim/settings/plugins/vim-choosewin.vim
+" source $HOME/.config/nvim/settings/plugins/vim-choosewin.vim
 source $HOME/.config/nvim/settings/plugins/neotex.vim
-source $HOME/.config/nvim/settings/plugins/TextObjectify.vim
+" source $HOME/.config/nvim/settings/plugins/TextObjectify.vim
 source $HOME/.config/nvim/settings/plugins/vim-surround.vim
-source $HOME/.config/nvim/settings/plugins/vim-easymotion.vim
-source $HOME/.config/nvim/settings/plugins/vimpyter.vim
-source $HOME/.config/nvim/settings/plugins/sideways.vim
+" source $HOME/.config/nvim/settings/plugins/vim-easymotion.vim
+" source $HOME/.config/nvim/settings/plugins/vimpyter.vim
+" source $HOME/.config/nvim/settings/plugins/sideways.vim
 source $HOME/.config/nvim/settings/plugins/codi.vim
 source $HOME/.config/nvim/settings/plugins/vimade.vim
 source $HOME/.config/nvim/settings/plugins/helpful.vim

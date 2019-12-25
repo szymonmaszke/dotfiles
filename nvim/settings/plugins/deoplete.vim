@@ -2,7 +2,7 @@ scriptencoding utf-8
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
-let g:deoplete#sources#jedi#enable_typeinfo = 0
+let g:deoplete#sources#jedi#enable_typeinfo = 1
 let g:deoplete#sources#jedi#ignore_errors = 1
 
 call deoplete#custom#source('omni',          'mark', '⚡')

@@ -3,7 +3,7 @@ scriptencoding utf-8
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 
-let g:which_key_map = {',': 'Turn off linter'}
+let g:which_key_map = {',': 'Turn off linter', 'b': 'Easymotion line jump', 'q': 'Save and quit', }
 
 " Configure readable output
 
