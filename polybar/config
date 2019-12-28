@@ -24,7 +24,7 @@ padding-right = 0
 module-margin-right = 0
 module-margin-left = 0
 
-modules-right = docker placeholder updates reddit github volume network ping vpn firewall placeholder filesystem battery menu
+modules-right = docker placeholder updates reddit github volume network ping vpn firewall bluetooth placeholder filesystem battery
 modules-left = battery_alarm tmux_environment date weather i3 cpu temperature placeholder backlight redshift
 
 background = ${colors.dark_gray}
@@ -134,14 +134,11 @@ type = internal/i3
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
+ws-icon-2 = 3;
+ws-icon-3 = 4;󰁈
+ws-icon-4 = 5;󰂆
 
-ws-icon-default = ♟
+ws-icon-default = 󰇹
 
 strip-wsnumbers = true
 
