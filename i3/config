@@ -1,7 +1,15 @@
+###############################################################################
+#
+#                             GLOBAL SETTINGS
+#
+###############################################################################
+
+# Set modifier
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Workspaces
+workspace_layout tabbed
+workspace_auto_back_and_forth yes
 
 font pango: DejaVuSansMono Nerd Font Mono 12
 new_window none
@@ -9,156 +17,183 @@ new_window none
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# Start terminal anywhere
 bindsym $mod+Return exec i3-sensible-terminal
 
-# change screen brightness
-bindsym F11 exec "sudo light -U 5"
-bindsym F12 exec "sudo light -A 5"
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
+# Exit i3
+bindsym $mod+Shift+e exec "i3-msg exit"
 
-# BIND ROFI
+
+
+###############################################################################
+#
+#                         APPS MODIFIER KEYBINDINGS
+#
+###############################################################################
+
+# General
+bindsym $mod+e [con_mark="google"] scratchpad show, fullscreen enable
+for_window [instance="google.com"] mark "google", move scratchpad
+
+bindsym $mod+d [con_mark="facebook"] scratchpad show, fullscreen enable
+for_window [instance="facebook.com"] mark "facebook", move scratchpad
+
+# Code
+bindsym $mod+i [con_mark="scratchpad"] scratchpad show, fullscreen enable
+for_window [title="scratchpad-code"] mark "scratchpad", move scratchpad
+
+# Programming
+bindsym $mod+g [con_mark="github"] scratchpad show, fullscreen enable
+for_window [instance="github.com"] mark "github", move scratchpad
+
+bindsym $mod+s [con_mark="stackoverflow"] scratchpad show, fullscreen enable
+for_window [instance="stackoverflow.com"] mark "stackoverflow", move scratchpad
+
+bindsym $mod+r [con_mark="reddit"] scratchpad show, fullscreen enable
+for_window [instance="new.reddit.com"] mark "reddit", move scratchpad
+
+# Machine Learning
+bindsym $mod+a [con_mark="arxiv"] scratchpad show, fullscreen enable
+for_window [instance="arxiv.org"] mark "arxiv", move scratchpad
+
+bindsym $mod+o [con_mark="overleaf"] scratchpad show, fullscreen enable
+for_window [instance="overleaf.com"] mark "overleaf", move scratchpad
+
 # Messengers
-bindsym $mod+s [con_mark="signal-client"] scratchpad show
-bindsym $mod+f [con_mark="messenger-client"] scratchpad show
-bindsym $mod+g [con_mark="inbox-client"] scratchpad show
-bindsym $mod+m [con_mark="protonmail-client"] scratchpad show
-bindsym $mod+i [con_mark="scratchpad-code"] scratchpad show, fullscreen enable
+bindsym $mod+t [con_mark="signal"] scratchpad show
+for_window [class="Signal"] mark "signal", move scratchpad
 
-# Other scripts
-bindsym $mod+n exec "$HOME/.config/rofi/scripts/network.sh"
-bindsym $mod+b exec "$HOME/.config/rofi/scripts/books.sh"
-bindsym $mod+v exec "$HOME/.config/rofi/scripts/vpn.sh"
+bindsym $mod+f [con_mark="messenger"] scratchpad show
+for_window [class="Caprine"] mark "messenger", move scratchpad
 
-bindsym $mod+o exec "$HOME/.config/rofi/scripts/other.sh"
+# E-Mails
+bindsym $mod+n [con_mark="protonmail"] scratchpad show
+for_window [instance="mail.protonmail.com"] mark "protonmail", move scratchpad
+
+bindsym $mod+u [con_mark="gmail"] scratchpad show
+for_window [instance="mail.google.com"] mark "gmail", move scratchpad
+
+# Watching
+bindsym $mod+w [con_mark="netflix"] scratchpad show, fullscreen enable
+for_window [class="qtwebflix"] mark "netflix", move scratchpad
+
+bindsym $mod+y [con_mark="youtube"] scratchpad show, fullscreen enable
+for_window [instance="^youtube.com$"] mark "youtube", move scratchpad
+
+# Music
+bindsym $mod+m [con_mark="youtube-music"] scratchpad show
+for_window [instance="^music.youtube.com$"] mark "youtube-music", move scratchpad
+
+###############################################################################
+#
+#                         SCRIPTS MODIFIER KEYBINDINGS
+#
+###############################################################################
+
+
+# Keyboard shortcuts
 bindsym $mod+c exec "rofi -show clipboard"
 bindsym $mod+x exec "rofi -show drun"
 
-# Music player
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym $mod+Print exec scrot -z "$HOME/screens/%b%d::%H%M%S.png"
-bindsym --release Print exec scrot -z -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
+# bluetooth (mod+b), docker (mod+d)
+bindsym $mod+v exec "$HOME/.config/rofi/scripts/vpn.sh" # Fix VPN
 
-bindsym $mod+p exec /home/vyz/.local/bin/keepmenu
+###############################################################################
+#
+#                           ENVIRONMENT CONTROLS
+#
+###############################################################################
 
-# change sound level/mute
+# Locking and exiting
+bindsym $mod+z exec "i3lock-next"
+bindsym $mod+F9 exec "shutdown now"
+bindsym $mod+F5 exec "shutdown now -r"
+
+# Sound levels
 bindsym F2 exec "amixer set Master 5%-"
 bindsym F3 exec "amixer set Master 5%+"
 
-#kill focused window
+# Music player
+bindsym XF86AudioPlay exec playerctl -a play-pause
+bindsym XF86AudioNext exec playerctl -a next
+bindsym XF86AudioPrev exec playerctl -a previous
+
+# Brightness
+bindsym F11 exec "sudo light -U 5"
+bindsym F12 exec "sudo light -A 5"
+
+# Fix screenshots
+# bindsym $mod+Print exec scrot -z "$HOME/screens/%b%d::%H%M%S.png"
+# bindsym --release Print exec scrot -z -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
+
+# bindsym $mod+p exec /home/vyz/.local/bin/keepmenu
+
+###############################################################################
+#
+#                             WINDOWS CONTROLS
+#
+###############################################################################
+
 bindsym $mod+Shift+q kill
 
-# change focus
-bindsym $mod+Left focus left
-bindsym $mod+Up focus up
-bindsym $mod+Down focus down
-bindsym $mod+Right focus right
-
-#change workspaces
+# Move between tabs and workspaces
 bindsym $mod+j workspace prev
 bindsym $mod+k workspace next
+bindsym $mod+h focus left
+bindsym $mod+l focus right
 
-# move focused window
+# Moving focused window (rarely used)
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
+# Split window (rarely used)
 bindsym $mod+- split h
+bindsym $mod+\ split v
 
-# split in vertical orientation
-bindsym $mod+| split v
 
-# enter fullscreen mode for the focused container
-# bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
+###############################################################################
+#
+#                                   WORKSPACES
+#
+###############################################################################
 
 set $code 1
 set $web 2
-set $xmind 3
-set $books 4
-set $reader 5
-set $music 6
-set $film 7
-set $other 8
+set $reader 3
+set $pictures 4
+set $other 5
 
 bindsym $mod+1 workspace $code
 bindsym $mod+2 workspace $web
-bindsym $mod+3 workspace $xmind
-bindsym $mod+4 workspace $books
-bindsym $mod+5 workspace $reader
-bindsym $mod+6 workspace $music
-bindsym $mod+7 workspace $film
-bindsym $mod+8 workspace $other
+bindsym $mod+3 workspace $reader
+bindsym $mod+4 workspace $pictures
+bindsym $mod+5 workspace $other
 
 bindsym $mod+Shift+1 move container to workspace $code
 bindsym $mod+Shift+2 move container to workspace $web
-bindsym $mod+Shift+3 move container to workspace $xmind
-bindsym $mod+Shift+4 move container to workspace $books
-bindsym $mod+Shift+5 move container to workspace $reader
-bindsym $mod+Shift+6 move container to workspace $music
-bindsym $mod+Shift+7 move container to workspace $film
-bindsym $mod+Shift+8 move container to workspace $other
-
-workspace_auto_back_and_forth yes
-
-for_window[class="Spotify"] move to workspace $music
-for_window[class="Termite"] layout tabbed
-for_window[class="mpv"] move to workspace $film
+bindsym $mod+Shift+3 move container to workspace $reader
+bindsym $mod+Shift+4 move container to workspace $pictures
+bindsym $mod+Shift+5 move container to workspace $other
 
 assign [class="firefox"] $web
-for_window[class="firefox"] layout tabbed
-
-assign [class="XMind"] $xmind
-for_window[class="XMind"] layout tabbed
-
-assign [class="Feedreader"] $reader
-
-assign [class="Zathura"] $books
-for_window[class="Zathura"] layout tabbed
+assign [class="Zathura"] $reader
+assign [class="feh"] $pictures
 
 assign [class="libreoffice"] $other
-assign [class="feh"] $other
 assign [class="filelight"] $other
 assign [class="bleachbit"] $other
-assign [class="keepassxc"] $other
+assign [class="KeePassXC"] $other
 
-#GAPS
-for_window[class="^.*"] border pixel 4
-gaps inner 3
-gaps outer 8
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-msg exit"
+###############################################################################
+#
+#                                 RESIZING
+#
+###############################################################################
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -167,11 +202,6 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -179,30 +209,35 @@ mode "resize" {
 
 bindsym $mod+Control+r mode "resize"
 
-#i3 colors
 
+###############################################################################
+#
+#                               LOOK AND FEEL
+#
+###############################################################################
+
+# Gaps
+for_window[class="^.*"] border pixel 4
+gaps inner 3
+gaps outer 9
+
+# Colors
 set $bg-color 			#2f343f
 set $inactive-bg-color 		#2f343f
 set $text-color 		#f3f4f5
 set $inactive-text-color 	#f3f4f5
 
-#window colors	border		background	text		indicator
-#client.focused	#c795ae $bg-color	$text-color	$bg-color
+# Window colors
 client.unfocused	#585858 #585858 #d0d0d0 #585858
 client.focused #585858 #585858 #d0d0d0 #585858
 client.focused_inactive #585858 #585858 #d0d0d0 #585858
-#client.focused_inactive		$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$bg-color
-#client.urgent	$urgent-bg-color	$urgent-bg-color	$text-color	$bg-color
+
+
+###############################################################################
+#
+#                                 AUTOSTART
+#
+###############################################################################
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec compton -b --inactive-dim 0.3 --focus-exclude '_NET_WM_NAME@:s = "rofi"'
-
-# Social media
-for_window [class="Caprine"] mark "messenger-client", move scratchpad
-for_window [class="Slack"] mark "slack-client", move scratchpad
-for_window [class="Signal"] mark "signal-client", move scratchpad
-for_window [class="Inboxer"] mark "inbox-client", move scratchpad
-for_window [class="Protonmail Desktop"] mark "protonmail-client", move scratchpad
-
-# Code Scratchpad
-for_window [title="scratchpad-code"] mark "scratchpad-code", move scratchpad
