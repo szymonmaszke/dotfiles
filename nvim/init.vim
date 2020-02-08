@@ -94,7 +94,7 @@ Plug 'rhysd/committia.vim'
 Plug 'tpope/vim-repeat'
 " Plug 't9md/vim-choosewin'
 "GENERATE DOCUMENTATION FOR FUNCTIONS CLASSES ETC. AUTOMATICALLY
-Plug 'heavenshell/vim-pydocstring'
+" Plug 'heavenshell/vim-pydocstring'
 "SNIPPETS MENU
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -139,6 +139,8 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ryanoasis/vim-devicons'
+" FINALLY GOOD DOCUMENTATION PLUGIN <3
+Plug 'kkoomen/vim-doge'
 
 call plug#end()
 " }}}
@@ -176,7 +178,7 @@ source $HOME/.config/nvim/settings/plugins/fzf.vim
 source $HOME/.config/nvim/settings/plugins/ale.vim
 source $HOME/.config/nvim/settings/plugins/indentline.vim
 source $HOME/.config/nvim/settings/plugins/python-syntax.vim
-source $HOME/.config/nvim/settings/plugins/vim-pydocstring.vim
+" source $HOME/.config/nvim/settings/plugins/vim-pydocstring.vim
 source $HOME/.config/nvim/settings/plugins/vimtex.vim
 " source $HOME/.config/nvim/settings/plugins/vim-choosewin.vim
 source $HOME/.config/nvim/settings/plugins/neotex.vim
@@ -195,4 +197,5 @@ source $HOME/.config/nvim/settings/plugins/vim-highlightedundo.vim
 source $HOME/.config/nvim/settings/plugins/vim-highlightedyank.vim
 source $HOME/.config/nvim/settings/plugins/clever-f.vim
 source $HOME/.config/nvim/settings/plugins/vim-which-key.vim
+source $HOME/.config/nvim/settings/plugins/vim-doge.vim
 " }}}

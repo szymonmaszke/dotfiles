@@ -6,12 +6,12 @@ unread=$(curl -sf "$url" | jq '.["data"]["children"] | length' 2>/dev/null)
 
 case "$unread" in
 '' | *[!0-9]*)
-	unread=0
-	;;
+  unread=0
+  ;;
 esac
 
 if [ "$unread" -gt 0 ]; then
-	echo "%{F${warning_color}}%{F-}"
+  echo "%{F${warning_color}}%{F-}"
 else
-	echo ""
+  echo ""
 fi

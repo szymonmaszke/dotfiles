@@ -9,10 +9,11 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
+      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
       \   'python': ['black', 'isort', 'remove_trailing_lines', 'trim_whitespace'],
-      \   'sh': ['shfmt', 'remove_trailing_lines', 'trim_whitespace',],
-      \   'vim': ['remove_trailing_lines', 'trim_whitespace',],
-      \   'md': ['prettier', 'trim_whitespace',],
+      \   'cpp': ['clang-format', 'clangtidy', ],
+      \   'sh': ['shfmt', ],
+      \   'md': ['prettier', ],
       \}
 
 let g:ale_python_black_executable = 'black'
