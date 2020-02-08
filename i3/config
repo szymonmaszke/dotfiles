@@ -54,13 +54,6 @@ for_window [instance="stackoverflow.com"] mark "stackoverflow", move scratchpad
 bindsym $mod+r [con_mark="reddit"] scratchpad show, fullscreen enable
 for_window [instance="new.reddit.com"] mark "reddit", move scratchpad
 
-# Machine Learning
-bindsym $mod+a [con_mark="arxiv"] scratchpad show, fullscreen enable
-for_window [instance="arxiv.org"] mark "arxiv", move scratchpad
-
-bindsym $mod+o [con_mark="overleaf"] scratchpad show, fullscreen enable
-for_window [instance="overleaf.com"] mark "overleaf", move scratchpad
-
 # Messengers
 bindsym $mod+t [con_mark="signal"] scratchpad show
 for_window [class="Signal"] mark "signal", move scratchpad
@@ -125,8 +118,8 @@ bindsym F11 exec "sudo light -U 5"
 bindsym F12 exec "sudo light -A 5"
 
 # Fix screenshots
-# bindsym $mod+Print exec scrot -z "$HOME/screens/%b%d::%H%M%S.png"
-# bindsym --release Print exec scrot -z -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
+bindsym $mod+Print exec scrot -z "$HOME/screens/%b%d::%H%M%S.png"
+bindsym --release Print exec scrot -z -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
 
 # bindsym $mod+p exec /home/vyz/.local/bin/keepmenu
 
