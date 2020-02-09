@@ -118,8 +118,7 @@ bindsym F11 exec "sudo light -U 5"
 bindsym F12 exec "sudo light -A 5"
 
 # Fix screenshots
-bindsym $mod+Print exec scrot -z "$HOME/screens/%b%d::%H%M%S.png"
-bindsym --release Print exec scrot -z -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screens/'
+bindsym Print exec "$HOME/.config/rofi/scripts/screenshots.sh"
 
 # bindsym $mod+p exec /home/vyz/.local/bin/keepmenu
 
