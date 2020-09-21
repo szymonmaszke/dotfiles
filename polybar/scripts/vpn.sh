@@ -3,7 +3,7 @@
 no_vpn_color='#373737'
 
 if [ "$(pgrep openvpn)" ]; then
-	echo ""
+  echo ""
 else
-	echo "%{F${no_vpn_color}}%{F-}"
+  echo "%{F${no_vpn_color}}%{F-}"
 fi

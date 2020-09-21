@@ -7,7 +7,7 @@ red = #f44336
 green = #388E3C
 
 [bar/top_bar]
-override-redirect = false
+override-redirect = False
 bottom = false
 width = 100%
 height = 32
@@ -33,9 +33,9 @@ foreground = ${colors.white}
 underline-size = 2
 underline-color = ${colors.red}
 
-font-0 = MaterialDesignIcons:size=14;3
-font-1 = "Hack Nerd Font Complete Mono:size=11;3"
-font-2 = "Weather Icons:size=14;4"
+font-0 = "Symbols Nerd Font:pixelsize=13;3"
+font-1 = "Hack Nerd Font Complete Mono:pixelsize=11;3"
+font-2 = "Weather Icons:pixelsize=14;4"
 
 [module/firewall]
 type = custom/script
@@ -96,20 +96,20 @@ format-muted-padding = 2
 format-muted-background = ${colors.gray}
 format-muted = <label-muted> <bar-volume>
 
-label-muted = 
+label-muted = ""
 label-muted-foreground = #66
 
 bar-volume-width = 8
-bar-volume-indicator = 
+bar-volume-indicator = ""
 bar-volume-indicator-foreground = ${colors.red}
-bar-volume-fill = 
+bar-volume-fill = 
 bar-volume-fill-foreground = ${colors.white}
-bar-volume-empty = 
+bar-volume-empty = 
 bar-volume-empty-foreground = ${colors.dark_gray}
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 ramp-headphones-0 = 
 ramp-headphones-1 = 
@@ -120,9 +120,9 @@ type = internal/date
 time = %H:%M
 label = %time%
 
-time-alt = %A, %d %B %Y
+time-alt = %A, %d-%b-%Y
 
-format =  <label>
+format = " <label>"
 format-background = ${colors.gray}
 interval = 5
 format-padding = 1
@@ -132,13 +132,13 @@ label-font = 2
 type = internal/i3
 ;ws-icon-[0-9]+ = label;icon
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;󰁈
-ws-icon-4 = 5;󰂆
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
 
-ws-icon-default = 󰇹
+ws-icon-default = 
 
 strip-wsnumbers = true
 
@@ -167,13 +167,12 @@ type = internal/backlight
 card = intel_backlight
 format = <ramp>
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-5 = 
-ramp-6 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
 
 [module/weather]
 type = custom/script
@@ -233,8 +232,8 @@ interface = wlp3s0
 format-connected = <label-connected>
 format-connected-background = ${colors.gray}
 format-connected-padding = 1
-label-connected =  
-label-disconnected =   
+label-connected = 
+label-disconnected =  
 format-disconnected = <label-disconnected>
 label-disconnected-foreground = ${colors.dark_gray}
 label-disconnected-background= ${colors.gray}
@@ -261,27 +260,22 @@ format-full-padding = 1
 format-full-background = ${colors.gray}
 
 label-full = 
-ramp-capacity-8 = ""
-ramp-capacity-7 = ""
-ramp-capacity-6 = ""
-ramp-capacity-5 = ""
-ramp-capacity-4 = ""
-ramp-capacity-4-foreground = ${colors.orange}
-ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+ramp-capacity-3 = ""
 ramp-capacity-3-foreground = ${colors.orange}
-ramp-capacity-2 = ""
-ramp-capacity-2-foreground = ${colors.red}
-ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-2-foreground = ${colors.orange}
+ramp-capacity-1 = ""
 ramp-capacity-1-foreground = ${colors.red}
-ramp-capacity-0 = ""
+ramp-capacity-0 = ""
 ramp-capacity-0-foreground = ${colors.red}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 400
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 200
 
 [module/menu]
 type = custom/menu
@@ -343,14 +337,12 @@ format-warn-background= ${colors.gray}
 
 label-warn = 
 
-ramp-0 = 
+ramp-0 = 
 ramp-0-foreground = ${colors.white}
-ramp-1 = 
-ramp-1-foreground = ${colors.white}
-ramp-2 = 
-ramp-2-foreground = ${colors.orange}
-ramp-3 = 
-ramp-3-foreground = ${colors.red}
+ramp-1 = 
+ramp-1-foreground = ${colors.orange}
+ramp-2 = 
+ramp-2-foreground = ${colors.red}
 
 
 [module/title]

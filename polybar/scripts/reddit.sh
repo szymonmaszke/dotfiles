@@ -11,7 +11,7 @@ case "$unread" in
 esac
 
 if [ "$unread" -gt 0 ]; then
-  echo "%{F${warning_color}}%{F-}"
+  echo "%{F${warning_color}}%{F-}"
 else
-  echo ""
+  echo ""
 fi

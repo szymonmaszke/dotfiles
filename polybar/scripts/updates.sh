@@ -17,9 +17,9 @@ arch_updates=$(echo "$arch_updates" | wc -l)
 updates=$((arch_updates + aur_updates))
 
 if [ "$updates" -lt 40 ]; then
-  echo ""
+  echo " 累"
 elif [ "$updates" -lt 80 ]; then
-  echo "%{F${normal_color}}%{F-}"
+  echo "%{F${normal_color}} 累%{F-}"
 else
-  echo "%{F${warning_color}}%{F-}"
+  echo "%{F${warning_color}} 累%{F-}"
 fi

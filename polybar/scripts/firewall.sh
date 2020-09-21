@@ -3,7 +3,7 @@
 inactive_color='#373737'
 
 if [ "$(systemctl is-active ufw)" = "active" ]; then
-	echo ""
+  echo ""
 else
-	echo "%{F${inactive_color}}%{F-}"
+  echo "%{F${inactive_color}}%{F-}"
 fi
