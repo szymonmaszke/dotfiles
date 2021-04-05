@@ -33,14 +33,6 @@ bindsym $mod+Shift+e exec "i3-msg exit"
 #
 ###############################################################################
 
-# General
-bindsym $mod+e [con_mark="google"] scratchpad show, fullscreen enable
-for_window [instance="google.com"] mark "google", move scratchpad
-
-bindsym $mod+d [con_mark="facebook"] scratchpad show, fullscreen enable
-for_window [instance="facebook.com"] mark "facebook", move scratchpad
-
-# Code
 bindsym $mod+i [con_mark="scratchpad"] scratchpad show, fullscreen enable
 for_window [title="scratchpad-code"] mark "scratchpad", move scratchpad
 
@@ -75,9 +67,13 @@ for_window [class="qtwebflix"] mark "netflix", move scratchpad
 bindsym $mod+y [con_mark="youtube"] scratchpad show, fullscreen enable
 for_window [instance="^youtube.com$"] mark "youtube", move scratchpad
 
-# Music
-bindsym $mod+m [con_mark="youtube-music"] scratchpad show
-for_window [instance="^music.youtube.com$"] mark "youtube-music", move scratchpad
+# Slack
+bindsym $mod+m [con_mark="slack"] scratchpad show
+for_window [class="Slack"] mark "slack", move scratchpad
+
+# Drawing
+# bindsym $mod+d [con_mark="pinta"] scratchpad show, fullscreen enable
+# for_window [class="Pinta"] mark "pinta", move scratchpad
 
 ###############################################################################
 #
@@ -90,8 +86,6 @@ for_window [instance="^music.youtube.com$"] mark "youtube-music", move scratchpa
 bindsym $mod+c exec "rofi -show clipboard"
 bindsym $mod+x exec "rofi -show drun"
 
-# bluetooth (mod+b), docker (mod+d)
-bindsym $mod+v exec "$HOME/.config/rofi/scripts/vpn.sh" # Fix VPN
 
 ###############################################################################
 #
@@ -119,8 +113,6 @@ bindsym F12 exec "sudo light -A 5"
 
 # Fix screenshots
 bindsym Print exec "$HOME/.config/rofi/scripts/screenshots.sh"
-
-# bindsym $mod+p exec /home/vyz/.local/bin/keepmenu
 
 ###############################################################################
 #
@@ -211,7 +203,7 @@ bindsym $mod+Control+r mode "resize"
 # Gaps
 for_window[class="^.*"] border pixel 4
 gaps inner 3
-gaps outer 9
+gaps outer 24
 
 # Colors
 set $bg-color 			#2f343f

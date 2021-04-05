@@ -12,12 +12,6 @@ bottom = false
 width = 100%
 height = 32
 
-border-top-size = 15
-border-left-size = 12
-border-right-size = 12
-
-border-bottom-size = 5
-
 padding-left = 0
 padding-right = 0
 

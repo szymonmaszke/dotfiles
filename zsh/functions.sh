@@ -6,7 +6,7 @@ list_all() {
   ls_extended -s
 }
 
-chpwd_functions=(${chpwd_functions[@]} "list_all")
+# chpwd_functions=(${chpwd_functions[@]} "list_all")
 
 # List all available command
 lac() {

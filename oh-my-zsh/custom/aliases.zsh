@@ -4,6 +4,8 @@
 #
 ###############################################################################
 
+
+alias sudo='sudo '
 alias record='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -ac 1 -i hw:1,0 -c:v libx264 screen.mp4'
 
 alias present='mons -d'
@@ -20,13 +22,14 @@ alias c='clear'
 alias mv='$HOME/.config/scripts/mv.sh'
 alias cp='cp -ri'
 
-alias l='ls_extended -s'
-alias lf='ls_extended -f'
-alias ld='ls_extended -d'
-alias la='ls_extended -Aslhi'
+# alias l='ls_extended -s'
+# alias lf='ls_extended -f'
+# alias la='ls_extended -Aslhi'
 
-alias ls='ls_extended -s'
+# alias ls='ls_extended -s'
 alias cat='bat'
+
+alias jn='jupyter notebook'
 
 ###############################################################################
 #
@@ -70,7 +73,7 @@ alias qjup='kill $(pgrep jupyter)'
 #
 ###############################################################################
 
-alias pup='pikaur -Syyu --noconfirm && gem update'
+alias pup='rm -rf /home/vyz/.cache/pikaur/build/universal-ctags-git/src/testhome && pikaur -Syyu --noconfirm && gem update'
 alias pcc='pikaur -Scc'
 alias pget='pikaur -S'
 alias prm='pikaur -Rns'
@@ -96,74 +99,44 @@ alias gp='hub push -u origin $(git rev-parse --abbrev-ref HEAD)'
 #
 ###############################################################################
 
-#docker specific
-#--format using regex, formatting of given output, check it, p.58
-#-d running as daemon, -c running command
-alias drun='docker run'
-alias dpull='docker pull'
-alias dstart='docker start'
-alias dstop='docker stop'
-alias drm='docker rm'
-alias drmall='docker ps -a -q | xargs sudo docker rm'
-#drastic m8
-alias dkill='docker kill'
-alias drestart='docker restart'
-alias dattach='docker attach'
-#add container name below. -f flag - monitors current output, not last few liens
-#-t for timestamps
-alias dlogs='docker logs'
-#checking processes inside container
-alias dtop='docker top'
-#inspect given container (verbose output)
-alias dinspect='docker inspect'
+# Images
+alias di="docker image" # General for docker images
 
-#info about docker
-alias dinfo='docker info'
+alias dib="docker image build" # Build docker image
+alias dil="docker image ls" # List docker images (check --help)
+alias dip="docker image push" # Push NAME image
+alias dirm="docker image rm" # Remove NAME image
+alias dirmall="docker image prune -a" # Remove all images not used by containers
 
+# Containers
+alias dc="docker container" # General for docker containers
 
-#docker images - layers of read-only, one read-write on top of those. Union
-#mount - can mount many filesystems on top of each other, with only final layer
-#writeable
-#/var/lib/docker for local images, containers etc.
-#DockerHub - default registry, where repositories live. Inside repositories
-#there are images (default download place)
-#You can run your own registries
-#pulls given image from repository
-#ubuntu:12.04 - runs tagged version, best to build containers like that
+alias dcr="docker container run" # Run container from an IMAGE image
+alias dccp="docker container cp" # Copy data from src to dst inside container
+alias dce="docker container exec" # Execute COMMAND inside container
+alias dci="docker container inspect" # Inspect container
+alias dck="docker container kill"  # Kill container
+alias dcl="docker container ls" # List all available containers
+alias dcs="docker container stop" # Stop running container
 
-alias dp='docker pull'
-#list docker images
-alias di='docker images'
-#removes given image
-alias drmi='docker rmi'
-alias drmiall='docker rmi $(sudo docker images)'
-#given name searches images in registry
-alias dsearch='docker search'
+alias dcrma='docker ps -a -q | xargs sudo docker rm' # Remove all non-running containers
 
-#processes
-alias dps='docker ps'
-alias dlast='docker ps -l'
+# Volumes
+alias dv="docker volume" # General volume command
 
-#login
-alias dlogin='docker login'
+alias dvc="docker volume create" # Create NAMED volume
+alias dvl="docker volume ls" # List all available volumes
+alias dvrm="docker volume rm" # Remove volumes
 
-alias dc='docker commit'
-#trusted build - automated from GitHub/BitBucket
-alias db='docker build'
+# List files inside the created volume
+dvi(){
+  docker run --rm -i -v="$1":/tmp/myvolume busybox find /tmp/myvolume
+}
 
-#shows creation history for given image
-alias dhist='docker history'
-
-#pushing image to the dockerhub
-#can only push to user/repo_name, repo_name alone won't work (considered root,
-#docker staff can only use it)
-alias dpush='docker push'
-
-alias drmi_dangling='docker system prune'
-
-# removes all none images
-alias drminone='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
-
+# System
+alias dsi="docker system info" # Display system-wide information
+alias dsdf="docker system df" # How much images & containers take in terms of space
+alias dsp="docker system prune" # Remove every unused image/container
 
 ###############################################################################
 #
@@ -183,11 +156,12 @@ alias ca='conda activate'
 alias ci='conda install'
 alias cif='conda install -c conda-forge'
 alias ccr='conda create --name'
-alias cls='conda list'
+alias cl='conda list'
 alias crm='conda remove'
 alias ccl='conda clean'
 alias cup='conda update'
 alias cupc='conda update -n base -c defaults conda'
+alias crme='rm -rf $HOME/.conda/envs/*'
 
 # Poetry
 alias poi='poetry add'

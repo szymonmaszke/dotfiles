@@ -1,0 +1,20 @@
+1. Welcome to StackOverflow question
+Hello, welcome to [StackOverflow community](https://stackoverflow.com/conduct).
+
+2. Welcome to StackOverflow answer
+Hello, welcome to [StackOverflow community](https://stackoverflow.com/conduct),
+thanks for your answer!
+
+3. Do it for me pls
+Could you tell us what have you tried so far? Community will be more eager to help you if you outline a more specific problem. Please see [How do I ask a good question?](https://stackoverflow.com/help/how-to-ask) for more information.
+
+4. Answer with only code
+Your answer is not entirely clear. Could you provide some additional informations about your implementations and how it resolves OP's issue? See [How do I write a good answer](https://stackoverflow.com/help/how-to-answer) for more informations.
+
+5. Provide code instead of images
+Please provide your example as code instead of image, see [How to Ask a Good Question](https://stackoverflow.com/help/how-to-ask).
+
+6. Format your code
+
+7. Only link answer
+While this link may answer the question, it is better to include the essential parts of the answer here and provide the link for reference. Link-only answers can become invalid if the linked page changes. - From Review

@@ -6,6 +6,7 @@ let g:ale_dockerfile_hadolint_use_docker = 'always'
 let g:ale_linters = {
       \   'python': ['flake8', 'pylint',],
       \   'vim': ['vint',],
+      \   'go': ['gofmt',],
       \}
 
 let g:ale_fixers = {
@@ -14,6 +15,7 @@ let g:ale_fixers = {
       \   'cpp': ['clang-format', 'clangtidy', ],
       \   'sh': ['shfmt', ],
       \   'md': ['prettier', ],
+      \   'go': ['gofmt', ],
       \}
 
 let g:ale_python_black_executable = 'black'
